@@ -28,7 +28,7 @@ run: prod-build
 
 build:
 	@echo "Building image version $(VERSION)"
-	docker build --tag acm:$(VERSION) .
+	docker build --tag acm:v.$(VERSION) .
 
 prod-build:
 	@if [ "$(ENV)" = "prod" ]; then \
