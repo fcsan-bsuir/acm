@@ -35,3 +35,14 @@ prod-build:
 		echo "Build docker image for prod environment."; \
 		$(MAKE) build; \
 	fi
+
+migrations:
+	@if [ "$(ENV)" = "local" ]; then \
+		python3 manage.py makemigrations; \
+		python3 manage.py migrate; \
+	fi
+
+createsuperuser:
+	@if [ "$(ENV)" = "local" ]; then \
+		python3 manage.py createsuperuser;\
+	fi
