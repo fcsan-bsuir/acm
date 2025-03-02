@@ -7,28 +7,22 @@
 
 {% if not request.user.participant.team %} 
     {% if available_reg %}
-        <main>
-            <article class="login full-screen noised d-flex align-center justify-center">
-                <div class="container d-flex direction-column align-center">
-                    {% if olymp_type == 'single' %}
-                        <form action="/team/create" method="post">
-                            {% csrf_token %}
-                            <button class="button big-form-button" type="submit">Зарегистрироваться</button>
-                        </form>
-                    {% else %}
-                        <a href="{% url 'create-team' %}" class="btn-star">Создать команду</a>
-                    {% endif%}
-                </div>
-            </article>
-        </main>
+        <div class="center_pa">
+            <h1 class="title">Личный кабинет</h1>
+            <h2 class="text">У вас нет команды. Нажмите на кнопку, чтобы добавить.</h2>
+            {% if olymp_type == 'single' %}
+                <form action="/team/create" method="post">
+                    {% csrf_token %}
+                    <button class="button" type="submit">Добавить</button>
+                </form>
+            {% else %}
+                <a href="{% url 'create-team' %}"><button class="button">Создать команду</button></a>
+            {% endif%}
+        </div>
     {% else %}
-        <main>
-            <article class="login full-screen noised d-flex align-center justify-center">
-                <div class="container d-flex direction-column align-center">
-                    <h2 class="form-header">Регистрация закрыта...</h2>
-                </div>
-            </article>
-        </main>
+        <div class="center_pa">
+            <h2 class="center text">Регистрация закрыта...</h2>
+        </div>
     {% endif %}
 {% else %}
 <main>
