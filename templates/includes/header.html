@@ -11,29 +11,29 @@
     <ul class="main-buttons">
       <li>
         <a href="{% url 'index' %}#main-section">
-          <button class="button" data-target="">Главная</button>
+          <button class="button" data-target="#main-section">Главная</button>
         </a>
       </li>
       <li>
         <a href="{% url 'index' %}#about">
-          <button class="button" data-target="">Об олимпиаде</button>
+          <button class="button" data-target="#about">Об олимпиаде</button>
         </a>
       </li>
       <li>
         <a href="{% url 'index' %}#stages">
-          <button class="button" data-target="">Этапы</button>
+          <button class="button" data-target="#stages">Этапы</button>
         </a>
       </li>
       <li>
         <a href="{% url 'index' %}#timetable">
-          <button class="button" data-target="">Расписание</button>
+          <button class="button" data-target="#timetable">Расписание</button>
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a href="{% url 'index' %}#partners">
-          <button class="button" data-target="">Партнеры</button>
+          <button class="button" data-target="#partners">Партнеры</button>
         </a>
-      </li>
+      </li> -->
     </ul>
     <ul class="extra-buttons">
       {% if request.user.is_authenticated %}
@@ -80,7 +80,7 @@
       <li><a href="{% url 'index' %}#about" class="mobile-menu-button">Об олимпиаде</a></li>
       <li><a href="{% url 'index' %}#stages" class="mobile-menu-button">Этапы</a></li>
       <li><a href="{% url 'index' %}#timetable" class="mobile-menu-button">Расписание</a></li>
-      <li><a href="{% url 'index' %}#partners" class="mobile-menu-button">Партнеры</a></li>
+      <!-- <li><a href="{% url 'index' %}#partners" class="mobile-menu-button">Партнеры</a></li> -->
       <li><a href="{% url 'rules' %}">Правила</a></li>
     </ul>
     <div class="menu-buttons">
