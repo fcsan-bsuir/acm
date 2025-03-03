@@ -609,15 +609,17 @@ a:focus {
 
 }
 
-#restrictions {
+/* #restrictions {
     display: flex;
     flex-direction: column;
-    padding: 140px 80px;
+    padding: 150px 80px;
     position: inherit;
-}
+} */
 
 .code {
     font-size: 2.2vmin;
+    color: var(--white);
+    margin: 10px 0;
 }
 
 
