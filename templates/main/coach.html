@@ -6,51 +6,91 @@
 {% endblock %}
 
 {% block content %}
-<main>
-    <article class="login full-screen noised d-flex align-center justify-center">
-        <div class="container d-flex direction-column align-center">
-            <h2 class="form-header">
-                Добавить тренера
-            </h2>
-            <form method="POST" class="form d-flex direction-column align-center">
-                {% csrf_token %}
-                <div class="form-input__wrap required-input">
-                    {{form.lastname}}
-                </div>
-                <div class="form-input__wrap required-input">
-                    {{form.firstname}}
-                </div>
-                <div class="form-input__wrap required-input">
-                    {{form.secondname}}
-                </div>
-                <div class="form-input__wrap required-input">
-                    {{form.email}}
-                </div>
-                <div class="form-input__wrap required-input">
-                    {{form.phone}}
-                </div>
-                <div class="form-select__wrap required-input">
-                    {{form.tshirt_size}}
-                </div>
-                <p class="form-info">
-                    *-поля, обязательные для заполнения
-                    </br>
-                    {% for field, errors in form.errors.items %}
-                        {% for error in errors%}
-                            {{error}}
-                            </br>
-                        {% endfor %}
-                    {% endfor %}
-                </p>
-                <a class="btn-star submit">
-                    Добавить
-                </a>
-            </form>
+<form method="post" id="coach-form">
+{% csrf_token %}
+<div class="container">
+    <p class="headline">Добавление тренера</p>
+    <div class="grid">
+      <div class="grid_item">
+        <div class="name_input_container">
+          <input type="text" name="lastname" class="input" placeholder="Фамилия" form="coach-form"/>
+          <div class="alarm">
+            <img
+              src="{% static 'assets/img/arrows/star.png' %}"
+            />
+          </div>
         </div>
-    </article>
-</main>
-<script src="{% static 'assets/js/form-select.js' %}">
-</script>
-<script src="{% static 'assets/js/forms.js' %}">
-</script>
+      </div>
+      <div class="grid_item">
+        <div class="name_input_container">
+          <input type="text" name="firstname" class="input" placeholder="Имя" form="coach-form"/>
+          <div class="alarm">
+            <img
+              src="{% static 'assets/img/arrows/star.png' %}"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="grid_item">
+        <div class="name_input_container">
+          <input type="text" name="secondname" class="input" placeholder="Отчество" form="coach-form"/>
+          <div class="alarm">
+            <img
+              src="{% static 'assets/img/arrows/star.png' %}"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="grid_item">
+        <div class="name_input_container">
+          <input type="text" name="email" class="input" placeholder="E-mail" form="coach-form"/>
+          <div class="alarm">
+            <img
+              src="{% static 'assets/img/arrows/star.png' %}"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="grid_item">
+        <div class="name_input_container">
+          <input type="text" name="phone" class="input" placeholder="Номер телефона" form="coach-form"/>
+          <div class="alarm">
+            <img
+              src="{% static 'assets/img/arrows/star.png' %}"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="grid_item">
+        {{ form.tshirt_size }}
+        <div class="arrow">
+          <img
+            class="arrowimg"
+            src="{% static 'assets/img/arrows/up.png' %}"
+          />
+        </div>
+        <div class="alarm">
+          <img
+            src="{% static 'assets/img/arrows/star.png' %}"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="dirow center">
+        <div class="flex restriction restriction_center">
+            <h6>
+                <!-- *-поля, обязательные для заполнения <br> -->
+                {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    {{error}}</br>
+                {% endfor %}
+                {% endfor %}
+            </h6>
+        </div>
+        <div class="flex button_add">
+            <button class="button" type="submit" form="coach-form">Добавить</button>
+        </div>
+    </div>
+</div>
+</form>
 {% endblock %}
