@@ -794,7 +794,7 @@ a:focus {
         gap: 8vh;
     }
 
-    #restrictions {
+    .container {
         padding: 80px 20px;
     }
 }

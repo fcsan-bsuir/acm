@@ -13,10 +13,10 @@
             {% if olymp_type == 'single' %}
                 <form action="/team/create" method="post">
                     {% csrf_token %}
-                    <button class="button" type="submit">Добавить</button>
+                    <button class="button signUp-button" type="submit">Добавить</button>
                 </form>
             {% else %}
-                <a href="{% url 'create-team' %}"><button class="button">Создать команду</button></a>
+                <a href="{% url 'create-team' %}"><button class="button signUp-button">Создать команду</button></a>
             {% endif%}
         </div>
     {% else %}
