@@ -27,6 +27,7 @@
       placeholder="Повторите пароль"
       required
     />
+    {{form.captcha}}
   </form>
   <p class="wrong-inf">
     {% for field, errors in form.errors.items %}
