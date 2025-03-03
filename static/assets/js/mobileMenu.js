@@ -9,18 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     sidebarMenu.querySelectorAll('a.mobile-menu-button').forEach(link => {
       link.addEventListener('click', (event) => {
-        event.preventDefault(); 
-        const targetId = link.getAttribute('href'); 
-        const targetSection = document.querySelector(targetId); 
-  
-        if (targetSection) {
-          sidebarMenu.classList.remove('open');
-  
-          targetSection.scrollIntoView({
-            behavior: 'smooth', 
-            block: 'start'       
-          });
-        }
+        sidebarMenu.classList.remove('open');
       });
     });
   
