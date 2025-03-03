@@ -494,6 +494,13 @@ thead {
     height: 70%;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 150px 80px;
+}
+
 /* mobile version  */
 
 #mobile-header {
