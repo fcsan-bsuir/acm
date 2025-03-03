@@ -25,110 +25,130 @@
         </div>
     {% endif %}
 {% else %}
-<main>
-    <article class="command full-screen noised">
-        <div class="container d-flex direction-column">
-            <h2 class="command-header">{{request.user.participant.team.name}}</h2>
-            <table class="command-status-table">
-                <tr class="command-status-row">
-                    <td class="command-status-col">Статус</td>
-                    <td class="command-status-col">
-                        {{ request.user.participant.team.get_status_display }}
-                    </td>
-                </tr>
-                <tr class="command-status-row">
-                    <td class="command-status-col">Трек</td>
-                    <td class="command-status-col">
-                        {{ request.user.participant.team.get_type_display }}
-                    </td>
-                </tr>
-                <tr class="command-status-row">
-                    <td class="command-status-col">Стадия участия</td>
-                    <td class="command-status-col">{{ request.user.participant.team.stage }}</td>
-                </tr>
-                {% if credentials and request.user.participant.team.status == 'good' %}
-                <tr class="command-status-row">
-                    <td class="command-status-col">Логин</td>
-                    <td class="command-status-col">{{ request.user.participant.team.system_login }}</td>
-                </tr>
-                <tr class="command-status-row">
-                    <td class="command-status-col">Пароль</td>
-                    <td class="command-status-col">{{ request.user.participant.team.system_password }}</td>
-                </tr>
-                {% endif %}
-            </table>
-            <div class="command-info">
-                <div class="command-trainer">
-                    <h3 class="command-info-header">Тренер</h3>
-                    {% if not request.user.participant.team.coach %} 
-                        {% if not request.user.participant.team.is_sent%}
-                        <a href="{% url 'create-coach' %}" class="btn-star">Добавить тренера</a>
-                        {% else %}
-                        <p class="command-info-paragraph">Нет информации.</p>
-                        {% endif %} 
-                    {% else %}
-                        <p class="command-info-paragraph">
-                            {{request.user.participant.team.coach.fullname}}
-                        </p>
-                        <p class="command-info-paragraph color-red">
-                            Тел.: {{request.user.participant.team.coach.phone}}
-                        </p>
-                        <p class="command-info-paragraph color-red">
-                            E-mail: {{request.user.participant.team.coach.email}}
-                        </p>
-                        {% if not request.user.participant.team.is_sent %}
-                        <a href="{% url 'change-coach' %}" class="btn-star">Редактировать информацию</a>
-                        {% endif %}
-                    {% endif %}
+<div class="container_pa colflex">
+    <div class="white-box">
+        <div>
+            <h1 class="team-name">{{request.user.participant.team.name}}</h1>
+        </div>
+    </div>
+    <div class="white-box">
+        <div class="table_com">
+            <hr class="line" />
+            <div class="rowflex_table">
+                <div class="w30">
+                    <h4 class="table-text">Статус</h4>
                 </div>
-                <div class="command-trainees">
-                    <h3 class="command-info-header">Участники</h3>
-                    {% for participant in request.user.participant.team.participants.all %}
-                    <div class="command-trainee">
-                        {% if participant != request.user.participant %}
-                            <p class="command-info-paragraph">{{participant.fullname}}</p>
-                            <p class="command-info-paragraph color-red">Тел.: {{participant.phone}}</p>
-                            <p class="command-info-paragraph color-red">
-                                E-mail: {{participant.email}}
-                            </p>
-                            {% if not request.user.participant.team.is_sent %}
-                            <a
-                                href="{% url 'change-participant' participant.id %}"
-                                class="command-edit-trainee color-red underscored"
-                                >Редактировать</a
-                            >
+                <div class="w70">
+                    <h4 class="table-text">{{ request.user.participant.team.get_status_display }}</h4>
+                </div>
+            </div>
+            <hr class="line" />
+            <div class="rowflex_table">
+                <div class="w30">
+                    <h4 class="table-text">Трек</h4>
+                </div>
+                <div class="w70">
+                    <h4 class="table-text">{{ request.user.participant.team.get_type_display }}</h4>
+                </div>
+            </div>
+            <hr class="line" />
+            <div class="rowflex_table">
+                <div class="w30">
+                    <h4 class="table-text">Стадия участия</h4>
+                </div>
+                <div class="w70">
+                    <h4 class="table-text">{{ request.user.participant.team.stage }}</h4>
+                </div>
+            </div>
+            <hr class="line" />
+            {% if credentials and request.user.participant.team.status == 'good' %}
+                <div class="rowflex_table">
+                    <div class="w30">
+                        <h4 class="table-text">Login</h4>
+                    </div>
+                    <div class="w70">
+                        <h4 class="table-text">{{ request.user.participant.team.system_login }}</h4>
+                    </div>
+                </div>
+                <hr class="line" />
+                <div class="rowflex_table">
+                    <div class="w30">
+                        <h4 class="table-text">Password</h4>
+                    </div>
+                    <div class="w70">
+                        <h4 class="table-text">{{ request.user.participant.team.system_password }}</h4>
+                    </div>
+                </div>
+                <hr class="line" />
+            {% endif %}
+        </div>
+    </div>
+    <div class="rowflex gap22">
+        <div class="wmax">
+            <div class="white-box">
+                <div class="info-block rowflex spacebetween">
+                    <div>
+                        <h3 class="info-title">Тренер</br>
+                        {% if not request.user.participant.team.coach %}
+                            {% if not request.user.participant.team.is_sent%}
+                            <a href="{% url 'create-coach' %}">
+                                <button class="button">
+                                    Добавить тренера
+                                </button>
+                            </a>
+                            {% else %}
+                            <h5 class="info">No information.</h5>
                             {% endif %}
                         {% else %}
-                            {% if not participant.is_done %}
-                            <a href="{% url 'change-participant' participant.id %}" class="btn-star">Заполнить информацию о себе</a>
-                            {% else %}
-                            <p class="command-info-paragraph">{{participant.fullname}}</p>
-                            <p class="command-info-paragraph color-red">Тел.: {{participant.phone}}</p>
-                            <p class="command-info-paragraph color-red">
-                                E-mail: {{participant.email}}
-                            </p>
-                                {% if not request.user.participant.team.is_sent %}
-                                <a href="{% url 'change-participant' participant.id %}" class="btn-star">Редактировать</a>
-                                {% endif %}
-                            {% endif %}
+                            <h5 class="info">{{request.user.participant.team.coach.fullname}}</br>
+                                Тел.: {{request.user.participant.team.coach.phone}}</br>
+                                E-mail: {{request.user.participant.team.coach.email}}
+                            </h5>
                         {% endif %}
                     </div>
-                    {% endfor %}
-                    {% if not request.user.participant.team.is_full and not request.user.participant.team.is_sent %}
-                    <a href="{% url 'create-participant' %}" class="btn-star">Добавить участника</a>
+                    {% if request.user.participant.team.coach %}
+                        {% if not request.user.participant.team.is_sent %}
+                            <div class="edit_block">
+                                <a href="{% url 'change-coach' %}">
+                                    <button class="button btn-edit">
+                                        <img src="./../../assets/img/pencil.png" />
+                                        <h4 class="edit_text">Редактировать</h4>
+                                    </button>
+                                </a>
+                            </div>
+                        {% endif %}
                     {% endif %}
                 </div>
             </div>
-            {% if request.user.participant.team.is_ready %}
-            <a href="{% url 'verification' %}" class="btn-star">Отправить на рассмотрение</a>
-            {% elif not request.user.participant.team.is_sent %}
-                <p class="command-status">
-                    Чтобы отправить команду на рассмотрение заполните всю информацию.
-                </p>
-            {% endif %}
         </div>
-    </article>
-</main>
-<script src="{% static 'assets/js/create-command.js' %}"></script>
+        <div class="wmax">
+            <div class="colflex">
+                {% for participant in request.user.participant.team.participants.all %}
+                <div class="white-box">
+                    <div class="info-block wbox-mb rowflex spacebetween">
+                        <div>
+                            <h3 class="info-title">Участник</h3>
+                            <h5 class="info">Великович Владимир Сергеевич</br>
+                                Тел.: +375297330881</br>
+                                E-mail: vvelikovich@gmail.com</h5>
+                        </div>
+                        <div class="edit_block">
+                            <button class="button btn-edit">
+                                <img src="./../../assets/img/pencil.png" />
+                                <h4 class="edit_text">Редактировать</h4>
+                            </button>
+                        </div>
+                    </div> 
+                </div>
+                {% endfor %}
+            </div>
+            <div class="button_add">
+                <button class="button">
+                    Добавить участника
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endif %} 
 {% endblock %}

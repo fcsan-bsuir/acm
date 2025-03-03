@@ -30,8 +30,10 @@ footer {
 
 .options {
     display: flex;
+    /* flex-direction: column; */
     justify-content: space-between;
     margin-top: 57px;
+    gap: 10px;
 }
 
 .option {
@@ -175,6 +177,14 @@ select {
     padding-left: 16px;
 }
 
+button.active-form-button{
+    opacity: 1 !important;
+}
+
+.command-type button, .univer-type button{
+    opacity: 0.66;
+}
+
 @media screen and (max-width: 875px) {
     .container {    
         padding: 140px 50px;
@@ -182,6 +192,8 @@ select {
 
     .options {
         margin-top: 0;
+        flex-direction: column;
+        gap: 10px;
     }
 
     .item-text {
