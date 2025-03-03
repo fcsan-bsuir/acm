@@ -110,11 +110,6 @@
     color: var(--avia-blue);
 }
 
-.footer {
-    position: absolute;
-    bottom: 0;
-}
-
 .no-account {
     color: var(--white);
     margin: -15px 0;
