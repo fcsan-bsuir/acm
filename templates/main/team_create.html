@@ -10,8 +10,8 @@
 <div class="container">
     <form method="post" id="create-team">
         {% csrf_token %}
-        <input type="number" name="command_type" style="display: none;">
-        <input type="number" name="univer_type" style="display: none;">
+        <input type="number" name="command_type" style="display: none;" value="0">
+        <input type="number" name="univer_type" style="display: none;" value="0">
     </form>
     <p class="title headline">
         Создание команды

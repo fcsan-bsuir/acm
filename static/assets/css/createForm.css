@@ -36,17 +36,19 @@ body {
 
 .brleft {
     border-radius: 15px 0 0 15px;
+    /* width: 30vw; */
 }
 
 .brright {
     border-radius: 0 15px 15px 0;
+    /* width: 100%; */
 }
 
 .item {
     background-color: var(--white);
     color: var(--avia-blue);
     border: none;
-
+    width: 20vw;
     transition: .2s;
 }
 
@@ -55,10 +57,7 @@ body {
 }
 
 .item-text {
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    font-family: var(--bold), sans-serif;
     margin: 0;
     padding: 16px 30px 16px 30px;
 }
