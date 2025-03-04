@@ -80,6 +80,35 @@
                     </div>
                 </div>
                 <hr class="line" />
+                {% endif %}
+            {% if request.user.participant.team.is_ready %}
+                <div class="rowflex_table">
+                    <div class="w30">
+                        <h4 class="table-text">Отправить заявку</h4>
+                    </div>
+                    <div class="w70">
+                        <h4 class="table-text">
+                            <a href="{% url 'verification' %}">
+                                <button class="button">
+                                    Отправить на рассмотрение
+                                </button>
+                            </a>
+                        </h4>
+                    </div>
+                </div>
+                <hr class="line" />
+            {% elif not request.user.participant.team.is_sent %}
+                <div class="rowflex_table">
+                    <div class="w30">
+                        <h4 class="table-text">Отправить заявку</h4>
+                    </div>
+                    <div class="w70">
+                        <h4 class="table-text">
+                            Чтобы отправить команду на рассмотрение заполните всю информацию.
+                        </h4>
+                    </div>
+                </div>
+                <hr class="line" />
             {% endif %}
         </div>
     </div>
@@ -105,16 +134,13 @@
                                 E-mail: {{request.user.participant.team.coach.email}}
                             </h5>
                         {% endif %}
-                    
                     {% if request.user.participant.team.coach %}
                         {% if not request.user.participant.team.is_sent %}
-                            
-                                <a href="{% url 'change-coach' %}">
-                                    <button class="button">
-                                        Редактировать
-                                    </button>
-                                </a>
-                            
+                            <a href="{% url 'change-coach' %}">
+                                <button class="button">
+                                    Редактировать
+                                </button>
+                            </a>
                         {% endif %}
                     {% endif %}
                     </div>
