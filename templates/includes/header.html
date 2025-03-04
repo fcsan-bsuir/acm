@@ -88,7 +88,7 @@
         <a href="{% url 'team-detail' %}">Profile</a>
         <form method="post" action="{% url 'logout' %}">
           {% csrf_token %}
-          <button type="submit" class="mobile-menu-button">Logout</button>
+          <button type="submit" class="mobile-menu-button logout-button">Logout</button>
         </form>
       {% else %}
         <a href="{% url 'login' %}">Участвовать</a>

@@ -552,6 +552,11 @@ thead {
     gap: 2vh;
 }
 
+.logout-button {
+    background-color: transparent;
+    border: none;
+}
+
 .mobile-timetable {
     display: none;
 }
