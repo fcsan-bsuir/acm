@@ -16,6 +16,7 @@ class AuthUserForm(AuthenticationForm, forms.ModelForm):
 
 class CreateUserForm(UserCreationForm):
     captcha = ReCaptchaField()
+    personal_data_agreement = forms.BooleanField(initial=False, required=False)
 
 class CreateParticipantForm(forms.ModelForm):
 

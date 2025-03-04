@@ -40,11 +40,13 @@
       {% endfor %}
     {% endfor %}
   </p>
+  {% if agreement %}
   <label class="confirm confirm-text">
     <input name="personal_data_agreement" required type="checkbox" class="checkbox" />
     <span class="checkmark"></span>
-    Согласен с обработкой персональных данных
+    <p>Согласен с <a class="policy" target="_blank" href="{{ agreement_url }}">политикой</a> обработки персональных данных</p>
   </label>
+  {% endif %}
   <button form="signup-form" type="submit" class="button signUp-button">Зарегистрироваться</button>
 </form>
 </main>

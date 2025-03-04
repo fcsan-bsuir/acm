@@ -320,6 +320,10 @@ section {
     min-height: 750px;
 }
 
+.policy{
+    text-decoration: underline;
+}
+
 .card-header {
     display: flex;
     flex-direction: row;
