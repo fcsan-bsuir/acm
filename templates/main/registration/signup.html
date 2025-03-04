@@ -6,9 +6,11 @@
 {% endblock %}
 
 {% block content %}
-<main class="signUp">
-  <hi class="title auth-title">Регистрация</hi>
+
+<main class="signUp center_pa">
   <form class="reg-form" method="post" id="signup-form">
+  <hi class="title auth-title">Регистрация</hi>
+  
     {% csrf_token %}
     <input type="text" aria-label="Имя" class="input" placeholder="Имя" name="username" required/>
     <input
@@ -28,7 +30,7 @@
       required
     />
     {{form.captcha}}
-  </form>
+  
   <p class="wrong-inf">
     {% for field, errors in form.errors.items %}
       {% for error in errors %}
@@ -44,5 +46,6 @@
     Согласен с обработкой персональных данных
   </label>
   <button form="signup-form" type="submit" class="button signUp-button">Зарегистрироваться</button>
+</form>
 </main>
 {% endblock content %}

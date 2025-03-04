@@ -13,7 +13,7 @@
     <div class="grid">
       <div class="grid_item">
         <div class="name_input_container">
-          <input type="text" name="lastname" class="input" placeholder="Фамилия" form="coach-form" value="{{ form.lastname.value }}"/>
+          <input type="text" name="lastname" class="input" placeholder="Фамилия" form="coach-form" value="{% if form.lastname.value %}{{ form.lastname.value }}{% endif %}"/>
           <div class="alarm">
             <img
               src="{% static 'assets/img/arrows/star.png' %}"
@@ -23,7 +23,7 @@
       </div>
       <div class="grid_item">
         <div class="name_input_container">
-          <input type="text" name="firstname" class="input" placeholder="Имя" form="coach-form" value="{{ form.firstname.value }}"/>
+          <input type="text" name="firstname" class="input" placeholder="Имя" form="coach-form" value="{% if form.firstname.value %}{{ form.firstname.value }}{% endif %}"/>
           <div class="alarm">
             <img
               src="{% static 'assets/img/arrows/star.png' %}"
@@ -33,7 +33,7 @@
       </div>
       <div class="grid_item">
         <div class="name_input_container">
-          <input type="text" name="secondname" class="input" placeholder="Отчество" form="coach-form" value="{{ form.secondname.value }}"/>
+          <input type="text" name="secondname" class="input" placeholder="Отчество" form="coach-form" value="{% if form.secondname.value %}{{ form.secondname.value }}{% endif %}"/>
           <div class="alarm">
             <img
               src="{% static 'assets/img/arrows/star.png' %}"
@@ -43,7 +43,7 @@
       </div>
       <div class="grid_item">
         <div class="name_input_container">
-          <input type="text" name="email" class="input" placeholder="E-mail" form="coach-form" value="{{ form.email.value }}"/>
+          <input type="text" name="email" class="input" placeholder="E-mail" form="coach-form" value="{% if form.email.value %}{{ form.email.value }}{% endif %}"/>
           <div class="alarm">
             <img
               src="{% static 'assets/img/arrows/star.png' %}"
@@ -53,7 +53,7 @@
       </div>
       <div class="grid_item">
         <div class="name_input_container">
-          <input type="text" name="phone" class="input" placeholder="Номер телефона" form="coach-form" value="{{ form.phone.value }}"/>
+          <input type="text" name="phone" class="input" placeholder="Номер телефона" form="coach-form" value="{% if form.phone.value %}{{ form.phone.value }}{% endif %}"/>
           <div class="alarm">
             <img
               src="{% static 'assets/img/arrows/star.png' %}"

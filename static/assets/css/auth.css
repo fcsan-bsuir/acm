@@ -121,6 +121,10 @@
     border-bottom: 1px solid var(--white);
 }
 
+.g-recaptcha {
+    
+}
+
 @media (width <= 875px) {
     .body {
         overflow: hidden;

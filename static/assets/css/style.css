@@ -511,7 +511,7 @@ thead {
     background-color: transparent;
     border: none;
     position: absolute;
-    top: 13px;
+    /* top: 13px; */
     right: 20px;
     z-index: 2;
 }
@@ -647,7 +647,7 @@ a:focus {
 
     #mobile-header {
         display: flex;
-        padding: 1vh 5vw;
+        padding: 2vh 5vw;
         justify-content: space-between;
         align-items: center;
     }

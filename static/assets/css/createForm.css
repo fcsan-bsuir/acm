@@ -208,6 +208,18 @@ button.active-form-button{
     select {
         border-radius: 10px;
     }
+
+    .brright {
+        width: 100%;
+    }
+
+    .brleft {
+        width: 100%;
+    }
+
+    .button_add button {
+        font-size: 2.3vmin;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -227,10 +239,12 @@ button.active-form-button{
 
     .brleft {
         border-radius: 8px 0 0 8px;
+        width: 100%;
     }
     
     .brright {
         border-radius: 0 8px 8px 0;
+        width: 100%;
     }
     
     .item-text {
@@ -250,7 +264,7 @@ button.active-form-button{
     }
 
     .button_add button {
-        font-size: 16px;
+        font-size: 3vmin;
         border-radius: 12px;
         background-color: var(--white);
     }
