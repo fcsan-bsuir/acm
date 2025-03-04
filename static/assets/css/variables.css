@@ -9,5 +9,14 @@
     --regular: 'Frutiger Neue LT Regular';
     --bold: 'Frutiger Neue LT Bold';
     --cn-blk: 'Frutiger Neue LT CnBlk';
-    --cn-bold-it: 'Frutiger Neue LT CnBoldIt'
+    --cn-bold-it: 'Frutiger Neue LT CnBoldIt';
+    --button-border-radius: 15px;
+    --border-radius: 24px;
+}
+
+@media (width <= 875px) {
+    :root {
+        --button-border-radius: 10px;
+        --border-radius: 15px;
+    }
 }

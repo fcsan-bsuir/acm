@@ -31,7 +31,7 @@
     width: 30vw;
     padding: 15px 25px 15px 15px;
     color: var(--grey);
-    border-radius: 15px;
+    border-radius: var(--border-radius);
     border: none;
     font-family: var(--bold);
     font-size: 1.8vmin;
@@ -41,6 +41,7 @@
 .input::placeholder {
     color: var(--placeholder-color);
     font-family: var(--bold);
+    /* text-align: center; */
 }
 
 .input:focus {
@@ -73,8 +74,8 @@
 
 .confirm .checkmark {
     display: inline-block;
-    width: 1.2vmax;
-    height: 1.2vmax;
+    width: 17px;
+    height: 17px;
     background-color: transparent;
     border: 1.5px solid var(--white);
     border-radius: 5px;
@@ -84,14 +85,15 @@
 }
 
 .confirm input:checked + .checkmark::before {
-    content: '';
+    content: url("./../img/check.svg");
     display: block;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
-    background-color: var(--white);
-    box-sizing: border-box;
-    margin: 1px;
-    border-radius: 4px;
+    position: absolute;
+    scale: 0.6;
+    margin: -1px -2.8px;
+}
+
+.confirm input:checked ~ .checkmark::after {
+    display: block;
 }
 
 /* .confirm-text {
