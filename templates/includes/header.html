@@ -70,7 +70,9 @@
   </nav>
 </header>
 <header id="mobile-header">
-  <span class="mobile-header-title">BSUIR Open XIII</span>
+  <a href="{% url 'index' %}">
+    <span class="mobile-header-title">BSUIR Open XIII</span>
+  </a>
   <button class="burger-button" id="burger-button">
     <img src="{% static 'assets/img/burger.svg' %}" alt="" />
   </button>
@@ -81,6 +83,7 @@
       <li><a href="{% url 'index' %}#stages" class="mobile-menu-button">Этапы</a></li>
       <li><a href="{% url 'index' %}#timetable" class="mobile-menu-button">Расписание</a></li>
       <!-- <li><a href="{% url 'index' %}#partners" class="mobile-menu-button">Партнеры</a></li> -->
+      <li><a href="{% url 'common-info' %}" class="mobile-menu-button">Общая информация</a></li>
       <li><a href="{% url 'rules' %}">Правила</a></li>
     </ul>
     <div class="menu-buttons">
