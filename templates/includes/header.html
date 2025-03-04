@@ -85,7 +85,7 @@
     </ul>
     <div class="menu-buttons">
       {% if request.user.is_authenticated %}
-        <a href="{% url 'login' %}">Profile</a>
+        <a href="{% url 'team-detail' %}">Profile</a>
         <form method="post" action="{% url 'logout' %}">
           {% csrf_token %}
           <button type="submit" class="mobile-menu-button">Logout</button>
