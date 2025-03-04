@@ -70,11 +70,13 @@
     }
 
     .footer_img{
-        width: 100%;
+        /* width: 80%;
+        height: 80%; */
+        scale: 0.8;
         justify-content: space-between;
     }
 
     .footer_content {
-        padding: 1rem;
+        padding: 1vh;
     }
 }

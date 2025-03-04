@@ -803,4 +803,8 @@ a:focus {
     .container {
         padding: 80px 20px;
     }
+
+    .button {
+        font-size: 2.3vmin;
+    }
 }
