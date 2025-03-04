@@ -18,9 +18,7 @@ body {
     color: var(--white);
     margin-left: 32px;
     font-size: 54px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    font-family: var(--bold), sans-serif;
 }
 
 .options {
@@ -67,7 +65,7 @@ body {
 
 .restriction {
     color: var(--error);
-    font-size: 22px;
+    font-size: 3vmin;
     margin: 27px 0 0 43px;
 }
 
@@ -207,6 +205,7 @@ button.active-form-button{
 
     select {
         border-radius: 10px;
+        font-size: 11px;
     }
 
     .brright {
@@ -220,11 +219,19 @@ button.active-form-button{
     .button_add button {
         font-size: 2.3vmin;
     }
+
+    .restriction {
+        font-size: 2vmax;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .container {    
-        padding: 80px 30px 0 30px;
+        padding: 100px 30px 0 30px;
+    }
+
+    .select {
+        font-size: 11px;
     }
 
     .option {
