@@ -6,7 +6,7 @@
     font-family: var(--bold), sans-serif;
     font-weight: 900;
     font-size: 16px;
-    padding: 8px 18px;
+    padding: 0.8vh 1.5vw;
 }
 
 .translate-button {

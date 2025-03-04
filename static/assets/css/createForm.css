@@ -115,7 +115,7 @@ body {
 }
 
 select {
-    font-family: 'Frutiger Neue LT Regular', sans-serif;
+    font-family: var(--bold), sans-serif;
     color: var(--grey);
     background-color: var(--white);
     border: none;
@@ -125,7 +125,7 @@ select {
     color: var(--grey);
     border-radius: 15px;
 
-    font-size: 15px;
+    font-size: 1.8vmin;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;

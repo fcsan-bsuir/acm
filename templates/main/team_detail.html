@@ -88,7 +88,7 @@
             <div class="white-box">
                 <div class="info-block rowflex spacebetween">
                     <div>
-                        <h3 class="info-title">Тренер</br>
+                        <h3 class="info-title">Тренер<br />
                         {% if not request.user.participant.team.coach %}
                             {% if not request.user.participant.team.is_sent%}
                             <a href="{% url 'create-coach' %}">
@@ -100,24 +100,24 @@
                             <h5 class="info">No information.</h5>
                             {% endif %}
                         {% else %}
-                            <h5 class="info">{{request.user.participant.team.coach.fullname}}</br>
-                                Тел.: {{request.user.participant.team.coach.phone}}</br>
+                            <h5 class="info">{{request.user.participant.team.coach.fullname}}<br />
+                                Тел.: {{request.user.participant.team.coach.phone}}<br /> 
                                 E-mail: {{request.user.participant.team.coach.email}}
                             </h5>
                         {% endif %}
-                    </div>
+                    
                     {% if request.user.participant.team.coach %}
                         {% if not request.user.participant.team.is_sent %}
-                            <div class="edit_block">
+                            
                                 <a href="{% url 'change-coach' %}">
-                                    <button class="button btn-edit">
-                                        <img src="{% static 'assets/img/pencil.png' %}" />
-                                        <h4 class="edit_text">Редактировать</h4>
+                                    <button class="button">
+                                        Редактировать
                                     </button>
                                 </a>
-                            </div>
+                            
                         {% endif %}
                     {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
