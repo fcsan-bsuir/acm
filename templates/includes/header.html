@@ -37,19 +37,19 @@
     </ul>
     <ul class="extra-buttons">
       {% if request.user.is_authenticated %}
-        <a href="{% url 'team-detail' %}">
-          <button class="button">Profile</button>
-        </a>
-        <a href="{% url 'logout' %}">
-          <form method="post" action="{% url 'logout' %}">
-            {% csrf_token %}
-            <button class="button" type="submit">Logout</button>
-          </form>
-        </a>
+      <a href="{% url 'team-detail' %}">
+        <button class="button">Profile</button>
+      </a>
+      <a href="{% url 'logout' %}">
+        <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button class="button" type="submit">Logout</button>
+        </form>
+      </a>
       {% else %}
-        <a href="{% url 'login' %}">
-          <button class="button">Участвовать</button>
-        </a>
+      <a href="{% url 'login' %}">
+        <button class="button">Участвовать</button>
+      </a>
       {% endif %}
       <li>
         <div class="language-switcher">
@@ -76,22 +76,40 @@
   </button>
   <nav class="mobile-menu">
     <ul class="mobile-main-buttons">
-      <li><a href="{% url 'index' %}#main-section" class="mobile-menu-button">Главная</a></li>
-      <li><a href="{% url 'index' %}#about" class="mobile-menu-button">Об олимпиаде</a></li>
-      <li><a href="{% url 'index' %}#stages" class="mobile-menu-button">Этапы</a></li>
-      <li><a href="{% url 'index' %}#timetable" class="mobile-menu-button">Расписание</a></li>
+      <li>
+        <a href="{% url 'index' %}#main-section" class="mobile-menu-button"
+          >Главная</a
+        >
+      </li>
+      <li>
+        <a href="{% url 'index' %}#about" class="mobile-menu-button"
+          >Об олимпиаде</a
+        >
+      </li>
+      <li>
+        <a href="{% url 'index' %}#stages" class="mobile-menu-button">Этапы</a>
+      </li>
+      <li>
+        <a href="{% url 'index' %}#timetable" class="mobile-menu-button"
+          >Расписание</a
+        >
+      </li>
       <!-- <li><a href="{% url 'index' %}#partners" class="mobile-menu-button">Партнеры</a></li> -->
       <li><a href="{% url 'rules' %}">Правила</a></li>
     </ul>
     <div class="menu-buttons">
       {% if request.user.is_authenticated %}
-        <a href="{% url 'team-detail' %}">Profile</a>
-        <form method="post" action="{% url 'logout' %}">
-          {% csrf_token %}
-          <button type="submit" class="mobile-menu-button logout-button">Logout</button>
-        </form>
+      <a href="{% url 'team-detail' %}">Profile</a>
+      <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <a>
+          <button type="submit" class="mobile-menu-button logout-button">
+            Logout
+          </button>
+        </a>
+      </form>
       {% else %}
-        <a href="{% url 'login' %}">Участвовать</a>
+      <a href="{% url 'login' %}">Участвовать</a>
       {% endif %}
     </div>
   </nav>
