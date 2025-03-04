@@ -280,7 +280,6 @@ body {
 
     body {
         position: inherit;
-        height: 100%;
     }
 
     .line {
@@ -309,8 +308,4 @@ body {
         font-size: 10px;
     }
 
-    body {
-        position: inherit;
-        height: 100%;
-    }
 }
