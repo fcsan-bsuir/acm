@@ -81,7 +81,7 @@ body {
 }
 
 .button_add button {
-    font-size: 24px;
+    font-size: 1.8vmin;
     padding: 10px 15px 10px 15px;
     background-color: var(--white);
 }
@@ -168,7 +168,7 @@ select {
 
 .name_input_container input {
     width: 100%;
-    font-size: 16px;
+    /* font-size: 16px; */
     padding-left: 16px;
 }
 

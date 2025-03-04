@@ -10,6 +10,8 @@
 
 .container_pa {
     padding: 160px 100px 100px 100px;
+    width: 80%;
+    align-self: center;
 }
 
 body {
@@ -30,9 +32,11 @@ body {
 }
 
 .team-name {
-    padding: 30px 50px 30px 50px;
+    padding: 2vh;
     margin: 0;
-    font-size: 50px;
+    font-size: 3vmax;
+    font-family: var(--bold);
+    text-transform: uppercase;
 }
 
 .white-box {
@@ -63,7 +67,7 @@ body {
 }
 
 .info-block {
-    padding: 29px;
+    padding: 2vh;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -74,22 +78,23 @@ body {
 }
 
 .info-title {
-    font-size: 32px;
+    font-size: 3vmin;
     margin: 0;
+    font-family: var(--bold);
 }
 
 .info {
-    font-size: 24px;
-    margin: 22px 0 0 0;
+    font-size: 2vmin;
+    margin: 10px 0;
 }
 
 .table_com {
-    font-size: 24px;
+    font-size: 2vmin;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
 
-    padding: 35px 25px 35px 25px;
+    padding: 2vh;
 }
 
 .line {

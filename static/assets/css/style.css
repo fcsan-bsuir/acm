@@ -38,7 +38,7 @@ section {
 
 .running-line {
     color: var(--avia-blue);
-    font-size: 1.2vmax;
+    font-size: 2.5vmin;
     font-family: var(--cn-bold-it), sans-serif;
     width: 100%;
     overflow: hidden;
@@ -133,7 +133,7 @@ section {
     border-radius: 15px;
     color: var(--avia-blue);
     font-family: var(--bold), sans-serif;
-    font-size: 1vmax;
+    font-size: 1.8vmin;
     padding: 8px 18px;
     transition: background-color 0.5s ease;
 }
