@@ -18,8 +18,8 @@ main {
     gap: 100px;
 }
 
-.underline {
-    text-decoration: underline;
+.underline, .underscored {
+    text-decoration: underline !important;
 }
 
 header {

@@ -13,17 +13,17 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>{{ tr.team_name }}</th>
-                            <th>{{ tr.participant }} 1</th>
-                            <th>{{ tr.participant }} 2</th>
-                            <th>{{ tr.participant }} 3</th>
-                            <th>{{ tr.coach }}</th>
-                            <th>{{ tr.status }}</th>
+                            <th class="header-text">{{ tr.team_name }}</th>
+                            <th class="header-text">{{ tr.participant }} 1</th>
+                            <th class="header-text">{{ tr.participant }} 2</th>
+                            <th class="header-text">{{ tr.participant }} 3</th>
+                            <th class="header-text">{{ tr.coach }}</th>
+                            <th class="header-text">{{ tr.status }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for team in teams %}
-                        <tr>
+                        <tr class="underlined">
                             <td>{{team.name}}</td>
                             <td>
                                 {% if team.participants.all.count >= 1%}
