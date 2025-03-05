@@ -18,6 +18,10 @@ main {
     gap: 100px;
 }
 
+.underline {
+    text-decoration: underline;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -160,6 +164,11 @@ section {
 nav button.active {
     background-color: var(--avia-blue);
     color: var(--white);
+}
+
+.table-text .button {
+   width: 100%;
+   align-self: center;
 }
 
 .translate-icon {

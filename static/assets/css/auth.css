@@ -65,6 +65,7 @@
     color: var(--white);
     font-size: 1.3vmin;
     margin-top: -3vh;
+    width: max-content;
 }
 
 .confirm input {
@@ -95,10 +96,6 @@
 .confirm input:checked ~ .checkmark::after {
     display: block;
 }
-
-/* .confirm-text {
-    font-size: 0.8vmax
-} */
 
 .confirm:hover {
     cursor: pointer;
@@ -156,8 +153,6 @@
     }
 
     .confirm .checkmark {
-        width: 2vmax;
-        height: 2vmax;
         border-radius: 3.5px;
     }
 
