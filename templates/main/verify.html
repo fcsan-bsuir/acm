@@ -3,17 +3,16 @@
 
 
 {% block title %}
-Подтверждение регистрации
+{{ tr.rul_page_team_create_page_team_verify_page_titl }}
 {% endblock %}
 
 {% block content %}
 <div class="container_pa colflex center_pa">
-    <h2 class="text" style="text-align: center;">Нажатием кнопки вы подтверждаете правильность указанной вами информации об участниках олимпиады.
-            После подтверждения информации, вы не сможете изменить информацию о команде.</h2>
+    <h2 class="text" style="text-align: center;">{{ tr.approvement_warning }}</h2>
     <form method="POST">
         {% csrf_token %}
         <button class="button signUp-button">
-        Подтверждаю
+        {{ tr.confirm_button }}
         </button>
     </form>
 </div>

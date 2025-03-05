@@ -13,15 +13,15 @@
       alt="BSUIR Open logo"
       class="bsuir-open-logo"
     />
-    <h1 class="main-title">BSUIR OPEN XIII</h1>
+    <h1 class="main-title">{{ tr.title }}</h1>
     <img src="{% static 'assets/img/tower.png' %}" alt="tower" class="tower" />
     <img src="{% static 'assets/img/plane.png' %}" alt="plane" class="plane" />
     <img src="{% static 'assets/img/roadr.png' %}" alt="road" class="road" />
   </section>
   <section id="about">
-    <h2 class="title">Об олимпиаде</h2>
+    <h2 class="title">{{ tr.about }}</h2>
     <p class="text">
-      13-й командный чемпионат БГУИР по спортивному программированию
+      {{ tr.index_about_header }}
     </p>
     <ul class="about-list">
       <li>
@@ -30,7 +30,7 @@
           src="{% static 'assets/img/plane point.svg' %}"
           alt="plane point"
         />
-        <p class="text">Проводится по стандартным правилам ICPC</p>
+        <p class="text">{{ tr.index_about_list_1 }}</p>
       </li>
       <li>
         <img
@@ -38,7 +38,7 @@
           src="{% static 'assets/img/plane point.svg' %}"
           alt="plane point"
         />
-        <p class="text">Команды от 1 до 3 человек</p>
+        <p class="text">{{ tr.index_about_list_2 }}</p>
       </li>
       <li>
         <img
@@ -46,7 +46,7 @@
           src="{% static 'assets/img/plane point.svg' %}"
           alt="plane point"
         />
-        <p class="text">Участники со всего земного шара</p>
+        <p class="text">{{ tr.index_about_list_3 }}</p>
       </li>
       <li>
         <img
@@ -54,7 +54,7 @@
           src="{% static 'assets/img/plane point.svg' %}"
           alt="plane point"
         />
-        <p class="text">Интересные задачи и незабываемые эмоции</p>
+        <p class="text">{{ tr.index_about_list_4 }}</p>
       </li>
       <li>
         <img
@@ -62,23 +62,23 @@
           src="{% static 'assets/img/plane point.svg' %}"
           alt="plane point"
         />
-        <p class="text">Две возрастные категории:</p>
+        <p class="text">{{ tr.index_ages_header }}:</p>
       </li>
     </ul>
 
     <div class="ages">
       <div class="age">
         <span class="title age-title">Junior</span>
-        <p class="text age-text">- школьные команды</p>
+        <p class="text age-text">- {{ tr.index_age_junior }}</p>
       </div>
       <div class="age">
         <span class="title age-title">Student</span>
-        <p class="text age-text">- студенческие команды</p>
+        <p class="text age-text">- {{ tr.index_age_student }}</p>
       </div>
     </div>
   </section>
   <section id="stages">
-    <h2 class="title title-right">Этапы</h2>
+    <h2 class="title title-right">{{ tr.stages }}</h2>
     <nav>
       <ul class="steps-list">
         <li>
@@ -86,22 +86,22 @@
             class="step-button step-button-active"
             data-target="#quaterfinal"
           >
-            Четвертьфинал
+            {{ tr.index_round_quarter }}
           </button>
         </li>
         <li>
           <button class="step-button" data-target="#halffinal">
-            Полуфинал
+            {{ tr.index_round_semi }}
           </button>
         </li>
         <li>
-          <button class="step-button" data-target="#final">Финал</button>
+          <button class="step-button" data-target="#final">{{ tr.index_round_final }}</button>
         </li>
       </ul>
     </nav>
     <div class="card">
       <div class="card-header">
-        <p class="main-title card-title">BSUIR OPEN XIII</p>
+        <p class="main-title card-title">{{ tr.title }}</p>
         <img
           src="{% static 'assets/img/logo.svg' %}"
           alt="BSUIR Open logo"
@@ -110,87 +110,56 @@
       </div>
       <div class="card-body">
         <div class="card-description active" id="quaterfinal">
-          <p class="stage-title">Четвертьфинал</p>
-          <p class="text card-text">Цели отборочного тура:</p>
+          <p class="stage-title">{{ tr.index_round_quarter }}</p>
+          <p class="text card-text">{{ tr.index_quarter_purpose }}:</p>
           <ul class="card-description-list">
             <li class="point">
               <p class="text card-text">
-                дать возможность командам самостоятельно оценить уровень
-                подготовки к участию в Чемпионате;
+                {{ tr.index_quarter_list_1 }}
               </p>
             </li>
             <li class="point">
               <p class="text card-text">
-                команды, которые смогут бороться во втором отборочном туре
-                (полуфинале) за выход в финал Чемпионата.
+                {{ tr.index_quarter_list_2 }}
               </p>
             </li>
           </ul>
           <p class="text card-text">
-            Четвертьфинал является обязательным отборочным этапом для команд
-            БГУИР и школьников. Остальные команды по желанию также могут принять
-            участие в данном туре. Смешанные команды, в состав которых входит
-            хотя бы один студент, магистрант или аспирант БГУИР, также должны
-            принимать участие в четвертьфинале соревнований.
+            {{ tr.index_quarter_info }}
           </p>
           <p class="text card-text">
-            Команды, решившие не менее половины из предложенных задач, проходят
-            во второй отборочный тур (полуфинал соревнований).
+            {{ tr.index_quarter_pass }}
           </p>
         </div>
         <div class="card-description" id="halffinal">
-          <p class="stage-title">Полуфинал</p>
+          <p class="stage-title">{{ tr.index_round_semi }}</p>
           <p class="text card-text">
-            Второй отборочный тур (полуфинал) проводится в очно-заочной форме.
-            Командам-участницам предлагается решить от 4 до 12 задач (текст
-            задач на русском и английском языках) за 4-5 астрономических часов.
-            Жюри имеет право продлить соревнования в случае каких-либо
-            непредвиденных обстоятельств.
+            {{ tr.index_semifinal_info }}
           </p>
           <p class="text card-text">
-            Команды БГУИР участвуют в туре очно на базе университета. Команды не
-            из БГУИР решают тур заочно в своих учреждениях образования. За
-            соблюдение правил соревнований в данном случае отвечает тренер
-            команды. Участники других учреждений образования, изъявившие желание
-            участвовать в полуфинале на базе БГУИР, должны заранее сообщить
-            организаторам об этом.
+            {{ tr.index_semifinal_details }}
           </p>
         </div>
         <div class="card-description" id="final">
-          <p class="stage-title">Финал</p>
+          <p class="stage-title">{{ tr.index_round_final }}</p>
           <p class="text card-text">
-            В следующий этап (финал) проходят 30 команд, показавшие лучшие
-            результаты на данном этапе, но не более:
+            {{ tr.index_final_info }}
           </p>
           <ul class="card-description-list">
             <li class="point">
               <p class="text card-text">
-                7 команд студентов, магистрантов и аспирантов БГУИР;
+                {{ tr.index_final_list_1 }}
               </p>
             </li>
             <li class="point">
               <p class="text card-text">
-                2 команд от каждого ВУЗа или ССУЗа Республики Беларусь и стран
-                зарубежья;
+                {{ tr.index_final_list_2 }}
               </p>
             </li>
           </ul>
           <p class="text card-text">
-            Для команд из средних общеобразовательных учреждений проводится
-            отдельный финал, в который приглашается не более 25 команд и не
-            более одной команды от каждого учреждения образования. Решение об
-            участии в школьном финале команд, участники которых являются
-            представителями разных учреждений образования, принимается
-            организационным комитетом в индивидуальном порядке.
+            {{ tr.index_final_additional }}
           </p>
-          <p class="text card-text">
-            По решению оргкомитета и жюри количество команд, которое проходит в
-            следующий этап, их состав, а также квота могут быть изменены.
-          </p>
-          <p class="text card-text">
-            Финал соревнований проводится в очной форме. Участникам предлагается
-            решить от 6 до 12 алгоритмических задач (тексты задач на английском
-            языке) за 5 астрономических часов.
           </p>
         </div>
       </div>
@@ -199,15 +168,15 @@
   <section id="timetable">
     <span class="timetable-title">
       <img class="plane-title" src="{% static 'assets/img/plane point.svg' %}" />
-      <h2 class="title">Расписание</h2>
+      <h2 class="title">{{ tr.schedule }}</h2>
     </span>
     <div class="desktop-timetable">
       <table class="table">
         <thead>
           <tr>
-            <td class="header-text">Дата</td>
-            <td class="header-text">Этап</td>
-            <td class="header-text">Статус</td>
+            <td class="header-text">{{ tr.date }}</td>
+            <td class="header-text">{{ tr.one_stage }}</td>
+            <td class="header-text">{{ tr.status }}</td>
           </tr>
         </thead>
         <tbody>
@@ -219,11 +188,11 @@
                 class="merge-line"
               />
               <div class="date">
-                <p class="date-text">1 марта</p>
-                <p class="date-text">20 марта</p>
+                <p class="date-text">{{ tr.reg_start_day }}</p>
+                <p class="date-text">{{ tr.reg_end_day }}</p>
               </div>
             </td>
-            <td class="stage-text">Регистрация</td>
+            <td class="stage-text">{{ tr.registration }}</td>
             <td class="status-text">До начала регистрации осталось n дней</td>
           </tr>
           <tr class="underlined">
@@ -234,33 +203,33 @@
                 class="merge-line"
               />
               <div class="date">
-                <p class="date-text">17 марта</p>
-                <p class="date-text">23 марта</p>
+                <p class="date-text">{{ tr.qual_start_day }}</p>
+                <p class="date-text">{{ tr.qual_end_day }}</p>
               </div>
             </td>
-            <td class="stage-text">Отборочный тур</td>
+            <td class="stage-text">{{ tr.index_selection_header }}</td>
             <td class="status-text">
               До начала отборочного тура осталось n дней
             </td>
           </tr>
           <tr class="underlined">
-            <td class="date-text">9 апреля</td>
-            <td class="stage-text">Полуфинал</td>
+            <td class="date-text">{{ tr.semi_day }}</td>
+            <td class="stage-text">{{ tr.semifinal }}</td>
             <td class="status-text">До начала полуфинала осталось n дней</td>
           </tr>
           <tr class="underlined">
-            <td class="date-text">26 апреля</td>
+            <td class="date-text">{{ tr.stud_final_day }}</td>
             <td>
-              <p class="stage-text">Финал Student</p>
-              <p class="status-text">(Минск, Гикало 9)</p>
+              <p class="stage-text">{{ tr.stud_final }}</p>
+              <p class="status-text">({{ tr.bsuir_address }})</p>
             </td>
             <td class="status-text">До начала финала осталось n дней</td>
           </tr>
           <tr>
-            <td class="date-text">3 мая</td>
+            <td class="date-text">{{ tr.jun_final_day }}</td>
             <td>
-              <p class="stage-text">Финал Junior</p>
-              <p class="status-text">(Минск, Гикало 9)</p>
+              <p class="stage-text">{{ tr.jun_final }}</p>
+              <p class="status-text">( {{tr.bsuir_address}} )</p>
             </td>
             <td class="status-text">До начала финала осталось n дней</td>
           </tr>
@@ -268,16 +237,16 @@
       </table>
     </div>
     <div class="mobile-timetable">
-      <p class="title timetable-title">Регистрация</p>
-      <p class="text">17 марта - 20 марта</p>
-      <p class="title timetable-title">Отборочный тур</p>
-      <p class="text">17 марта - 23 марта</p>
-      <p class="title timetable-title">Полуфинал</p>
-      <p class="text">9 марта</p>
-      <p class="title timetable-title">Финал Student</p>
-      <p class="text">26 апреля</p>
-      <p class="title timetable-title">Финал Junior</p>
-      <p class="text">3 мая</p>
+      <p class="title timetable-title">{{ tr.registration }}</p>
+      <p class="text">{{tr.reg_start_day}} - {{tr.reg_end_day}}</p>
+      <p class="title timetable-title">{{ tr.index_selection_header }}</p>
+      <p class="text">{{tr.qual_start_day}} - {{tr.qual_end_day}}</p>
+      <p class="title timetable-title">{{tr.semifinal}}</p>
+      <p class="text">{{tr.semi_day}}</p>
+      <p class="title timetable-title">{{tr.stud_final}}</p>
+      <p class="text">{{tr.stud_final_day}}</p>
+      <p class="title timetable-title">{{tr.jun_final}}</p>
+      <p class="text">{{tr.jun_final_day}}</p>
     </div>
   </section>
   <section id="partners">

@@ -2,21 +2,21 @@
 <footer class="footer">
   <div class="footer_content">
     <div class="footer_btn">
-      <a href="{% url 'rules' %}"> Правила </a>
-      <a href="{% url 'common-info' %}"> Общая информация </a>
+      <a href="{% url 'rules' %}"> {{ tr.rules }} </a>
+      <a href="{% url 'common-info' %}"> {{ tr.common_info_page_titl }} </a>
     </div>
     <div class="footer_img">
       <a href="https://bsuir.by">
-        <img src="{% static 'assets/img/sponsors/BSUIR.png' %}" alt="bsuir" />
+        <img src="{% static 'assets/img/sponsors/BSUIR.png' %}" alt="BSUIR" />
       </a>
       <a href="https://vk.com/studsovet_fksis">
-        <img src="{% static 'assets/img/sponsors/FCSaN.png' %}" alt="" />
+        <img src="{% static 'assets/img/sponsors/FCSaN.png' %}" alt="{{ tr.fcsan }}" />
       </a>
       <a href="https://t.me/fcsan_by">
-        <img src="{% static 'assets/img/sponsors/telegram.png' %}" alt="" />
+        <img src="{% static 'assets/img/sponsors/telegram.png' %}" alt="{{ tr.union }}" />
       </a>
       <a href="mailto:acm@bsuir.by">
-        <img src="{% static 'assets/img/sponsors/Mail.png' %}" alt="" />
+        <img src="{% static 'assets/img/sponsors/Mail.png' %}" alt="Email" />
       </a>
     </div>
   </div>
