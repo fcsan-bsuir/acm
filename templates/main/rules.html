@@ -1,570 +1,344 @@
 {% extends 'wrapper.html' %}
+
 {% block title %}
-    Правила
+{{ tr.rul_page_titl}}
 {% endblock %}
 
 {% block content %}
-<main id="restrictions">
-  <article class="rules noised large-text d-flex">
-    <div class="container">
-      <h2 class="title">Правила XIII Открытого чемпионата БГУИР</h2>
-      <h3 class="title subtitle">1. АППАРАТНОЕ И ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ</h3>
-      <h4 class="title subsubtitle">1.1. Тестирующая система</h4>
-      <p class="text">
-        Intel(R) Xeon(R) CPU E5-2630 @ 2.20GHz, 15MB cache, virtualizаtion on 8
-        core, 8GB RAM, OS Linux. Доступные компиляторы:
-      </p>
-      <ul>
-        <li class="text">C11 (gcc-12.2.1)</li>
-        <li class="text">C++17 (gcc-12.2.1)</li>
-        <li class="text">C++20 (gcc-12.2.1)</li>
-        <li class="text">Go (go-1.19.5)</li>
-        <li class="text">Pascal (fpc-3.2.2)</li>
-        <li class="text">Python3 (pypy-7.3.9)</li>
-        <li class="text">Python3 (python-3.10.10)</li>
-        <li class="text">Rust (rustc-1.64.0)</li>
-        <li class="text">Java (openjdk-19.0.2)</li>
-        <li class="text">C# (mono-6.12.0)</li>
-      </ul>
-      <h4 class="title subsubtitle">1.2. Рабочие места</h4>
-      <p class="text">
-        Во время очных туров соревнований предоставляется подсоединенный к
-        интернет сети IBM PC-совместимый компьютер в следующей конфигурации:
-        процессор Pentium или совместимый, ОЗУ не менее 2 Gb, операционная
-        система Microsoft Windows и сопутствующее программное обеспечение.
-      </p>
+<main>
+    <article class="rules noised large-text d-flex">
+        <div class="container">
+            <h2 class="title">{{ tr.rul_page_titl_hw_and_sw_rules }}</h2>
+            <h3 class="title subtitle" >{{ tr.rul_page_titl_hw_and_sw_title }}</h3>
+            <h4 class="title subsubtitle">{{ tr.rul_page_titl_hw_and_sw_testsys_title }}</h4>
+            <p class="text"> {{ tr.rul_page_titl_hw_and_sw_testsys_descr }}
+            <ul>
+                <li class="text">{{ tr.rul_page_titl_hw_and_sw_testsys_compil_1 }}</li>
+                <li class="text">{{ tr.rul_page_titl_hw_and_sw_testsys_compil_2 }}</li>
+                <li class="text">{{ tr.rul_page_titl_hw_and_sw_testsys_compil_3 }}</li>
+                <li class="text">{{ tr.rul_page_titl_hw_and_sw_testsys_compil_4 }}</li>
+                <li class="text">{{ tr.rul_page_titl_hw_and_sw_testsys_compil_5 }}</li>
+                <li class="text">{{ tr.rul_page_titl_hw_and_sw_testsys_compil_6 }}</li>
+                <li class="text">{{ tr.rul_page_titl_hw_and_sw_testsys_compil_7 }}</li>
+                <li class="text">{{ tr.rul_page_titl_hw_and_sw_testsys_compil_8 }}</li>
+                <li class="text">{{ tr.rul_page_titl_hw_and_sw_testsys_compil_9 }}</li>
+                <li class="text">{{ tr.rul_page_titl_hw_and_sw_testsys_compil_10 }}</li>
+                <li class="text">{{ tr.rul_page_titl_hw_and_sw_testsys_compil_11 }}</li>
+                <li class="text">{{ tr.rul_page_titl_hw_and_sw_testsys_compil_12 }}</li>
+            </ul>
+            </p>
+            <h4 class="title subsubtitle">{{ tr.rul_page_titl_hw_and_sw_work_places_title }}</h4>
+            <p class="text">{{ tr.rul_page_titl_hw_and_sw_work_places_descr }}</p>
 
-      <p class="text">
-        Участники должны заранее сообщить, какие среды разработки им
-        потребуются. В противном случае гарантируется лишь доступность хотя бы
-        одной из перечисленных.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_hw_and_sw_work_places_note }}</p>
 
-      <h3 class="title subtitle">2. ПОРЯДОК ПРОВЕДЕНИЯ</h3>
-      <p class="text">
-        Участниками соревнований являются учащиеся средних общеобразовательных
-        учреждений Республики Беларусь, учащиеся учреждений среднего
-        специального образования, студенты (I и II ступень), аспиранты
-        учреждений высшего образования Республики Беларусь и других стран.
-      </p>
+            <h3 class="title subtitle">{{ tr.rul_page_titl_conduct_titl }}</h3>
+            <p class="text">{{ tr.rul_page_titl_conduct_descr }}</p>
 
-      <p class="text">
-        Команда может состоять не более чем из 3 участников. Участнику
-        соревнований запрещается входить в состав более чем одной команды.
-        Команда, в состав которой входит хотя бы один студент, магистрант или
-        аспирант вуза или ссуза, считается студенческой командой. Команда, в
-        состав которой входят участники не из одного учебного заведения, кроме
-        учебных заведений основного и среднего общего образования, считается
-        смешанной и в очном финале официальное участие не принимают. Не полная
-        команда, состоящая менее чем из 2 участников в очном финале официальное
-        участие не принимают.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_conduct_team_rules }}</p>
 
-      <p class="text">
-        Чемпионат по программированию проводится по правилам ICPC и состоит из
-        трех туров. Во время всех туров чемпионата запрещается обсуждать идеи и
-        обмениваться решениями задач вне команды.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_conduct_championship_rules }}</p>
 
-      <h4 class="title subsubtitle">
-        2.1. Первый отборочный тур (четвертьфинал)
-      </h4>
-      <p class="text">
-        Первый отборочный тур проводится в заочной форме. Командам-участницам
-        предлагается решить от 12 до 15 задач (текст задач на русском языке) за
-        133 часов (5 дней 13 часов). Жюри имеет право продлить соревнования в
-        случае каких-либо непредвиденных обстоятельств. Для прохождения на
-        следующий этап участникам необходимо решить не менее половины задач.
-      </p>
+            <h4 class="title subsubtitle">{{ tr.rul_page_titl_conduct_quarter_finals_titl }}</h4>
+            <p class="text">{{ tr.rul_page_titl_conduct_quarter_finals_descript }}</p>
 
-      <p class="text">
-        Команды, чьи решения имеют НЕСОМНЕННЫЕ ПРИЗНАКИ «СПИСЫВАНИЯ» ИСХОДНОГО
-        ТЕКСТА программы, при подведении итогов тура будут дисквалифицированы. В
-        случае особенно явных нарушений участники, отославшие такие решения,
-        также могут быть дисквалифицированы для участия в чемпионате на
-        следующий год.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_conduct_quarter_finals_disqualific }}</p>
 
-      <p class="text">
-        Первый отборочный тур является обязательным для команд БГУИР и школьных
-        команд. Команды других вузов и ссузов Республики Беларусь и стран
-        зарубежья приглашаются для участия сразу во втором отборочном туре
-        соревнования (полуфинале), однако также могут принимать участие в
-        четвертьфинале.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_conduct_quarter_finals_participation_rules }}</p>
 
-      <h4 class="title subsubtitle">2.2. Второй отборочный тур (полуфинал)</h4>
-      <p class="text">
-        Второй отборочный тур (полуфинал) проводится в очно-заочной форме.
-        Командам-участницам предлагается решить от 4 до 12 задач (текст задач на
-        русском и английском языках) за 4-5 астрономических часов. Жюри имеет
-        право продлить соревнования в случае каких-либо непредвиденных
-        обстоятельств.
-      </p>
+            <h4 class="title subsubtitle">{{ tr.rul_page_titl_conduct_semi_finals_titl }}</h4>
+            <p class="text">{{ tr.rul_page_titl_conduct_semi_finals_descript }}</p>
 
-      <p class="text">
-        Команды БГУИР участвуют в туре очно на базе университета. Команды не из
-        БГУИР решают тур заочно в своих учреждениях образования. Для участия на
-        своей площадке участникам в категории "Students" необходимо
-        использование системы прокторинга. Необходима синхронная запись экрана
-        устройства (не конкретного приложения), которым будет пользоваться
-        команда во время тура и запись рабочего места с лицами участников на
-        котором находится компьютер. Запись должна быть достаточно информативна,
-        чтобы организационный комитет убедился в соблюдении правил чемпионата.
-        Также за соблюдение правил соревнований отвечает тренер команды.
-        Участники других учреждений образования, изъявившие желание участвовать
-        в полуфинале на базе БГУИР, должны заранее сообщить организаторам об
-        этом.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_conduct_semi_finals_participation_rules }}</p>
 
-      <p class="text">
-        В следующий этап (финал) проходят 30 команд, показавшие лучшие
-        результаты на данном этапе, но не более:
-      </p>
-      <ul>
-        <li class="text">
-          7 команд студентов, магистрантов и аспирантов БГУИР;
-        </li>
-        <li class="text">
-          2 команд от каждого вуза или ссуза Республики Беларусь и стран
-          зарубежья;
-        </li>
-      </ul>
-      <p class="text">
-        Для команд из средних общеобразовательных учреждений проводится
-        отдельный финал, в который приглашается не менее 15 и не более 25 команд
-        и не более одной команды от каждого учреждения образования. Решение об
-        участии в школьном финале команд, участники которых являются
-        представителями разных учреждений образования, принимается
-        организационным комитетом в индивидуальном порядке.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_conduct_semi_finals_final_qualification }}
+            <ul>
+                <li class="text">{{ tr.rul_page_titl_conduct_semi_finals_final_qualification_list_1 }}</li>
+                <li class="text">{{ tr.rul_page_titl_conduct_semi_finals_final_qualification_list_2 }}</li>
+            </ul>
+            {{ tr.rul_page_titl_conduct_semi_finals_school_finals }}</p>
 
-      <h4 class="title subsubtitle">2.3. Финал чемпионата</h4>
-      <p class="text">
-        Финал соревнований проводится в очной форме. Участникам предлагается
-        решить от 6 до 12 алгоритмических задач (тексты задач на английском
-        языке) за 5 астрономических часов.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_conduct_semi_finals_jury_decision }}</p>
 
-      <h4 class="title subsubtitle">2.4. Прочие условия</h4>
-      <p class="text">
-        Второй отборочный тур (полуфинал) является обязательным для всех
-        зарегистрированных команд, желающих принять участие в чемпионате.
-      </p>
+            <h4 class="title subsubtitle">{{ tr.rul_page_titl_conduct_finals_titl }}</h4>
+            <p class="text">{{ tr.rul_page_titl_conduct_finals_descript }}</p>
 
-      <p class="underscored text">
-        Команды высших учебных заведений, в состав которых входит не менее двух
-        финалистов студенческого командного чемпионата мира по программированию
-        ICPC сезона 2023-2024, а также команды средних общеобразовательных
-        учреждений (школ, гимназий, лицеев), в состав которых входит не менее
-        двух призеров заключительного этапа республиканской олимпиады по
-        информатике 2024 года (диплом 1, 2 и 3 степени), допускаются к участию в
-        финале соревнований без прохождения отборочных этапов и сверх
-        установленной квоты для учебного заведения.
-      </p>
+            <h4 class="title subsubtitle">{{ tr.rul_page_titl_conduct_other_conditions_titl }}</h4>
+            <p class="text">{{ tr.rul_page_titl_conduct_other_conditions_descript }}</p>
 
-      <p class="text">
-        Во время второго отборочного тура (полуфинала) и финала соревнований
-        каждой команде предоставляется один компьютер.
-      </p>
+            <p class="underscored"> {{ tr.rul_page_titl_conduct_other_conditions_special_conditions }}</p>
 
-      <p class="text">
-        Участники могут приносить с собой и использовать словари (англо-русский
-        и т.п.), чистые листы бумаги и инструменты для письма. Запрещается
-        использовать любые (кроме предоставленных жюри) книги, распечатки,
-        электронные средства хранения и передачи информации: личные компьютеры,
-        флешки, дискеты, калькуляторы, мобильные телефоны и др.
-      </p>
-      <p class="text">
-        По решению оргкомитета и жюри количество команд, которое проходит в
-        следующий этап, их состав, а также квота могут быть изменены.
-      </p>
-      <p class="text">
-        Во время очных туров команды могут использовать сетевой принтер для
-        печати своих решений. Доставку распечаток осуществляют представители
-        организаторов.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_conduct_other_conditions_equipment_rules }}</p>
 
-      <p class="text">
-        В течение очных туров участники могут общаться только с членами своей
-        команды, представителями жюри и оргкомитета соревнований.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_conduct_other_conditions_allowed_items }}{{ tr.rul_page_titl_conduct_other_conditions_prohibited_items }}</p>
 
-      <h3 class="title subtitle">3. РЕШЕНИЕ ЗАДАЧ</h3>
-      <p class="text">
-        Во время тура участники решают предложенные задачи. Решением является
-        программа (исходный текст). Программа не должна включать в себя другие
-        файлы или модули кроме стандартных.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_conduct_other_conditions_printer_usage }}</p>
 
-      <p class="text">
-        Проверка представленных решений проводится во время соревнований.
-        Участники посылают решения в тестирующую систему с помощью
-        предоставленного программного обеспечения. Решение проверяется путем
-        запуска на наборе тестов, который недоступен участникам и является
-        одинаковым для всех участников. Решение засчитывается в том случае, если
-        оно выдает верные ответы на все тесты. В противном случае, участники
-        могут делать повторные попытки (их количество не ограничено).
-      </p>
 
-      <p class="text">
-        Ввод и вывод осуществляется через стандартные потоки (stdin, stdout),
-        если не сказано иное. Тестирование производится автоматически, поэтому
-        программы должны в точности соблюдать форматы ввода-вывода, описанные в
-        условии каждой задачи. Если не оговорено отдельно, все входные данные
-        предполагаются корректными и удовлетворяющими всем ограничениям,
-        указанным в условии.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_conduct_other_conditions_communication_rules }}</p>
 
-      <p class="text">
-        Для каждой из задач указывается максимальное время выполнения одного
-        теста. Если на одном из тестов программа превысила это время, решение
-        считается неверным.
-      </p>
+            <h3 class="title subtitle">{{ tr.rul_page_titl_problem_solving_titl }}</h3>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_descript }}</p>
 
-      <p class="text">В решениях задач запрещено использовать:</p>
-      <ol>
-        <li class="text">Работу с подкаталогами и файлами.</li>
-        <li class="text">Любые сетевые средства.</li>
-        <li class="text">
-          Любые другие средства или действия, которые могут нарушить работу
-          программного обеспечения олимпиады (в том числе использование вставок
-          ассемблерного кода).
-        </li>
-      </ol>
-      <p class="text">
-        Проверяющие программы используют различные методы контроля за
-        соблюдением данных требований. Нарушители будут дисквалифицированы.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_verification }}</p>
 
-      <p class="text">
-        По мере готовности участники посылают свои решения в тестирующую систему
-        для проверки. После этого они могут продолжать работу над другими
-        задачами. После того как тестирующая система проверит решение, они
-        получают сообщение о результатах тестирования. Это сообщение появится на
-        экране (в окне программы-клиента проверяющей системы). Участнику
-        сообщается, зачтено ли решение или нет. Если решение не зачтено,
-        сообщается тип ошибки и номер теста, на котором эта ошибка произошла.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_input_output }}</p>
 
-      <p class="text">
-        В случае сообщения “Compilation error” можно будет просмотреть протокол
-        компиляции. Номер теста при таком сообщении указываться не будет.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_time_limit }}</p>
 
-      <p class="text">
-        Все тесты выполняются в одном и том же порядке. Номер ошибочного теста,
-        указываемый в результатах проверки, есть номер первого теста, на котором
-        задача не прошла проверку. Например, если система сообщила: «Time-limit
-        exceeded: Test 9» («Превышен предел времени на тесте № 9»), это
-        означает, что:
-      </p>
-      <ul>
-        <li class="text">тесты с 1 по 8 прошли проверку;</li>
-        <li class="text">
-          на более сложном, чем предыдущие восемь, девятом тесте программа
-          превысила предел времени.
-        </li>
-      </ul>
-      <p class="text">
-        Если получено сообщение «Presentation error» («Ошибка вывода»), то это
-        означает, что формат результата (вывода) программы отличается от
-        требуемого.
-      </p>
 
-      <p class="text">
-        Сообщение «Run-time error» означает ошибку времени выполнения (аварийное
-        завершение программы). Сообщение «Wrong answer» означает неправильный
-        ответ.
-      </p>
+            <p class="text">{{ tr. }}{{ tr.rul_page_titl_problem_solving_time_problems }}</p>
+            <ol>
+                <li class="text">{{ tr. }}{{ tr.rul_page_titl_problem_solving_prohibited_actions_1 }}</li>
+                <li class="text">{{ tr. }}{{ tr.rul_page_titl_problem_solving_prohibited_actions_2 }}</li>
+                <li class="text">{{ tr. }}{{ tr.rul_page_titl_problem_solving_prohibited_actions_3 }}</li>
+            </ol>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_disqualification }}</p>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_submission_process }}</p>
 
-      <p class="text">
-        C целью упрощения поиска ошибок ввода/вывода гарантируется, что тест №1
-        совпадает с примером, указанным в условии и известным участникам.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_compilation_error }}</p>
 
-      <p class="text">
-        Во время соревнований участники могут задавать вопросы по условиям
-        задач. Вопрос должен быть составлен в форме, предполагающей ответы «ДА»
-        («Yes») или «НЕТ» («No»). Если вопрос поставлен некорректно или ответ
-        прямо следует из условия задачи, жюри отвечает «Без комментариев» («No
-        comments»). Если жюри согласно, что в условии присутствует неясность или
-        ошибка, то всем участникам делается соответствующее объявление.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_test_order }}</p>
+            <ul>
+                <li class="text">{{ tr.rul_page_titl_problem_solving_test_order_list_1 }}</li>
+                <li class="text">{{ tr.rul_page_titl_problem_solving_test_order_list_2 }}</li>
+            </ul>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_presentation_error }}</p>
 
-      <p class="text">
-        Выигрывает команда, правильно решившая наибольшее число задач. В случае
-        равенства числа решенных задач, выигрывает команда, у которой меньше
-        штрафных очков. Штрафные очки начисляются отдельно за каждую успешно
-        решенную задачу и суммируются. Для каждой задачи число штрафных очков
-        равно времени от начала соревнований до ее успешного решения (в минутах)
-        с добавлением по 20 минут за каждую неудачную попытку. Каждая попытка
-        сдать задачу ПОСЛЕ того, как решение для данной задачи уже было зачтено,
-        может быть воспринята как «неудачная попытка» и привести к
-        дополнительному штрафному времени.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_runtime_error }}{{ tr.rul_page_titl_problem_solving_wrong_answer }}</p>
 
-      <p class="text">
-        Во время соревнований участники могут просматривать текущие результаты
-        всех команд на своих компьютерах. В очных турах таблица результатов
-        «замораживается» за час до окончания соревнования: у команд есть
-        возможность видеть вердикты по своим посылкам и наличие посылок по
-        задачам других команд без указания, была эта попытка успешной или нет.
-        Пример таблицы результатов:
-      </p>
-      <div class="table__wrap">
-        <table class="table rules-table">
-          <thead>
-            <tr class="underlined">
-              <th class="stage-text">Place</th>
-              <th class="stage-text">User</th>
-              <th class="stage-text">A</th>
-              <th class="stage-text">B</th>
-              <th class="stage-text">C</th>
-              <th class="stage-text">D</th>
-              <th class="stage-text">E</th>
-              <th class="stage-text">F</th>
-              <th class="stage-text">Total</th>
-              <th class="stage-text">Penalty</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="underlined">
-              <td class="date-text">1</td>
-              <td class="date-text">kegbl</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+1</td>
-              <td class="date-text">+5</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+</td>
-              <td class="date-text">6</td>
-              <td class="date-text">370</td>
-            </tr>
-            <tr class="underlined">
-              <td class="date-text">2</td>
-              <td class="date-text">K5</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+1</td>
-              <td class="date-text">+5</td>
-              <td class="date-text">+2</td>
-              <td class="date-text">+</td>
-              <td class="date-text">6</td>
-              <td class="date-text">667</td>
-            </tr>
-            <tr class="underlined">
-              <td class="date-text">3</td>
-              <td class="date-text">abra</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+3</td>
-              <td class="date-text">+1</td>
-              <td class="date-text">+1</td>
-              <td class="date-text">+3</td>
-              <td class="date-text">+</td>
-              <td class="date-text">6</td>
-              <td class="date-text">876</td>
-            </tr>
-            <tr class="underlined">
-              <td class="date-text">4</td>
-              <td class="date-text">K4</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+3</td>
-              <td class="date-text">+3</td>
-              <td class="date-text"></td>
-              <td class="date-text">+2</td>
-              <td class="date-text">+1</td>
-              <td class="date-text">5</td>
-              <td class="date-text">788</td>
-            </tr>
-            <tr class="underlined">
-              <td class="date-text">5</td>
-              <td class="date-text">LGS</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+1</td>
-              <td></td>
-              <td class="date-text">+2</td>
-              <td class="date-text">+3</td>
-              <td class="date-text">5</td>
-              <td class="date-text">6184</td>
-            </tr>
-            <tr class="underlined">
-              <td class="date-text">6</td>
-              <td class="date-text">4lulz</td>
-              <td class="date-text">+1</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+4</td>
-              <td class="date-text">+3</td>
-              <td class="date-text">+1</td>
-              <td></td>
-              <td class="date-text">5</td>
-              <td class="date-text">9769</td>
-            </tr>
-            <tr class="underlined">
-              <td class="date-text">7</td>
-              <td class="date-text">AI</td>
-              <td class="date-text">+2</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+4</td>
-              <td></td>
-              <td class="date-text">+1</td>
-              <td class="date-text">+1</td>
-              <td class="date-text">5</td>
-              <td class="date-text">15438</td>
-            </tr>
-            <tr class="underlined">
-              <td class="date-text">8</td>
-              <td class="date-text">abcd</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+2</td>
-              <td></td>
-              <td class="date-text">+2</td>
-              <td></td>
-              <td class="date-text">4</td>
-              <td class="date-text">305</td>
-            </tr>
-            <tr class="underlined">
-              <td class="date-text">9</td>
-              <td class="date-text">Doll_backs</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+1</td>
-              <td></td>
-              <td class="date-text">+2</td>
-              <td></td>
-              <td class="date-text">4</td>
-              <td class="date-text">418</td>
-            </tr>
-            <tr class="underlined">
-              <td class="date-text">10</td>
-              <td class="date-text">ШИК</td>
-              <td class="date-text">+</td>
-              <td class="date-text">+2</td>
-              <td class="date-text">-8</td>
-              <td></td>
-              <td class="date-text">+2</td>
-              <td class="date-text">+</td>
-              <td class="date-text">4</td>
-              <td class="date-text">504</td>
-            </tr>
-            <tr class="underlined">
-              <td></td>
-              <td class="date-text">Total</td>
-              <td class="date-text">13</td>
-              <td class="date-text">18</td>
-              <td class="date-text">35</td>
-              <td class="date-text">18</td>
-              <td class="date-text">27</td>
-              <td class="date-text">12</td>
-              <td class="date-text">123</td>
-              <td></td>
-            </tr>
-            <tr class="underlined">
-              <td></td>
-              <td class="date-text">Success</td>
-              <td class="date-text">10</td>
-              <td class="date-text">10</td>
-              <td class="date-text">9</td>
-              <td class="date-text">4</td>
-              <td class="date-text">10</td>
-              <td class="date-text">7</td>
-              <td class="date-text">50</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td class="date-text">%</td>
-              <td class="date-text">77%</td>
-              <td class="date-text">55%</td>
-              <td class="date-text">26%</td>
-              <td class="date-text">22%</td>
-              <td class="date-text">37%</td>
-              <td class="date-text">58%</td>
-              <td class="date-text">41%</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_test_example }}</p>
 
-      <p class="text">
-        Здесь «User» – название команды, A,B,C,D,E,F – задачи, «Total» - число
-        решенных задач, «Penalty» – число штрафных очков. Знак «+» означает, что
-        задача принята, «+n» означает, что задача была принята после n неудачных
-        попыток, «-n» - что задача не принята и было сделано n неудачных
-        попыток.
-      </p>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_questions }}</p>
 
-      <h3 class="title subtitle">4. ОСОБЕННОСТИ НАПИСАНИЯ ПРОГРАММ</h3>
-      <h4 class="title subsubtitle">4.1. На С/С++</h4>
-      <p class="text">
-        Если решение задачи написано на языке С/С++, то для корректной работы
-        тестирующей системы оно должно завершать работу с кодом возврата 0,
-        т.е., например,
-      </p>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_scoring }}</p>
 
-      <code class="code">int main() { ... return 0; } </code>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_results_table }}</p>
+            <div class="table__wrap">
+                <table class="table">
+                    <thead>
+                        <tr class="underlined">
+                            <th class="stage-text">Place</th>
+                            <th class="stage-text">User</th>
+                            <th class="stage-text">A</th>
+                            <th class="stage-text">B</th>
+                            <th class="stage-text">C</th>
+                            <th class="stage-text">D</th>
+                            <th class="stage-text">E</th>
+                            <th class="stage-text">F</th>
+                            <th class="stage-text">Total</th>
+                            <th class="stage-text">Penalty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="underlined">
+                            <td class="date-text">1</td>
+                            <td class="date-text">kegbl</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+1</td>
+                            <td class="date-text">+5</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">6</td>
+                            <td class="date-text">370</td>
+                        </tr>
+                        <tr class="underlined">
+                            <td class="date-text">2</td>
+                            <td class="date-text">K5</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+1</td>
+                            <td class="date-text">+5</td>
+                            <td class="date-text">+2</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">6</td>
+                            <td class="date-text">667</td>
+                        </tr>
+                        <tr class="underlined">
+                            <td class="date-text">3</td>
+                            <td class="date-text">abra</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+3</td>
+                            <td class="date-text">+1</td>
+                            <td class="date-text">+1</td>
+                            <td class="date-text">+3</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">6</td>
+                            <td class="date-text">876</td>
+                        </tr>
+                        <tr class="underlined">
+                            <td class="date-text">4</td>
+                            <td class="date-text">K4</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+3</td>
+                            <td class="date-text">+3</td>
+                            <td class="date-text"></td>
+                            <td class="date-text">+2</td>
+                            <td class="date-text">+1</td>
+                            <td class="date-text">5</td>
+                            <td class="date-text">788</td>
+                        </tr>
+                        <tr class="underlined">
+                            <td class="date-text">5</td>
+                            <td class="date-text">LGS</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+1</td>
+                            <td class="date-text"></td>
+                            <td class="date-text">+2</td>
+                            <td class="date-text">+3</td>
+                            <td class="date-text">5</td>
+                            <td class="date-text">6184</td>
+                        </tr>
+                        <tr class="underlined">
+                            <td class="date-text">6</td>
+                            <td class="date-text">4lulz</td>
+                            <td class="date-text">+1</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+4</td>
+                            <td class="date-text">+3</td>
+                            <td class="date-text">+1</td>
+                            <td class="date-text"></td>
+                            <td class="date-text">5</td>
+                            <td class="date-text">9769</td>
+                        </tr>
+                        <tr class="underlined">
+                            <td class="date-text">7</td>
+                            <td class="date-text">AI</td>
+                            <td class="date-text">+2</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+4</td>
+                            <td class="date-text"></td>
+                            <td class="date-text">+1</td>
+                            <td class="date-text">+1</td>
+                            <td class="date-text">5</td>
+                            <td class="date-text">15438</td>
+                        </tr>
+                        <tr class="underlined">
+                            <td class="date-text">8</td>
+                            <td class="date-text">abcd</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+2</td>
+                            <td class="date-text"></td>
+                            <td class="date-text">+2</td>
+                            <td class="date-text"></td>
+                            <td class="date-text">4</td>
+                            <td class="date-text">305</td>
+                        </tr>
+                        <tr class="underlined">
+                            <td class="date-text">9</td>
+                            <td class="date-text">Doll_backs</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+1</td>
+                            <td class="date-text"></td>
+                            <td class="date-text">+2</td>
+                            <td class="date-text"></td>
+                            <td class="date-text">4</td>
+                            <td class="date-text">418</td>
+                        </tr>
+                        <tr class="underlined">
+                            <td class="date-text">10</td>
+                            <td class="date-text">ШИК</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">+2</td>
+                            <td class="date-text">-8</td>
+                            <td class="date-text"></td>
+                            <td class="date-text">+2</td>
+                            <td class="date-text">+</td>
+                            <td class="date-text">4</td>
+                            <td class="date-text">504</td>
+                        </tr>
+                        <tr class="underlined">
+                            <td rowspan="3"></td>
+                            <td class="date-text">Total</td>
+                            <td class="date-text">13</td>
+                            <td class="date-text">18</td>
+                            <td class="date-text">35</td>
+                            <td class="date-text">18</td>
+                            <td class="date-text">27</td>
+                            <td class="date-text">12</td>
+                            <td class="date-text">123</td>
+                            <td rowspan="3"></td>
+                        </tr>
+                        <tr class="underlined">
+                            <td class="date-text">Success</td>
+                            <td class="date-text">10</td>
+                            <td class="date-text">10</td>
+                            <td class="date-text">9</td>
+                            <td class="date-text">4</td>
+                            <td class="date-text">10</td>
+                            <td class="date-text">7</td>
+                            <td class="date-text">50</td>
+                        </tr>
+                        <tr class="underlined">
+                            <td class="date-text">%</td>
+                            <td class="date-text">77%</td>
+                            <td class="date-text">55%</td>
+                            <td class="date-text">26%</td>
+                            <td class="date-text">22%</td>
+                            <td class="date-text">37%</td>
+                            <td class="date-text">58%</td>
+                            <td class="date-text">41%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-      <p class="text">но не</p>
+            <p class="text">{{ tr.rul_page_titl_problem_solving_results_table_explanation }}</p>
 
-      <code class="code">void main() { ... }</code>
+            <h3 class="title subtitle">{{ tr.rul_page_titl_programming_features_titl }}</h3>
+            <h4 class="title subsubtitle">{{ tr.rul_page_titl_programming_features_cpp_titl }}</h4>
+            <p class="text">{{ tr.rul_page_titl_programming_features_cpp_description }}</p>
 
-      <p class="text">
-        Также вместо __int64 нужно писать long long (VC++ тоже понимает long
-        long). Для использования hash_xxx следует подключить namespace __gnu_cxx
-        (вместо stdext в VC++).
-      </p>
+            <code class="code">int main() {
+            ...
+            return 0;
+        }
+        </code>
 
-      <p class="text">Вместо</p>
-      <code class="code">#include &lt;iostream.h&gt;</code>
-      <p class="text">надо писать:</p>
-      <p class="text">Код:</p>
-      <code class="code">#include &lt;iostream&gt; using namespace std;</code>
-      <p class="text">
-        <code class="code">itoa, atoi</code> могут не компилироваться - тогда
-        используйте <code class="code">sscanf, sprintf</code>
-      </p>
+            <p class="text">{{ tr.rul_page_titl_programming_features_cpp_incorrect_example_not }}</p>
 
-      <h4 class="title subsubtitle">4.2. На Java</h4>
-      <p class="text">
-        Решение нужно оформить в виде публичного класса Main в пакете по
-        умолчанию. В файле может быть произвольное количество непубличных и
-        вложенных классов. Точка входа в программу - стандартный метод
-        main(String[]).
-      </p>
-      <p class="text">Пример:</p>
-      <code class="code"
-        >import java.io.*; public class Main { public static void main(String
-        args[]) { //решение } }
-      </code>
+            <code class="code">void main() {
+            ...
+        }</code>
+            <p class="text">{{ tr.rul_page_titl_programming_features_cpp_additional_rules_1 }}</p>
+            <p class="text">{{ tr.rul_page_titl_programming_features_cpp_incorrect_example_not_1 }}</p>
+            <code class="code">#include &lt;iostream.h&gt;</code>
+            <p class="text">{{ tr.rul_page_titl_programming_features_cpp_incorrect_example_not_2 }}</p>
+            <p class="text">{{ tr.rul_page_titl_programming_features_cpp_incorrect_example_not_3 }}</p>
+            <code class="code">#include &lt;iostream&gt;
+                using namespace std;</code>
+            <p class="text"><code class="code">itoa, atoi</code> {{ tr.rul_page_titl_programming_features_cpp_incorrect_example_not_4 }} <code
+                    class="code">sscanf, sprintf</code></p>
 
-      <h3 class="title subtitle">5. ПОДВЕДЕНИЕ ИТОГОВ СОРЕВНОВАНИЯ</h3>
-      <p class="text">Результаты соревнований подводятся жюри.</p>
+            <h4 class="title subsubtitle">{{ tr.rul_page_titl_programming_features_java_titl }}</h4>
+            <p class="text">{{ tr.rul_page_titl_programming_features_java_description }}</p>
+            <p class="text">{{ tr.rul_page_titl_programming_features_cpp_incorrect_example_not_5 }}</p>
+            <code class="code">import java.io.*;
+                public class Main
+                {
+                    public static void main(String args[])
+                    {
+                        //{{ tr.rul_page_titl_programming_features_cpp_incorrect_example_not_6 }}
+                    }
 
-      <p class="text">
-        За нарушение правил чемпионата или нарушение хода соревнований другим
-        способом (например, неподобающее поведение, подключение или отключение
-        дополнительного оборудования и проводов без согласия представителей
-        оргкомитета) команда может быть дисквалифицирована. Участники команд,
-        дисквалифицированных за нарушение правил, по решению жюри могут быть не
-        допущены к соревнованиям следующего года.
-      </p>
+                }
+                </code>
 
-      <p class="text">
-        В течение заранее объявленного времени (обычно в течение одного часа)
-        после соревнований команда может направить в жюри письменную апелляцию в
-        случае неправильного определения победителей, потери присланного решения
-        и т.п. Жюри разбирает апелляцию, принимает решение и сообщает его
-        команде.
-      </p>
+            <h3 class="title subtitle">{{ tr.rul_page_titl_results_titl }}</h3>
+            <p class="text">{{ tr.rul_page_titl_results_description }}.</p>
 
-      <p class="text">
-        Жюри обладает исключительным правом определения правильности присланных
-        решений, определения победителей и дисквалификации команд. Жюри
-        разбирает вопросы, возникшие в результате непредвиденных событий и
-        обстоятельств. Решения жюри окончательны и обжалованию не подлежат.
-      </p>
-    </div>
-  </article>
+            <p class="text">{{ tr.rul_page_titl_results_disqualification }}</p>
+
+            <p class="text">{{ tr.rul_page_titl_results_appeals }}</p>
+
+
+            <p class="text">{{ tr.rul_page_titl_results_jury_authority }}</p>
+        </div>
+    </article>
 </main>
+
 {% endblock %}

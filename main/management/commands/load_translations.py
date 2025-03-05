@@ -1,6 +1,9 @@
+import os
+import re
 import json
 from pathlib import Path
 from django.core.management.base import BaseCommand
+from django.conf import settings
 
 from main.models import TranslationKey, Translation
 
@@ -8,8 +11,24 @@ from main.models import TranslationKey, Translation
 class Command(BaseCommand):
     help = "Loading translations"
 
+    __vars = set()
+
     def add_arguments(self, parser):
         parser.add_argument("config", type=Path)
+
+    def get_variables(self):
+        reg = r'\{\{\s*tr\.(?P<name>[a-zA-Z\_0-9]*)\s*\}\}'
+
+        for root, dirs, files in os.walk(settings.TEMPLATE_DIR):
+            for file in files:
+                _file = Path(root, file)
+                if _file.suffix == '.html':
+                    with Path(_file).open('r+') as f:
+                        text = f.read()
+                        matches = re.findall(reg, text)
+                        for match in matches:
+                            if match:
+                                self.__vars.add(match)
 
     def handle(self, *args, **options):
         translations = None
@@ -17,9 +36,17 @@ class Command(BaseCommand):
         with Path(file).open('r') as f:
             translations = json.load(f)
 
-        for key, langs in translations.values():
+        self.get_variables()
+
+        for var in sorted(list(self.__vars)):
+            if var not in translations.keys():
+                print(f"[WARN] {var} is not specified")
+
+        for key, langs in translations.items():
+            if key not in self.__vars:
+                continue
             tr_key, _ = TranslationKey.objects.get_or_create(key=key)
-            for lang, value in langs.values():
+            for lang, value in langs.items():
                 tr, _ = Translation.objects.get_or_create(
                     translation_key=tr_key,
                     language=lang
@@ -31,3 +58,12 @@ class Command(BaseCommand):
 
                 tr.translated_text = text
                 tr.save()
+
+
+        unused = set(translations.keys()) - self.__vars
+
+        for var in unused:
+            del translations[var]
+
+        with Path(file).open('w', encoding='utf-8') as f:
+            print(json.dumps(translations, ensure_ascii=False), file=f)

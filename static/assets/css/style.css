@@ -40,12 +40,25 @@ section {
     color: var(--avia-blue);
     font-size: 2.5vmin;
     font-family: var(--cn-bold-it), sans-serif;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    box-sizing: border-box;
+    height: 100%;
+
+    align-items: center;
+    display: flex;
     position: relative;
+    animation: marquee 20s linear infinite;
+    will-change: transform;
 }
+
+.running-line > p{
+    min-width: max-content;
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 
 .slider_item {
     display: inline-block;
@@ -317,6 +330,10 @@ section {
     max-width: 1200px;
     align-self: center;
     min-height: 750px;
+}
+
+.policy{
+    text-decoration: underline;
 }
 
 .card-header {

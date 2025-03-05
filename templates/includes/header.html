@@ -1,32 +1,33 @@
 {% load static %}
 <header id="desktop-header">
-  <div class="running-line" loop="-1">
-    <span class="slider_item">
-      До начала регистрации N дней // До начала отборочного тура N дней // До
-      начала регистрации N дней // До начала отборочного тура N дней // Продам
-      гараж!!!
-    </span>
+  <div class="running-line">
+    <p>
+      {{ tr.running_line }}&nbsp;
+    </p>
+    <p>
+      {{ tr.running_line }}&nbsp;
+    </p>
   </div>
   <nav class="menu">
     <ul class="main-buttons">
       <li>
         <a href="{% url 'index' %}#main-section">
-          <button class="button" data-target="#main-section">Главная</button>
+          <button class="button" data-target="#main-section">{{ tr.main_page }}</button>
         </a>
       </li>
       <li>
         <a href="{% url 'index' %}#about">
-          <button class="button" data-target="#about">Об олимпиаде</button>
+          <button class="button" data-target="#about">{{ tr.about }}</button>
         </a>
       </li>
       <li>
         <a href="{% url 'index' %}#stages">
-          <button class="button" data-target="#stages">Этапы</button>
+          <button class="button" data-target="#stages">{{ tr.stages }}</button>
         </a>
       </li>
       <li>
         <a href="{% url 'index' %}#timetable">
-          <button class="button" data-target="#timetable">Расписание</button>
+          <button class="button" data-target="#timetable">{{ tr.schedule }}</button>
         </a>
       </li>
       <!-- <li>
@@ -38,17 +39,17 @@
     <ul class="extra-buttons">
       {% if request.user.is_authenticated %}
       <a href="{% url 'team-detail' %}">
-        <button class="button">Profile</button>
+        <button class="button">{{ tr.profile }}</button>
       </a>
       <a href="{% url 'logout' %}">
         <form method="post" action="{% url 'logout' %}">
           {% csrf_token %}
-          <button class="button" type="submit">Logout</button>
+          <button class="button" type="submit">{{ tr.logout }}</button>
         </form>
       </a>
       {% else %}
       <a href="{% url 'login' %}">
-        <button class="button">Участвовать</button>
+        <button class="button">{{ tr.login_action }}</button>
       </a>
       {% endif %}
       <li>
@@ -70,46 +71,35 @@
   </nav>
 </header>
 <header id="mobile-header">
-  <span class="mobile-header-title">BSUIR Open XIII</span>
+  <a href="{% url 'index' %}">
+    <span class="mobile-header-title">{{ tr.title }}</span>
+  </a>
   <button class="burger-button" id="burger-button">
     <img src="{% static 'assets/img/burger.svg' %}" alt="" />
   </button>
   <nav class="mobile-menu">
     <ul class="mobile-main-buttons">
-      <li>
-        <a href="{% url 'index' %}#main-section" class="mobile-menu-button"
-          >Главная</a
-        >
-      </li>
-      <li>
-        <a href="{% url 'index' %}#about" class="mobile-menu-button"
-          >Об олимпиаде</a
-        >
-      </li>
-      <li>
-        <a href="{% url 'index' %}#stages" class="mobile-menu-button">Этапы</a>
-      </li>
-      <li>
-        <a href="{% url 'index' %}#timetable" class="mobile-menu-button"
-          >Расписание</a
-        >
-      </li>
+      <li><a href="{% url 'index' %}#main-section" class="mobile-menu-button">{{ tr.main_page }}</a></li>
+      <li><a href="{% url 'index' %}#about" class="mobile-menu-button">{{ tr.about }}</a></li>
+      <li><a href="{% url 'index' %}#stages" class="mobile-menu-button">{{ tr.stages }}</a></li>
+      <li><a href="{% url 'index' %}#timetable" class="mobile-menu-button">{{ tr.schedule }}</a></li>
       <!-- <li><a href="{% url 'index' %}#partners" class="mobile-menu-button">Партнеры</a></li> -->
-      <li><a href="{% url 'rules' %}">Правила</a></li>
+      <li><a href="{% url 'common-info' %}" class="mobile-menu-button">{{ tr.common_info_page_titl }}</a></li>
+      <li><a href="{% url 'rules' %}">{{ tr.rules }}</a></li>
     </ul>
     <div class="menu-buttons">
       {% if request.user.is_authenticated %}
-      <a href="{% url 'team-detail' %}">Profile</a>
+      <a href="{% url 'team-detail' %}">{{ tr.profile }}</a>
       <form method="post" action="{% url 'logout' %}">
         {% csrf_token %}
         <a>
           <button type="submit" class="mobile-menu-button logout-button">
-            Logout
+            {{ tr.logout }}
           </button>
         </a>
       </form>
       {% else %}
-      <a href="{% url 'login' %}">Участвовать</a>
+      <a href="{% url 'login' %}">{{ tr.login_action }}</a>
       {% endif %}
     </div>
   </nav>
