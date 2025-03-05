@@ -687,6 +687,36 @@ a:focus {
     .table__wrap {
         overflow-x: scroll;
     }
+    .teams .table__wrap{
+        overflow-x: auto;
+        background-image: linear-gradient(to right, var(--avia-blue), var(--avia-blue)),
+                          linear-gradient(to right, var(--avia-blue), var(--avia-blue)),
+                          linear-gradient(to right, rgba(0, 0, 0, .4), rgba(255, 255, 255, 0)),
+                          linear-gradient(to left, rgba(0, 0, 0, .4), rgba(255, 255, 255, 0));
+        background-position: left center, right center, left center, right center;
+        background-repeat: no-repeat;
+        background-color: var(--avia-blue);
+        background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+        background-attachment: local, local, scroll, scroll;
+    }
+
+    .team-list{
+        display: block;
+        padding-top: 100px;
+    }
+
+    .team-list .table {
+        width: auto;
+        justify-self: auto;
+    }
+
+    .team-list th {
+        text-align: center;
+    }
+
+    .team-list td {
+        text-align: center;
+    }
 }
 
 @media (width <= 875px) {

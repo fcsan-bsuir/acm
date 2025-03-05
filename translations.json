@@ -19,6 +19,10 @@
         "ru": "Этап не начался",
         "en": "The stage has not started"
     },
+    "team_list": {
+        "ru": "Список команд",
+        "en": "Team list"
+    },
     "about": {
         "ru": "Об олимпиаде",
         "en": "About"

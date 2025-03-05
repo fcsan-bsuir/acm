@@ -1,14 +1,14 @@
 {% extends "wrapper.html" %}
 
 {% block title %}
-tr.team_list
+{{tr.team_list}}
 {% endblock %}
 
 {% block content %}
 <main>
     <article class="teams noised full-screen d-flex" style="overflow: auto;">
         <div class="team-list">
-            <h2 class="title text-left">Список команд</h2>
+            <h2 class="title text-left">{{tr.team_list}}</h2>
             <div class="table__wrap">
                 <table class="table">
                     <thead>
