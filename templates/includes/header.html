@@ -38,19 +38,19 @@
     </ul>
     <ul class="extra-buttons">
       {% if request.user.is_authenticated %}
-        <a href="{% url 'team-detail' %}">
-          <button class="button">{{ tr.profile }}</button>
-        </a>
-        <a href="{% url 'logout' %}">
-          <form method="post" action="{% url 'logout' %}">
-            {% csrf_token %}
-            <button class="button" type="submit">{{ tr.logout }}</button>
-          </form>
-        </a>
+      <a href="{% url 'team-detail' %}">
+        <button class="button">{{ tr.profile }}</button>
+      </a>
+      <a href="{% url 'logout' %}">
+        <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button class="button" type="submit">{{ tr.logout }}</button>
+        </form>
+      </a>
       {% else %}
-        <a href="{% url 'login' %}">
-          <button class="button">{{ tr.login_action }}</button>
-        </a>
+      <a href="{% url 'login' %}">
+        <button class="button">{{ tr.login_action }}</button>
+      </a>
       {% endif %}
       <li>
         <div class="language-switcher">
@@ -89,13 +89,17 @@
     </ul>
     <div class="menu-buttons">
       {% if request.user.is_authenticated %}
-        <a href="{% url 'team-detail' %}">{{ tr.profile }}</a>
-        <form method="post" action="{% url 'logout' %}">
-          {% csrf_token %}
-          <button type="submit" class="mobile-menu-button logout-button">{{ tr.logout }}</button>
-        </form>
+      <a href="{% url 'team-detail' %}">{{ tr.profile }}</a>
+      <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <a>
+          <button type="submit" class="mobile-menu-button logout-button">
+            {{ tr.logout }}
+          </button>
+        </a>
+      </form>
       {% else %}
-        <a href="{% url 'login' %}">{{ tr.login_action }}</a>
+      <a href="{% url 'login' %}">{{ tr.login_action }}</a>
       {% endif %}
     </div>
   </nav>

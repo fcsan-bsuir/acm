@@ -41,7 +41,7 @@ body {
 
 .white-box {
     background-color: var(--white);
-    border-radius: 24px;
+    border-radius: var(--border-radius);
     color: var(--avia-blue);
     width: 100%;
 }

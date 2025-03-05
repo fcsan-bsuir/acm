@@ -3,7 +3,7 @@
     background-color: var(--white);
     color: var(--avia-blue);
 
-    border-radius: 24px 24px 0px 0px;
+    border-radius: var(--border-radius) var(--border-radius) 0px 0px;
     font-family: 'Frutiger Neue LT Regular', sans-serif;
 }
 
@@ -61,17 +61,12 @@
 }
 
 @media screen and (max-width: 480px) {
-    .footer {
-        border-radius: 10px 10px 0 0;
-    }
 
     .footer_img a{
         display: inline-block !important;
     }
 
     .footer_img{
-        /* width: 80%;
-        height: 80%; */
         scale: 0.8;
         justify-content: space-between;
     }
