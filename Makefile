@@ -49,5 +49,5 @@ createsuperuser:
 
 translations:
 	@if [ "$(ENV)" = "local" ]; then \
-		python3 manage.py load_translations translations.json;\
+		python3 manage.py load_translations translations.json --force;\
 	fi
