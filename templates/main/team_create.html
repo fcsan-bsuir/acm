@@ -3,7 +3,7 @@
 
 
 {% block title %}
-Создать команду
+{{ tr.create_team }}
 {% endblock %}
 
 {% block content %}
@@ -14,30 +14,30 @@
         <input type="number" name="univer_type" style="display: none;" value="0">
     </form>
     <p class="title headline">
-        Создание команды
+        {{ tr.creating_team }}
     </p>
     <div class="options">
         <div class="option univer-type">
             <button class="item brleft active-form-button" id="school" data-key="0">
                 <h4 class="item-text">
-                    Школьная
+                    {{ tr.schoolar_team }}
                 </h4>
             </button>
             <button class="item brright" id="university" data-key="1">
                 <h4 class="item-text">
-                    Студенческая
+                    {{ tr.students_team }}
                 </h4>
             </button>
         </div>
         <div class="option command-type">
             <button class="item brleft active-form-button" id="whole" data-key="0">
                 <h4 class="item-text">
-                    Из одного учебного заведения
+                    {{ tr.university_type_same_institution }}
                 </h4>
             </button>
             <button class="item brright" id="mixed" data-key="1">
                 <h4 class="item-text">
-                    Смешанная
+                    {{ tr.university_type_mixed }}
                 </h4>
             </button>
         </div>
@@ -46,7 +46,7 @@
         <input type="text" aria-label="Имя" class="input" name="name" form="create-team" placeholder="Имя"/>
     </div>
     <div class="restriction">
-        <h6>*-поля, обязательные для заполнения <br>
+        <h6>{{ tr.required_fields }}<br>
             {% for field, errors in form.errors.items %}
             {% for error in errors %}
                 {{error}}</br>
@@ -55,7 +55,7 @@
         </h6>
     </div>
     <div class="center button_add" id="command_apply">
-        <button class="button signUp-button" type="submit" form="create-team">Создать</button>
+        <button class="button signUp-button" type="submit" form="create-team">{{ tr.create }}</button>
     </div>
 </div>
 <script src="{% static 'assets/js/create-command.js' %}"></script>

@@ -2,19 +2,19 @@
 {% load static %}
 
 {% block title %}
-    Авторизация
+    {{tr.authorization}}
 {% endblock %}
 
 {% block content %}
 <main class="signUp">
-  <hi class="title auth-title">Авторизация</hi>
+  <hi class="title auth-title">{{tr.authorization}}</hi>
   <form class="reg-form" method="post" id="login-form">
     {% csrf_token %}
     <input
       type="text"
       aria-label="Имя"
       class="input"
-      placeholder="Имя"
+      placeholder="{{tr.username}}"
       name="username"
     />
     <input
@@ -22,7 +22,7 @@
       name="password"
       aria-label="Пароль"
       class="input"
-      placeholder="Пароль"
+      placeholder="{{tr.password}}"
     />
   </form>
   <p class="wrong-inf">
@@ -33,11 +33,11 @@
     {% endfor %} {% endfor %}
   </p>
   <span class="no-account">
-    Нет аккаунта?
-    <a href="{% url 'signup' %}" class="signUp-link">Зарегистрироваться!</a>
+    {{tr.no_account}}?
+    <a href="{% url 'signup' %}" class="signUp-link">{{tr.signup}}!</a>
   </span>
   <button form="login-form" class="button signUp-button" type="submit">
-    Авторизоваться
+    {{tr.login_action}}
   </button>
 </main>
 {% endblock %}

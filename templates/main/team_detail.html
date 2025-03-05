@@ -1,27 +1,27 @@
 {% extends 'wrapper.html' %}
 {% load static %}
 
-{% block title %} Личный кабинет {% endblock %} 
+{% block title %} {{ tr.profile }} {% endblock %} 
 
 {% block content %} 
 
 {% if not request.user.participant.team %} 
     {% if available_reg %}
         <div class="center_pa">
-            <h1 class="title">Личный кабинет</h1>
-            <h2 class="text">У вас нет команды. Нажмите на кнопку, чтобы добавить.</h2>
+            <h1 class="title">{{ tr.profile }}</h1>
+            <h2 class="text">{{ tr.empty_team }}</h2>
             {% if olymp_type == 'single' %}
                 <form action="/team/create" method="post">
                     {% csrf_token %}
                     <button class="button signUp-button" type="submit">Добавить</button>
                 </form>
             {% else %}
-                <a href="{% url 'create-team' %}"><button class="button signUp-button">Создать команду</button></a>
+                <a href="{% url 'create-team' %}"><button class="button signUp-button">{{ tr.create_team }}</button></a>
             {% endif%}
         </div>
     {% else %}
         <div class="center_pa">
-            <h2 class="center text">Регистрация закрыта...</h2>
+            <h2 class="center text">{{ tr.registration_closed }}</h2>
         </div>
     {% endif %}
 {% else %}
@@ -36,7 +36,7 @@
             <hr class="line" />
             <div class="rowflex_table">
                 <div class="w30">
-                    <h4 class="table-text">Статус</h4>
+                    <h4 class="table-text">{{ tr.status }}</h4>
                 </div>
                 <div class="w70">
                     <h4 class="table-text">{{ request.user.participant.team.get_status_display }}</h4>
@@ -45,7 +45,7 @@
             <hr class="line" />
             <div class="rowflex_table">
                 <div class="w30">
-                    <h4 class="table-text">Трек</h4>
+                    <h4 class="table-text">{{ tr.track }}</h4>
                 </div>
                 <div class="w70">
                     <h4 class="table-text">{{ request.user.participant.team.get_type_display }}</h4>
@@ -54,7 +54,7 @@
             <hr class="line" />
             <div class="rowflex_table">
                 <div class="w30">
-                    <h4 class="table-text">Стадия участия</h4>
+                    <h4 class="table-text">{{ tr.stage }}</h4>
                 </div>
                 <div class="w70">
                     <h4 class="table-text">{{ request.user.participant.team.stage }}</h4>
@@ -64,7 +64,7 @@
             {% if credentials and request.user.participant.team.status == 'good' %}
                 <div class="rowflex_table">
                     <div class="w30">
-                        <h4 class="table-text">Login</h4>
+                        <h4 class="table-text">{{ tr.login }}</h4>
                     </div>
                     <div class="w70">
                         <h4 class="table-text">{{ request.user.participant.team.system_login }}</h4>
@@ -73,7 +73,7 @@
                 <hr class="line" />
                 <div class="rowflex_table">
                     <div class="w30">
-                        <h4 class="table-text">Password</h4>
+                        <h4 class="table-text">{{ tr.password }}</h4>
                     </div>
                     <div class="w70">
                         <h4 class="table-text">{{ request.user.participant.team.system_password }}</h4>
@@ -84,13 +84,13 @@
             {% if request.user.participant.team.is_ready %}
                 <div class="rowflex_table">
                     <div class="w30">
-                        <h4 class="table-text">Отправить заявку</h4>
+                        <h4 class="table-text">{{ tr.send_for_approve }}</h4>
                     </div>
                     <div class="w70">
                         <h4 class="table-text">
                             <a href="{% url 'verification' %}">
                                 <button class="button">
-                                    Отправить на рассмотрение
+                                    {{ tr.send }}
                                 </button>
                             </a>
                         </h4>
@@ -100,11 +100,11 @@
             {% elif not request.user.participant.team.is_sent %}
                 <div class="rowflex_table">
                     <div class="w30">
-                        <h4 class="table-text">Отправить заявку</h4>
+                        <h4 class="table-text">{{ tr.send_for_approve }}</h4>
                     </div>
                     <div class="w70">
                         <h4 class="table-text">
-                            Чтобы отправить команду на рассмотрение заполните всю информацию.
+                            {{ tr.fullfilled_info }}
                         </h4>
                     </div>
                 </div>
@@ -117,28 +117,28 @@
             <div class="white-box">
                 <div class="info-block rowflex spacebetween">
                     <div>
-                        <h3 class="info-title">Тренер<br />
+                        <h3 class="info-title">{{ tr.coach }}<br />
                         {% if not request.user.participant.team.coach %}
                             {% if not request.user.participant.team.is_sent%}
                             <a href="{% url 'create-coach' %}">
                                 <button class="button">
-                                    Добавить тренера
+                                    {{ tr.add_coach }}
                                 </button>
                             </a>
                             {% else %}
-                            <h5 class="info">No information.</h5>
+                            <h5 class="info">{{ tr.no_info }}</h5>
                             {% endif %}
                         {% else %}
                             <h5 class="info">{{request.user.participant.team.coach.fullname}}<br />
-                                Тел.: {{request.user.participant.team.coach.phone}}<br /> 
-                                E-mail: {{request.user.participant.team.coach.email}}
+                                {{ tr.phone }}: {{request.user.participant.team.coach.phone}}<br /> 
+                                {{ tr.email }}: {{request.user.participant.team.coach.email}}
                             </h5>
                         {% endif %}
                     {% if request.user.participant.team.coach %}
                         {% if not request.user.participant.team.is_sent %}
                             <a href="{% url 'change-coach' %}">
                                 <button class="button">
-                                    Редактировать
+                                    {{ tr.edit }}
                                 </button>
                             </a>
                         {% endif %}
@@ -154,15 +154,15 @@
                     {% if participant != request.user.participant %}
                     <div class="info-block wbox-mb rowflex spacebetween">
                         <div>
-                            <h3 class="info-title">Участник</h3>
+                            <h3 class="info-title">{{ tr.participant }}</h3>
                             <h5 class="info">{{ participant.fullname }}</br>
-                                Тел.: {{ participant.phone }}</br>
-                                E-mail: {{ participant.email }}
+                                {{ tr.phone }}: {{ participant.phone }}</br>
+                                {{ tr.email }}: {{ participant.email }}
                             </h5>
                             {% if not request.user.participant.team.is_sent %}
                                     <a href="{% url 'change-participant' participant.id %}">
                                         <button class="button">
-                                            Редактировать
+                                            {{ tr.edit }}
                                         </button>
                                     </a>
                             {% endif %}
@@ -171,21 +171,21 @@
                     {% else %}
                         <div class="info-block wbox-mb rowflex spacebetween">
                             <div>
-                                <h3 class="info-title">Участник</h3>
+                                <h3 class="info-title">{{ tr.participant }}</h3>
                             {% if not participant.is_done %}
                                 <a href="{% url 'change-participant' participant.id %}">
                                     <button class="button">
-                                        Заполнить информацию о себе
+                                        {{ tr.fullfill_self }}
                                     </button>
                                 </a>
                             {% else %}
                                 <h5 class="info">{{ participant.fullname }}</br>
-                                    Тел.: {{ participant.phone }}</br>
-                                    E-mail: {{ participant.email }}</h5>
+                                    {{ tr.phone }}: {{ participant.phone }}</br>
+                                    {{ tr.email }}: {{ participant.email }}</h5>
                                 {% if not request.user.participant.team.is_sent %}
                                     <a href="{% url 'change-participant' participant.id %}">
                                         <button class="button">
-                                            Редактировать
+                                            {{ tr.edit }}
                                         </button>
                                     </a>
                                 {% endif %}
@@ -200,7 +200,7 @@
             <div class="button_add">
                 <a href="{% url 'create-participant' %}">
                     <button class="button signUp-button">
-                        Добавить участника
+                        {{ tr.add_participant }}
                     </button>
                 </a>
             </div>

@@ -2,23 +2,22 @@
 {% load static %}
 
 {% block title %}
-Регистриция пользователя
+{{tr.registration}}
 {% endblock %}
 
 {% block content %}
 
 <main class="signUp">
   <form class="reg-form" method="post" id="signup-form">
-  <hi class="title auth-title">Регистрация</hi>
-  
+  <hi class="title auth-title">{{tr.registration}}</hi>
     {% csrf_token %}
-    <input type="text" aria-label="Имя" class="input" placeholder="Имя" name="username" required/>
+    <input type="text" aria-label="Имя" class="input" placeholder="{{tr.username}}" name="username" required/>
     <input
       type="password"
       aria-label="Пароль"
       class="input"
       name="password1"
-      placeholder="Пароль"
+      placeholder="{{tr.password}}"
       required
     />
     <input
@@ -26,11 +25,10 @@
       aria-label="Повторите пароль"
       class="input"
       name="password2"
-      placeholder="Повторите пароль"
+      placeholder="{{tr.repeat_password}}"
       required
     />
     {{form.captcha}}
-  
   <p class="wrong-inf">
     {% for field, errors in form.errors.items %}
       {% for error in errors %}
@@ -44,10 +42,10 @@
   <label class="confirm confirm-text">
     <input name="personal_data_agreement" required type="checkbox" class="checkbox" />
     <span class="checkmark"></span>
-    <p>Согласен с <a class="policy" target="_blank" href="{{ agreement_url }}">политикой</a> обработки персональных данных</p>
+    <p>{{tr.policy_agree}} <a class="policy" target="_blank" href="{{ agreement_url }}">{{tr.policy}}</a></p>
   </label>
   {% endif %}
-  <button form="signup-form" type="submit" class="button signUp-button">Зарегистрироваться</button>
+  <button form="signup-form" type="submit" class="button signUp-button">{{tr.signup}}</button>
 </form>
 </main>
 {% endblock content %}
