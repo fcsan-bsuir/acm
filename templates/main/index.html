@@ -193,7 +193,7 @@
               </div>
             </td>
             <td class="stage-text">{{ tr.registration }}</td>
-            <td class="status-text">До начала регистрации осталось n дней</td>
+            <td class="status-text">{{tr.reg_state}}</td>
           </tr>
           <tr class="underlined">
             <td class="merge-date">
@@ -209,13 +209,13 @@
             </td>
             <td class="stage-text">{{ tr.index_selection_header }}</td>
             <td class="status-text">
-              До начала отборочного тура осталось n дней
+              {{tr.qual_state}}
             </td>
           </tr>
           <tr class="underlined">
             <td class="date-text">{{ tr.semi_day }}</td>
             <td class="stage-text">{{ tr.semifinal }}</td>
-            <td class="status-text">До начала полуфинала осталось n дней</td>
+            <td class="status-text">{{tr.semi_state}}</td>
           </tr>
           <tr class="underlined">
             <td class="date-text">{{ tr.stud_final_day }}</td>
@@ -223,7 +223,7 @@
               <p class="stage-text">{{ tr.stud_final }}</p>
               <p class="status-text">({{ tr.bsuir_address }})</p>
             </td>
-            <td class="status-text">До начала финала осталось n дней</td>
+            <td class="status-text">{{tr.stud_fin_state}}</td>
           </tr>
           <tr>
             <td class="date-text">{{ tr.jun_final_day }}</td>
@@ -231,7 +231,7 @@
               <p class="stage-text">{{ tr.jun_final }}</p>
               <p class="status-text">( {{tr.bsuir_address}} )</p>
             </td>
-            <td class="status-text">До начала финала осталось n дней</td>
+            <td class="status-text">{{tr.jun_fin_state}}</td>
           </tr>
         </tbody>
       </table>

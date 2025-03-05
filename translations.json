@@ -1,6 +1,26 @@
 {
+    "reg_state": {
+        "ru": "Регистрация открыта",
+        "en": "Registration is open"
+    },
+    "qual_state": {
+        "ru": "Этап не начался",
+        "en": "The stage has not started"
+    },
+    "semi_state": {
+        "ru": "Этап не начался",
+        "en": "The stage has not started"
+    },
+    "stud_fin_state": {
+        "ru": "Этап не начался",
+        "en": "The stage has not started"
+    },
+    "jun_fin_state": {
+        "ru": "Этап не начался",
+        "en": "The stage has not started"
+    },
     "about": {
-        "ru": "О чемпионате",
+        "ru": "Об олимпиаде",
         "en": "About"
     },
     "title": {
