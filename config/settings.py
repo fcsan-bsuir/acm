@@ -39,10 +39,11 @@ if DEBUG:
 
 # Allowed hosts configuration
 
-hosts = os.getenv("ALLOWED_HOSTS",'localhost').split(',')
+allowed_hosts = os.getenv("ALLOWED_HOSTS",'localhost').split(',')
+cors_origins = os.getenv("CORS_ORIGINS",'localhost').split(',')
 
-ALLOWED_HOSTS = hosts
-CSRF_TRUSTED_ORIGINS = hosts
+ALLOWED_HOSTS = allowed_hosts
+CSRF_TRUSTED_ORIGINS = cors_origins
 
 # Application definition
 
