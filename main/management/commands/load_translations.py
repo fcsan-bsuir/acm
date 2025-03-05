@@ -15,9 +15,11 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument("config", type=Path)
+        parser.add_argument("--force", action='store_true')
+        parser.add_argument("--rewrite", action='store_true')
 
     def get_variables(self):
-        reg = r'\{\{\s*tr\.(?P<name>[a-zA-Z\_0-9]*)\s*\}\}'
+        reg = r'\{\{\s*tr\.(?P<name>[a-zA-Z\_0-9]*)(\s*\|\s[a-zA-Z0-9]*)*\s*\}\}'
 
         for root, dirs, files in os.walk(settings.TEMPLATE_DIR):
             for file in files:
@@ -26,7 +28,7 @@ class Command(BaseCommand):
                     with Path(_file).open('r+') as f:
                         text = f.read()
                         matches = re.findall(reg, text)
-                        for match in matches:
+                        for match, _ in matches:
                             if match:
                                 self.__vars.add(match)
 
@@ -56,14 +58,15 @@ class Command(BaseCommand):
                 else:
                     text = value
 
-                tr.translated_text = text
+                if _ or options['force']:
+                    tr.translated_text = text
                 tr.save()
 
+        if options['rewrite']:
+            unused = set(translations.keys()) - self.__vars
 
-        unused = set(translations.keys()) - self.__vars
+            for var in unused:
+                del translations[var]
 
-        for var in unused:
-            del translations[var]
-
-        with Path(file).open('w', encoding='utf-8') as f:
-            print(json.dumps(translations, ensure_ascii=False), file=f)
+            with Path(file).open('w', encoding='utf-8') as f:
+                print(json.dumps(translations, ensure_ascii=False), file=f)

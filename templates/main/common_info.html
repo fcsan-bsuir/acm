@@ -8,7 +8,6 @@
 <main>
     <article class="common-info large-text noised d-flex">
         <div class="container">
-            <h2></h2>
             <h3 class="title subtitle">{{ tr.common_info_page_qualification }}</h3>
             <h4 class="title subsubtitle">{{ tr.common_info_page_qualification_purpose }}</h4>
 
@@ -17,8 +16,8 @@
                 <li class="text">{{ tr.common_info_page_qualification_goals_2 }}</li>
             </ul>
 
-            <p class="color-red text">{{ tr.common_info_page_qualification_dates_1 }}<br>
-                {{ tr.common_info_page_qualification_dates_2}}</p>
+            <p class="color-red text">{{ tr.common_info_page_qualification_dates_1 | safe }}<br>
+                {{ tr.common_info_page_qualification_dates_2 | safe}}</p>
 
             <p class="text">{{ tr.common_info_page_qualification_rules }}</p>
 
@@ -44,7 +43,7 @@
                 <li class="text">{{ tr.common_info_page_fair_play_rules_list_5 }}</li>
                 <li class="text">{{ tr.common_info_page_fair_play_rules_list_6 }}</li>
             </ul>
-            <p class="text">{{ br.common_info_page_disqualification_warning }}</p>
+            <p class="text">{{ tr.common_info_page_disqualification_warning }}</p>
         </div>
     </article>
 </main>
