@@ -659,6 +659,29 @@ a:focus {
     margin: 10px 0;
 }
 
+.team-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 200px 5vw 2vh 5vw;
+}
+
+.team-list .table {
+    width: 90vw;
+}
+
+.team-list th {
+    text-align: center;
+}
+
+.team-list td {
+    text-align: center;
+}
+
+.text-left {
+    align-self: flex-start;
+}
 
 @media (max-width: 767px) {
     .table__wrap {
