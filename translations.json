@@ -7,6 +7,10 @@
         "ru": "Этап не начался",
         "en": "The stage has not started"
     },
+    "participate": {
+        "ru": "Участвовать",
+        "en": "Participate"
+    },
     "semi_state": {
         "ru": "Этап не начался",
         "en": "The stage has not started"

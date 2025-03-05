@@ -90,7 +90,14 @@ class UserLoginView(LanguageMixin, LoginView):
     template_name = 'main/registration/login.html'
 
     def get(self, request, *args, **kwargs):
-        return self.render_page(request, self.template_name, {'form': self.get_form()})
+        return self.render_page(
+            request,
+            self.template_name,
+            {
+                'form': self.get_form(),
+                'login': 'active',
+            }
+        )
 
     def post(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
