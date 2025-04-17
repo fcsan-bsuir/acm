@@ -1,5 +1,6 @@
 [tool.poetry]
 name = "acm-prodigy"
+
 version = "1.0.11"
 description = "Project for management participants on ICPC-like olympiads"
 authors = ["Vladimir Velikovich <vvelikovich@gmail.com>"]
