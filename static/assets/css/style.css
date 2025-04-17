@@ -516,6 +516,14 @@ thead {
     width: 30%;
 }
 
+#belveb {
+    width: 15%;
+}
+
+#vadarod {
+    width: 28%;
+}
+
 .plane-front {
     width: 60%;
     margin-top: 150px;
@@ -886,7 +894,15 @@ a:focus {
     }
 
     #techarena {
-        width: 46vw;
+        width: 55vw;
+    }
+
+    #belveb {
+        width: 25%;
+    }
+
+    #vadarod {
+        width: 50%;
     }
 
     .plane-front {
