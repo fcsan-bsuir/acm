@@ -22,9 +22,8 @@ class Cfg:
 Configuration = Cfg()
 
 
-def generate_pdf(name, text):
+def generate_pdf(output_pdf, name, text):
     try:
-        output_pdf = f'printer_{name}.pdf'
         html_content = render_to_string(settings.TEMPLATE_PATH, context={
             'team_name': name,
             'text': text,

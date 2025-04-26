@@ -26,6 +26,7 @@ RUN apk add --no-cache \
     ttf-freefont
 
 RUN apk add weasyprint
+RUN apk add ghostscript
 
 RUN python -m pip install --no-cache-dir poetry==1.7.1 \
     && poetry config virtualenvs.create false \

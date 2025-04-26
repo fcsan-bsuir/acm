@@ -17,7 +17,7 @@ from main.forms import (
     AuthUserForm,
     PrinterForm
 )
-from config.settings import RECAPTCHA_PUBLIC_KEY
+from config.settings import BASE_DIR, RECAPTCHA_PUBLIC_KEY
 from main.models import Coach, Participant, Team
 from main.services import get_available_reg, get_credentials_show, get_olympiad_type
 from main.mixins import LanguageMixin
@@ -509,9 +509,23 @@ class FinalPrintView(LanguageMixin, View):
         team = request.user.participant.team
 
         if form.is_valid():
-            pdf_path = f"printer_{team.name} ({team.location}).pdf"
-            generate_pdf(f'{team.name} ({team.location})', form.cleaned_data['text'])
-            with open(Path(settings.BASE_DIR, pdf_path), "rb") as f:
+            pdf_path = Path(BASE_DIR, f"printer_{team.id}.pdf")
+            pcl_path = Path(BASE_DIR, f"printer_{team.id}.pcl")
+            generate_pdf(pdf_path, f'{team.name} ({team.location})', form.cleaned_data['text'])
+            gs = ('gs '
+                   '-dNOPAUSE '
+                   '-dBATCH '
+                   '-sDEVICE=ljet4 '
+                   f'-sOutputFile={pcl_path} '
+                   f'{pdf_path}'
+            )
+            import subprocess
+            try:
+                os.system(gs)
+            except subprocess.CalledProcessError as e:
+                raise RuntimeError(f"Ошибка конвертации: {e}")
+
+            with open(Path(settings.BASE_DIR, pcl_path), "rb") as f:
                 file_data = f.read()
 
             printer_ip = Configuration("configuration.printer.ip")
@@ -522,4 +536,5 @@ class FinalPrintView(LanguageMixin, View):
                 s.sendall(file_data)
 
             os.unlink(pdf_path)
+            os.unlink(pcl_path)
             return redirect('team-detail')
