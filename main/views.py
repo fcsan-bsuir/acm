@@ -492,7 +492,7 @@ class FinalPrintView(LanguageMixin, View):
     def get(self, request, *args, **kwargs):
         if not request.user.participant.team:
             return redirect('index')
-        if not request.user.participant.team.final:
+        if not request.user.participant.team.can_print:
             return redirect('index')
 
         form = PrinterForm()
@@ -502,7 +502,7 @@ class FinalPrintView(LanguageMixin, View):
     def post(self, request, *args, **kwargs):
         if not request.user.participant.team:
             return redirect('index')
-        if not request.user.participant.team.final:
+        if not request.user.participant.team.can_print:
             return redirect('index')
 
         form = PrinterForm(request.POST)
