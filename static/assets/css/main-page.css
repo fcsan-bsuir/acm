@@ -89,7 +89,7 @@ section:not(#main):not(.participants-button) {
   transform: translateY(-50%);
   width: 35px;
   height: 35px;
-  background-image: url("/assets/img/maladosc.svg");
+  background-image: url("../img/maladosc.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }

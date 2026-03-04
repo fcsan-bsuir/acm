@@ -1,43 +1,92 @@
-{% extends 'wrapper.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-{% block title %}
-    {{tr.authorization}}
-{% endblock %}
+    <link rel="stylesheet" href="{% static 'assets/css/reset.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/variables.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/fonts.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
 
-{% block content %}
-<main class="signUp">
-  <hi class="title auth-title">{{tr.authorization}}</hi>
-  <form class="reg-form" method="post" id="login-form">
-    {% csrf_token %}
-    <input
-      type="text"
-      aria-label="Имя"
-      class="input"
-      placeholder="{{tr.username}}"
-      name="username"
-    />
-    <input
-      type="password"
-      name="password"
-      aria-label="Пароль"
-      class="input"
-      placeholder="{{tr.password}}"
-    />
-  </form>
-  <p class="wrong-inf">
-    {% for field, errors in form.errors.items %} {% for error in errors %}
-    {{error}}
-    <br />
-    <br />
-    {% endfor %} {% endfor %}
-  </p>
-  <span class="no-account">
-    {{tr.no_account}}?
-    <a href="{% url 'signup' %}" class="signUp-link">{{tr.signup}}!</a>
-  </span>
-  <button form="login-form" class="button signUp-button" type="submit">
-    {{tr.login_action}}
-  </button>
+    <link rel="stylesheet" href="{% static 'assets/css/title.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/button.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/input.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/droplist.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/auth.css' %}" />
+
+    <title>Вход в аккаунт</title>
+</head>
+<body>
+<main>
+    <h1 class="title title-head">Вход</h1>
+
+    <form class="login-form" method="post">
+        {% csrf_token %}
+        <input class="input auth-input" name="username" placeholder="Логин" type="text" required />
+        <input class="input auth-input" name="password" placeholder="Пароль" type="password" required />
+
+        {% if form.errors %}
+        <span class="error-info" style="display: block;">
+            {% for field in form %}
+                {% for error in field.errors %}
+                    {{ error }}<br>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                {{ error }}<br>
+            {% endfor %}
+        </span>
+        {% else %}
+        <span class="error-info" style="display: none;">Неверный логин или пароль</span>
+        {% endif %}
+
+        <div class="auth-link">
+            Нет аккаунта? <a href="{% url 'signup' %}">Зарегистрироваться</a>
+        </div>
+
+        <button class="button button-primary auth-button" type="submit">Войти</button>
+    </form>
 </main>
-{% endblock %}
+<script type="module" src="{% static 'assets/js/utils/add-header.js' %}"></script>
+<script type="module" src="{% static 'assets/js/utils/add-footer.js' %}"></script>
+<script type="module">
+    const form = document.querySelector('.login-form');
+    // Note: changed from 'login' to 'username' to match Django default
+    const loginInput = document.querySelector('input[name="username"]');
+    const passwordInput = document.querySelector('input[name="password"]');
+    const errorInfo = document.querySelector('.error-info');
+
+    function validateLogin() {
+        const login = loginInput.value.trim();
+        const password = passwordInput.value;
+
+        if (login && password) {
+            errorInfo.style.display = 'none';
+        }
+    }
+
+    if (loginInput) loginInput.addEventListener('input', validateLogin);
+    if (passwordInput) passwordInput.addEventListener('input', validateLogin);
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            const login = loginInput.value.trim();
+            const password = passwordInput.value;
+            
+            if (!login || !password) {
+                // If required attribute is working, this might not be reached unless browser validation is bypassed
+                // But let's keep it safe.
+               if(errorInfo) {
+                    errorInfo.style.display = 'block';
+                    errorInfo.innerText = "Пожалуйста, заполните все поля";
+               }
+            }
+        });
+    }
+</script>
+</body>
+</html>

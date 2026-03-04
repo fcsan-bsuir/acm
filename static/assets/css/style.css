@@ -2,7 +2,7 @@
   min-height: 100dvh;
   width: 100vw;
   color: var(--almost-black);
-  background-image: url("/static/assets/img/ornament.svg");
+  background-image: url("../img/ornament.svg");
   background-position: 30px 245px;
   background-repeat: repeat-y;
   background-size: 100px auto;

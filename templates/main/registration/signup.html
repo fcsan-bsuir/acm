@@ -1,51 +1,114 @@
-{% extends 'wrapper.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/reset.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/variables.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/fonts.css' %}" />
 
-{% block title %}
-{{tr.registration}}
-{% endblock %}
+    <link rel="stylesheet" href="{% static 'assets/css/title.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/button.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/input.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/droplist.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/auth.css' %}" />
 
-{% block content %}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        .checkbox-container {
+            display: flex;
+            align-items: center; 
+            gap: 8px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .checkbox-label {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+        }
+    </style>
+    <title>Регистрация</title>
+</head>
+<body>
+<main>
+    <h1 class="title title-head">Регистрация</h1>
 
-<main class="signUp">
-  <form class="reg-form" method="post" id="signup-form">
-  <hi class="title auth-title">{{tr.registration}}</hi>
-    {% csrf_token %}
-    <input type="text" aria-label="Имя" class="input" placeholder="{{tr.username}}" name="username" required/>
-    <input
-      type="password"
-      aria-label="Пароль"
-      class="input"
-      name="password1"
-      placeholder="{{tr.password}}"
-      required
-    />
-    <input
-      type="password"
-      aria-label="Повторите пароль"
-      class="input"
-      name="password2"
-      placeholder="{{tr.repeat_password}}"
-      required
-    />
-    {{form.captcha}}
-  <p class="wrong-inf">
-    {% for field, errors in form.errors.items %}
-      {% for error in errors %}
-        {{error}}
-        <br />
-        <br />
-      {% endfor %}
-    {% endfor %}
-  </p>
-  {% if agreement %}
-  <label class="confirm confirm-text">
-    <input name="personal_data_agreement" required type="checkbox" class="checkbox" />
-    <span class="checkmark"></span>
-    <p>{{tr.policy_agree}} <a class="policy" target="_blank" href="{{ agreement_url }}">{{tr.policy}}</a></p>
-  </label>
-  {% endif %}
-  <button form="signup-form" type="submit" class="button signUp-button">{{tr.signup}}</button>
-</form>
+    <form class="login-form" method="post">
+        {% csrf_token %}
+        <input class="input auth-input" name="username" placeholder="Логин" type="text" required />
+        <input class="input auth-input" name="password1" placeholder="Пароль" type="password" required />
+        <input class="input auth-input" name="password2" placeholder="Повторите пароль" type="password" required />
+
+        {% if form.errors %}
+        <span class="error-info" style="display: block;">
+            {% for field in form %}
+                {% for error in field.errors %}
+                    {{ error }}<br>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                {{ error }}<br>
+            {% endfor %}
+        </span>
+        {% else %}
+        <span class="error-info" style="display: none;">Пароли не совпадают</span>
+        {% endif %}
+
+        <div style="margin-top: 10px; margin-bottom: 10px;">
+           <label>Captcha:</label> {{ form.captcha }}
+        </div>
+
+        {% if agreement %}
+        <div class="checkbox-container">
+            <input type="checkbox" id="terms" name="personal_data_agreement" class="checkbox" required>
+            <label for="terms" class="checkbox-label">
+                Я согласен с <a href="{{ agreement_url|default:'#' }}" target="_blank" class="checkbox-link" style="color: #000; font-weight: 700; text-decoration: none;">обработкой персональных данных</a>
+            </label>
+        </div>
+        {% endif %}
+
+        <button class="button button-primary auth-button" type="submit" style="margin-top: 20px;">Зарегистрироваться</button>
+    </form>
 </main>
-{% endblock content %}
+<script type="module" src="{% static 'assets/js/utils/add-header.js' %}"></script>
+<script type="module" src="{% static 'assets/js/utils/add-footer.js' %}"></script>
+<script type="module">
+
+    const form = document.querySelector('.login-form');
+    const passwordInput = document.querySelector('input[name="password1"]');
+    const passwordConfirmInput = document.querySelector('input[name="password2"]');
+    const errorInfo = document.querySelector('.error-info');
+
+    function validatePasswords() {
+        if (!passwordInput || !passwordConfirmInput) return true;
+        const password = passwordInput.value;
+        const passwordConfirm = passwordConfirmInput.value;
+        
+        if (password && passwordConfirm && password !== passwordConfirm) {
+            errorInfo.style.display = 'block';
+            errorInfo.innerText = "Пароли не совпадают";
+            return false;
+        } else {
+            errorInfo.style.display = 'none';
+            return true;
+        }
+    }
+
+    if (passwordInput) passwordInput.addEventListener('input', validatePasswords);
+    if (passwordConfirmInput) passwordConfirmInput.addEventListener('input', validatePasswords);
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            if (!validatePasswords()) {
+                e.preventDefault();
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

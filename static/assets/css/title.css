@@ -1,0 +1,14 @@
+.title {
+  font-family: var(--font-heading);
+  color: var(--almost-black);
+}
+
+.title-head {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.title-subhead {
+  font-size: 3rem;
+  margin: 0;
+}

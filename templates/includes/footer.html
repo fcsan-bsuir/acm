@@ -1,23 +1,36 @@
 {% load static %}
 <footer class="footer">
-  <div class="footer_content">
-    <div class="footer_btn">
-      <a href="{% url 'rules' %}"> {{ tr.rules }} </a>
-      <a href="{% url 'common-info' %}"> {{ tr.common_info_page_titl }} </a>
+    <div class="footer-content">
+        <div class="social-links">
+            {% with socials=social_links %}
+                {% if socials %}
+                    {% for social in socials %}
+                        <a href="{{ social.href }}" target="_blank" rel="noopener noreferrer" title="{{ social.alt }}">
+                            <img src="{{ social.src }}" alt="{{ social.alt }}" class="social-icon">
+                        </a>
+                    {% endfor %}
+                {% else %}
+                    <a href="https://t.me/fcsan_by" target="_blank" rel="noopener noreferrer" title="Telegram">
+                        <img src="{% static 'img/social/tg.svg' %}" alt="Telegram" class="social-icon">
+                    </a>
+                    <a href="https://vk.com/bsuiropen" target="_blank" rel="noopener noreferrer" title="VK">
+                        <img src="{% static 'img/social/vk.svg' %}" alt="VK" class="social-icon">
+                    </a>
+                    <a href="mailto:acm@bsuir.by" title="Mail">
+                        <img src="{% static 'img/social/mail.svg' %}" alt="Mail" class="social-icon">
+                    </a>
+                    <a href="https://bsuir.by" target="_blank" rel="noopener noreferrer" title="BSUIR">
+                        <img src="{% static 'img/social/bsuir.svg' %}" alt="BSUIR" class="social-icon">
+                    </a>
+                    <a href="https://vk.com/studsovet_fksis" target="_blank" rel="noopener noreferrer" title="FCSAN">
+                        <img src="{% static 'img/social/fcsan.svg' %}" alt="FCSAN" class="social-icon">
+                    </a>
+                {% endif %}
+            {% endwith %}
+        </div>
+        
+        <div class="footer-info">
+            <p>&copy; 2026 BSUIR Open. Все права защищены.</p>
+        </div>
     </div>
-    <div class="footer_img">
-      <a href="https://bsuir.by">
-        <img src="{% static 'assets/img/sponsors/BSUIR.png' %}" alt="BSUIR" />
-      </a>
-      <a href="https://vk.com/studsovet_fksis">
-        <img src="{% static 'assets/img/sponsors/FCSaN.png' %}" alt="{{ tr.fcsan }}" />
-      </a>
-      <a href="https://t.me/fcsan_by">
-        <img src="{% static 'assets/img/sponsors/telegram.png' %}" alt="{{ tr.union }}" />
-      </a>
-      <a href="mailto:acm@bsuir.by">
-        <img src="{% static 'assets/img/sponsors/Mail.png' %}" alt="Email" />
-      </a>
-    </div>
-  </div>
 </footer>

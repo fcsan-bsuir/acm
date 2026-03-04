@@ -1,14 +1,58 @@
 .button {
-    background-color: var(--button-color);
-    border: none;
-    border-radius: 15px;
-    color: var(--avia-blue);
-    font-family: var(--bold), sans-serif;
-    font-weight: 900;
-    font-size: 16px;
-    padding: 0.8vh 1.5vw;
+  --scale-factor: 0.6;
+  border: 0.3em solid var(--light-blue);
+  border-radius: 1em;
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  width: 21em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  font-weight: 600;
+  font-family: var(--font-body);
+  background-color: transparent;
+  transition: background-color 0.3s ease;
 }
 
-.translate-button {
-    background-color: transparent;
+.button:hover {
+  transform: scale(1.02);
+  background-color: var(--extra-light-blue);
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.button-primary {
+  background-color: var(--light-blue);
+  color: white;
+}
+
+.button-clicked {
+  background-color: transparent;
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+@media (min-width: 768px) {
+  .button {
+    --scale-factor: 0.8;
+    border-width: 0.2em;
+    width: 15em;
+    font-size: var(--font-size-xl);
+    border-radius: 0.7em;
+  }
+}
+
+@media (min-width: 1280px) {
+  .button {
+    --scale-factor: 1;
+    font-size: var(--font-size-3xl);
+    border-radius: 0.4em;
+  }
+}
+
+.button.custom-font {
+  font-size: calc(var(--max-font-size) * var(--scale-factor));
+}
+
+.button.custom-width {
+  width: calc(var(--max-width) * var(--scale-factor));
 }
