@@ -16,7 +16,7 @@
         <input type="number" form="create-team" name="command_type" style="display: none;" value="0">
         <input type="number" form="create-team" name="univer_type" style="display: none;" value="0">
     </form>
-    <form class="buttons">
+    <div class="buttons">
             <button type="button" class="button auth-button button-clicked command-type" id="school" data-key="0">
                 {{ tr.schoolar_team }}
             </button>
@@ -29,8 +29,8 @@
             <button type="button" class="button button-primary auth-button univer-type" id="mixed" data-key="1">
                 {{ tr.university_type_mixed }}
             </button>
-            <div class="name_input_container">
-                <input class="input auth-input" name="com-name" placeholder="Название команды"/>
+            <div class="name_input_container" id="command_name">
+                <input class="input auth-input" name="name" form="create-team" placeholder="Название команды"/>
                 <div class="alarm">
                     <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
                 </div>
@@ -43,8 +43,8 @@
                 {% endfor %}
                 {% endfor %}
             </span>
-        <button class="button button-primary auth-button"  type="submit" form="create-team">{{ tr.create }}</button>
-        </form>
+        <button class="button button-primary auth-button" id="command_apply" type="submit" form="create-team">{{ tr.create }}</button>
+        </div>
 </main>
 
 {% endblock %}
