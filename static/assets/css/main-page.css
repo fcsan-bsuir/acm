@@ -1,0 +1,585 @@
+@keyframes rotate {
+  from {
+    transform: translate(220%, 0%) rotate(0deg);
+  }
+  to {
+    transform: translate(220%, 0%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-mobile {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.valoshka {
+  position: absolute;
+  align-self: center;
+  width: 30vw;
+  animation: rotate 20s linear infinite;
+}
+
+.main-title {
+  font-family: var(--font-heading);
+  font-size: 9vmax;
+}
+
+.main-description {
+  font-family: var(--font-body);
+  font-size: 2vmax;
+  color: var(--light-green);
+}
+
+section:not(#main):not(.participants-button) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 50px 60px 120px 240px;
+}
+
+.main {
+  height: 100dvh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+
+.main-span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 70%;
+  margin-left: 200px;
+}
+
+#about {
+  gap: 80px;
+}
+
+.about-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-family: var(--font-body);
+  font-size: var(--font-size-2xl);
+}
+
+.about-list-item {
+  position: relative;
+  padding-left: 50px;
+}
+
+.about-list-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  background-image: url("/assets/img/maladosc.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.teams {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-title {
+  font-family: var(--font-heading);
+  font-size: 7vmax;
+  color: var(--blue);
+}
+
+.team-description {
+  font-family: var(--font-body);
+  font-size: 1.5vmax;
+  color: var(--light-green);
+}
+
+.teams-logo {
+  width: 10%;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.stage {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 80%;
+  min-height: 350px;
+  line-height: 1.2;
+}
+
+.stages-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.stages-list-item::before {
+  content: "-";
+  margin-right: 5px;
+}
+
+.stages {
+  align-items: flex-start !important;
+  justify-content: center;
+  gap: 40px;
+  margin-left: 200px;
+}
+
+.participants-button {
+  align-self: center;
+  justify-self: flex-end;
+  margin-right: 20%;
+}
+
+.nav {
+  width: 80%;
+}
+
+.schedule-title {
+  font-family: var(--font-heading);
+  font-size: 3vmax;
+}
+
+.schedule-description {
+  font-size: var(--font-size-2xl);
+  color: var(--light-green);
+}
+
+.maladosc {
+  height: 8vmax;
+  width: 8vmax;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.schedule-list {
+  width: 55%;
+}
+
+.schedule-strelka {
+    display: none;
+}
+
+.flex-row {
+  flex-direction: row;
+  justify-self: flex-start;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+  justify-self: flex-end;
+  text-align: end;
+}
+
+.finals-title {
+  font-family: var(--font-heading);
+  font-size: 4vmax;
+}
+
+.finals-description {
+  color: var(--dark-blue);
+  font-size: var(--font-size-2xl);
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.finals {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.finals-span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  justify-content: center;
+}
+
+.strelka {
+  opacity: 0.5;
+  width: 30%;
+}
+
+.schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.sponsors {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  align-items: center;
+  width: 80%;
+}
+
+.logos-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+}
+
+.pinely {
+  width: 7vmax;
+}
+
+.yandex {
+  width: 12vmax;
+}
+
+.mda {
+  width: 15vmax;
+}
+
+.tbank {
+  width: 5vmax;
+}
+
+.openmygame {
+  width: 25vmax;
+}
+
+.modsen {
+  width: 15vmax;
+}
+
+.lwo {
+  width: 10vmax;
+}
+
+.techarena {
+  width: 20vmax;
+}
+
+.yadro {
+  width: 12vmax;
+}
+
+.partners-title {
+  align-self: flex-start;
+  margin-left: 100px;
+}
+
+.partners {
+  padding-top: 20px;
+  gap: 100px;
+  position: relative;
+}
+
+.transparent-logo {
+  opacity: 0.15;
+  position: absolute;
+  align-self: center;
+  top: 120px;
+  width: 30vmax;
+  z-index: -1;
+}
+
+.sponsors a {
+  width: fit-content;
+}
+
+.hidden {
+  display: none;
+}
+
+.sponsors-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .hidden {
+    display: block;
+  }
+
+  .main-title-span {
+    display: flex;
+    align-items: center;
+  }
+
+  .main-title-mobile {
+    font-family: var(--font-heading);
+    font-size: 60px;
+    width: min-content;
+  }
+
+  section:not(#main):not(.participants-button) {
+    padding: 0;
+  }
+
+  .main-title {
+    display: none;
+  }
+
+  .main {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .big-text {
+    font-size: 150px;
+  }
+
+  .main-span {
+    margin-left: 0;
+    width: 80%;
+    align-items: center;
+    gap: 0;
+  }
+
+  .valoshka {
+    animation: rotate-mobile 20s linear infinite;
+    position: relative;
+    width: 80vw;
+  }
+
+  .main-description {
+    font-size: 16px;
+    width: min-content;
+  }
+
+  .title-head {
+    font-size: 50px;
+  }
+
+  .about-list {
+    padding: 0 35px;
+    gap: 25px;
+  }
+
+  .about-list-item {
+    font-size: 15px;
+    padding-left: 35px;
+  }
+
+  #about {
+    gap: 40px;
+    margin-bottom: 80px;
+  }
+
+  .about-list-item:before {
+    width: 25px;
+    height: 25px;
+  }
+
+  .teams-logo {
+    display: none;
+  }
+
+  .teams {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .team-title {
+    font-size: 80px;
+  }
+
+  .team-description {
+    font-size: 20px;
+  }
+
+  .team {
+    gap: 5px;
+  }
+
+  .buttons {
+    justify-content: space-around;
+    row-gap: 15px;
+  }
+
+  .stages {
+    margin-left: 0;
+    align-items: center !important;
+    margin-bottom: 80px;
+  }
+
+  .button {
+    width: 10rem;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .stage {
+    font-size: 15px;
+    gap: 10px;
+    max-width: 90%;
+  }
+
+  .participants-button {
+    margin: 0;
+  }
+
+  .maladosc {
+    width: 90px;
+    height: 90px;
+  }
+
+  .schedule-list {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .schedule-title {
+    font-size: 35px;
+  }
+
+  .schedule-item {
+    gap: 15px;
+  }
+
+  .schedule-description {
+    font-size: 20px;
+  }
+
+  .schedule-strelka {
+    display: block;
+    width: 15px;
+  }
+
+  .strelka {
+    display: none;
+  }
+
+  .finals-span {
+    flex-direction: column;
+  }
+
+  .schedule {
+    gap: 30px;
+  }
+
+  .finals-title {
+    font-size: 50px;
+  }
+
+  .description-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .finals-description {
+    font-size: 20px;
+  }
+
+  .finals {
+    gap: 10px;
+    margin-bottom: 80px;
+  }
+
+  .partners-title {
+    align-self: center;
+    margin-left: 0;
+  }
+
+  .sponsors-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .sponsors {
+    display: none;
+  }
+
+  .pinely {
+    width: 100px;
+  }
+
+  .yandex {
+    width: 150px;
+  }
+
+  .mda {
+    width: 200px;
+  }
+
+  .tbank {
+    width: 60px;
+  }
+
+  .innotech {
+    width: 300px;
+  }
+
+  .modsen {
+    width: 220px;
+  }
+
+  .lwo {
+    width: 150px;
+  }
+
+  .techarena {
+    width: 300px;
+  }
+
+  .yadro {
+    width: 150px;
+  }
+
+  .partners {
+    gap: 55px;
+  }
+}

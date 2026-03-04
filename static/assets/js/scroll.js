@@ -1,55 +1,144 @@
 function debounce(func, wait) {
-    let timeout;
-    return function(...args) {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(this, args), wait);
-    };
-  }
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    const navButtons = document.querySelectorAll('.menu .button');
-    const homeButton = document.querySelector('.menu .button[data-target="#main-section"]');
-  
-    navButtons.forEach(button => button.classList.remove('active'));
-  
-    if (homeButton) {
-      homeButton.classList.add('active');
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(
+    ".header_nav a, .mobile_menu_nav a",
+  );
+  const homeLink = document.querySelector('[href="#main"]');
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.dataset) {
+      link.dataset.active = "false";
     }
   });
-  
-  document.querySelectorAll('.menu .button').forEach(button => {
-    button.addEventListener('click', function() {
-      const targetId = this.getAttribute('data-target');
-      const targetSection = document.querySelector(targetId);
-  
-      if (targetSection) {
-        targetSection.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+
+  if (homeLink) {
+    homeLink.classList.add("active");
+    if (homeLink.dataset) {
+      homeLink.dataset.active = "true";
+    }
+  }
+});
+
+document
+  .querySelectorAll(".header_nav a, .mobile_menu_nav a")
+  .forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+
+        const targetId = href;
+        const targetSection = document.querySelector(targetId);
+
+        if (targetSection) {
+          const header = document.querySelector(".header");
+          const headerHeight = header ? header.offsetHeight : 0;
+
+          const offset = -20;
+
+          const elementPosition = targetSection.getBoundingClientRect().top;
+          const offsetPosition =
+            elementPosition + window.pageYOffset - headerHeight - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+
+          const mobileMenu = document.querySelector(".mobile_menu");
+          if (mobileMenu && mobileMenu.classList.contains("active")) {
+            mobileMenu.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+        }
       }
     });
   });
 
-  window.addEventListener('scroll', debounce(() => {
-    const sections = document.querySelectorAll('section');
-    const navButtons = document.querySelectorAll('.menu .button');
-  
-    let closestSection = null;
-    let closestDistance = Infinity;
-  
-    sections.forEach((section, index) => {
+window.addEventListener(
+  "scroll",
+  debounce(() => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(
+      ".header_nav a, .mobile_menu_nav a",
+    );
+
+    let currentSectionId = null;
+    let minDistance = Infinity;
+
+    sections.forEach((section) => {
       const rect = section.getBoundingClientRect();
-      const distance = Math.abs(rect.top); 
-  
-      if (distance < closestDistance && rect.top <= 170 && rect.bottom >= 130) {
-        closestDistance = distance;
-        closestSection = index;
+      const sectionTop = rect.top;
+      const sectionBottom = rect.bottom;
+
+      const distance = Math.abs(sectionTop);
+
+      if (sectionTop <= 200 && sectionBottom >= 200) {
+        if (distance < minDistance) {
+          minDistance = distance;
+          currentSectionId = section.getAttribute("id");
+        }
       }
     });
-  
-    navButtons.forEach(button => button.classList.remove('active'));
-    if (closestSection !== null) {
-      navButtons[closestSection].classList.add('active');
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.dataset) {
+        link.dataset.active = "false";
+      }
+    });
+
+    if (currentSectionId) {
+      const activeLinks = document.querySelectorAll(
+        `.header_nav a[href="#${currentSectionId}"], .mobile_menu_nav a[href="#${currentSectionId}"]`,
+      );
+
+      activeLinks.forEach((link) => {
+        link.classList.add("active");
+        if (link.dataset) {
+          link.dataset.active = "true";
+        }
+      });
+    } else {
+      if (window.scrollY < 100) {
+        const homeLinks = document.querySelectorAll(
+          '.header_nav a[href="#main"], .mobile_menu_nav a[href="#main"]',
+        );
+        homeLinks.forEach((link) => {
+          link.classList.add("active");
+          if (link.dataset) {
+            link.dataset.active = "true";
+          }
+        });
+      } else {
+        const firstLink = navLinks[0];
+        if (firstLink) {
+          firstLink.classList.add("active");
+          if (firstLink.dataset) {
+            firstLink.dataset.active = "true";
+          }
+        }
+      }
     }
-  }, 20));
+  }, 20),
+);
+
+document.addEventListener("click", (e) => {
+  const mobileMenu = document.querySelector(".mobile_menu");
+  const burger = document.querySelector(".header_burger");
+
+  if (mobileMenu && mobileMenu.classList.contains("active")) {
+    if (!mobileMenu.contains(e.target) && !burger.contains(e.target)) {
+      mobileMenu.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  }
+});

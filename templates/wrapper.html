@@ -15,15 +15,25 @@
     <link rel="stylesheet" href="{% static 'assets/css/auth.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/personalAcc.css' %}"/>
     <link rel="stylesheet" href="{% static 'assets/css/createForm.css' %}"/>
+    {% block extra_head %}{% endblock %}
     {% include 'includes/ya_metrika.html' %}
 </head>
 <body>
+    {% block header %}
     {% include 'includes/header.html' %}
+    {% endblock %}
+    
     {% block content %}
     {% endblock %}
+    
+    {% block footer %}
     {% include 'includes/footer.html' %}
+    {% endblock %}
+    
+    {% block extra_scripts %}
     <script src="{% static 'assets/js/languageSwitcher.js' %} "></script>
     <script src="{% static 'assets/js/mobileMenu.js' %} "></script>
     <script src="{% static 'assets/js/cardText.js' %} "></script>
+    {% endblock %}
 </body>
 </html>

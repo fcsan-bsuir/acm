@@ -2,268 +2,273 @@
 {% load static %}
 
 {% block title %}
-    Главная
+    BSUIR Open XIV
+{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'assets/css/reset.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/variables.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/fonts.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'shared/header/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'shared/footer/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'shared/title/title.css' %}" />
+    <link rel="stylesheet" href="{% static 'shared/button/button.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/main-page.css' %}" />
+{% endblock %}
+
+{% block header %}
 {% endblock %}
 
 {% block content %}
-<main>
-  <section id="main-section">
-    <img
-      src="{% static 'assets/img/logo.svg' %}"
-      alt="BSUIR Open logo"
-      class="bsuir-open-logo"
-    />
-    <h1 class="main-title">{{ tr.title }}</h1>
-    <img src="{% static 'assets/img/tower.png' %}" alt="tower" class="tower" />
-    <img src="{% static 'assets/img/plane.png' %}" alt="plane" class="plane" />
-    <img src="{% static 'assets/img/roadr.png' %}" alt="road" class="road" />
-  </section>
-  <section id="about">
-    <h2 class="title">{{ tr.about }}</h2>
-    <p class="text">
-      {{ tr.index_about_header }}
-    </p>
-    <ul class="about-list">
-      <li>
-        <img
-          class="plane-point-image"
-          src="{% static 'assets/img/plane point.svg' %}"
-          alt="plane point"
-        />
-        <p class="text">{{ tr.index_about_list_1 }}</p>
-      </li>
-      <li>
-        <img
-          class="plane-point-image"
-          src="{% static 'assets/img/plane point.svg' %}"
-          alt="plane point"
-        />
-        <p class="text">{{ tr.index_about_list_2 }}</p>
-      </li>
-      <li>
-        <img
-          class="plane-point-image"
-          src="{% static 'assets/img/plane point.svg' %}"
-          alt="plane point"
-        />
-        <p class="text">{{ tr.index_about_list_3 }}</p>
-      </li>
-      <li>
-        <img
-          class="plane-point-image"
-          src="{% static 'assets/img/plane point.svg' %}"
-          alt="plane point"
-        />
-        <p class="text">{{ tr.index_about_list_4 }}</p>
-      </li>
-      <li>
-        <img
-          class="plane-point-image"
-          src="{% static 'assets/img/plane point.svg' %}"
-          alt="plane point"
-        />
-        <p class="text">{{ tr.index_ages_header }}:</p>
-      </li>
-    </ul>
+<main class="main-page">
+      <section id="main" class="main">
+        <div class="main-span">
+          <h1 class="main-title">BSUIR Open XIV</h1>
+          <div class="hidden main-title-span">
+            <h1 class="main-title-mobile hidden">BSUIR Open</h1>
+            <h1 class="main-title-mobile hidden big-text">XIV</h1>
+          </div>
+          <p class="main-description">
+            14-й&nbsp;командный&nbsp;чемпионат&nbsp;БГУИР
+            по&nbsp;спортивному&nbsp;программированию
+          </p>
+        </div>
+        <img src="{% static 'assets/img/valoshka.svg' %}" alt="valoshka" class="valoshka" />
+      </section>
+      <section id="about" class="about">
+        <ul class="about-list">
+          <li class="about-list-item">
+            Проводится по стандартным правилам ICPC
+          </li>
+          <li class="about-list-item">Команды от 1 до 3 человек</li>
+          <li class="about-list-item">Участники со всего земного шара</li>
+          <li class="about-list-item">
+            Интересные задачи и незабываемые эмоции
+          </li>
+          <li class="about-list-item">Две возрастные категории:</li>
+        </ul>
+        <div class="teams">
+          <div class="team">
+            <span class="team-title">Junior</span>
+            <p class="team-description">школьные команды</p>
+          </div>
+          <img src="{% static 'assets/img/Logo.svg' %}" class="teams-logo" />
+          <div class="team">
+            <span class="team-title">Student</span>
+            <p class="team-description">студенческие команды</p>
+          </div>
+        </div>
+      </section>
+      <section id="stages" class="stages">
+        <nav class="nav">
+          <ul class="buttons"></ul>
+        </nav>
+        <div id="quaterfinals" class="stage">
+          <p>Цели отборочного тура:</p>
+          <ul class="stages-list">
+            <li class="stages-list-item">
+              дать возможность командам самостоятельно оценить уровень
+              подготовки к участию в Чемпионате;
+            </li>
+            <li class="stages-list-item">
+              команды, которые смогут бороться во втором отборочном туре
+              (полуфинале) за выход в финал Чемпионата.
+            </li>
+          </ul>
+          <p>
+            Четвертьфинал является обязательным отборочным этапом для команд
+            БГУИР и школьников. Остальные команды по желанию также могут принять
+            участие в данном туре. Смешанные команды, в состав которых входит
+            хотя бы один студент, магистрант или аспирант БГУИР, также должны
+            принимать участие в четвертьфинале соревнований.
+          </p>
+          <p>
+            Команды, решившие не менее половины из предложенных задач, проходят
+            во второй отборочный тур (полуфинал соревнований).
+          </p>
+        </div>
+        <div id="semifinals" class="stage">
+          <p>
+            Второй отборочный тур (полуфинал) проводится в очно-заочной форме.
+            Командам-участницам предлагается решить от 4 до 12 задач (текст
+            задач на русском и английском языках) за 4-5 астрономических часов.
+            Жюри имеет право продлить соревнования в случае каких-либо
+            непредвиденных обстоятельств.
+          </p>
+          <p>
+            Команды БГУИР участвуют в туре очно на базе университета. Команды не
+            из БГУИР решают тур заочно в своих учреждениях образования. За
+            соблюдение правил соревнований в данном случае отвечает тренер
+            команды. Участники других учреждений образования, изъявившие желание
+            участвовать в полуфинале на базе БГУИР, должны заранее сообщить
+            организаторам об этом.
+          </p>
+        </div>
+        <div id="finals" class="stage">
+          <p>
+            В следующий этап (финал) проходят 30 команд, показавшие лучшие
+            результаты на данном этапе, но не более:
+          </p>
+          <ul class="stages-list">
+            <li class="stages-list-item">
+              7 команд студентов, магистрантов и аспирантов БГУИР;
+            </li>
+            <li class="stages-list-item">
+              2 команд от каждого ВУЗа или ССУЗа Республики Беларусь и стран
+              зарубежья;
+            </li>
+          </ul>
+          <p>
+            Для команд из средних общеобразовательных учреждений проводится
+            отдельный финал, в который приглашается не более 25 команд и не
+            более одной команды от каждого учреждения образования. Решение об
+            участии в школьном финале команд, участники которых являются
+            представителями разных учреждений образования, принимается
+            организационным комитетом в индивидуальном порядке.
+          </p>
+          <p>
+            По решению оргкомитета и жюри количество команд, которое проходит в
+            следующий этап, их состав, а также квота могут быть изменены.
+          </p>
+          <p>
+            Финал соревнований проводится в очной форме. Участникам предлагается
+            решить от 6 до 12 алгоритмических задач (тексты задач на английском
+            языке) за 5 астрономических часов.
+          </p>
+        </div>
+      </section>
+      <section id="schedule" class="schedule">
+        <div class="schedule-list">
+          <div class="schedule-item flex-row">
+            <img src="{% static 'assets/img/maladosc.svg' %}" class="maladosc" />
+            <div>
+              <h3 class="schedule-title">Регистрация</h3>
+              <p class="schedule-description">1-20 марта</p>
+            </div>
+          </div>
+          <img
+            src="{% static 'assets/img/schedule-strelka.svg' %}"
+            class="schedule-strelka"
+          />
+          <div class="schedule-item flex-row-reverse">
+            <img src="{% static 'assets/img/maladosc.svg' %}" class="maladosc" />
+            <div>
+              <h3 class="schedule-title">Отборочный тур</h3>
+              <p class="schedule-description">16-22 марта</p>
+            </div>
+          </div>
+          <img
+            src="{% static 'assets/img/schedule-strelka.svg' %}"
+            class="schedule-strelka"
+          />
+          <div class="schedule-item flex-row">
+            <img src="{% static 'assets/img/maladosc.svg' %}" class="maladosc" />
+            <div>
+              <h3 class="schedule-title">Полуфинал</h3>
+              <p class="schedule-description">8 апреля</p>
+            </div>
+          </div>
+          <img
+            src="{% static 'assets/img/schedule-strelka.svg' %}"
+            class="schedule-strelka"
+          />
+        </div>
+        <div class="finals">
+          <img src="{% static 'assets/img/ornament-strelka-mobile.svg' %}" class="hidden" />
+          <h2 class="finals-title">Финал</h2>
+          <div class="finals-span">
+            <img src="{% static 'assets/img/ornament-strelka.svg' %}" class="strelka" />
+            <div class="description-mobile">
+              <p class="finals-description">Student - 24 апреля</p>
+              <p class="finals-description">Junior - 25 апреля</p>
+            </div>
+            <img
+              src="{% static 'assets/img/ornament-strelka.svg' %}"
+              class="strelka rotate"
+            />
+          </div>
+          <img src="{% static 'assets/img/ornament-strelka-mobile.svg' %}" class="hidden" />
+        </div>
+      </section>
+      <section id="partners" class="partners">
+        <div class="sponsors">
+          <div class="logos-line">
+            <a href="https://pinely.com" target="_blank">
+              <img src="{% static 'assets/img/sponsors/Pinely.svg' %}" class="pinely"
+            /></a>
+            <a href="https://yandex.by" target="_blank"
+              ><img src="{% static 'assets/img/sponsors/Yandex.svg' %}" class="yandex"
+            /></a>
+            <a href="https://mdait.by" target="_blank">
+              <img src="{% static 'assets/img/sponsors/MDA.svg' %}" class="mda"
+            /></a>
+            <a href="https://tdev.by/it/" target="_blank">
+              <img src="{% static 'assets/img/sponsors/T-Bank.svg' %}" class="tbank"
+            /></a>
+          </div>
+          <div class="logos-line">
+            <a href="https://www.openmygame.com" target="_blank">
+              <img src="{% static 'assets/img/sponsors/OpenMyGame.svg' %}" class="openmygame"
+            /></a>
+            <a href="https://www.modsen.by" target="_blank">
+              <img src="{% static 'assets/img/sponsors/Modsen.svg' %}" class="modsen"
+            /></a>
+          </div>
+          <div class="logos-line">
+            <a href="https://lwo.by" target="_blank">
+              <img src="{% static 'assets/img/sponsors/LWO.svg' %}" class="lwo"
+            /></a>
+            <a>
+              <img src="{% static 'assets/img/sponsors/Techarena.svg' %}" class="techarena"
+            /></a>
+            <a href="https://yadro.com" target="_blank">
+              <img src="{% static 'assets/img/sponsors/Yadro.svg' %}" class="yadro"
+            /></a>
+          </div>
+        </div>
+        <div class="sponsors-mobile">
+          <a href="https://pinely.com" target="_blank">
+            <img src="{% static 'assets/img/sponsors/Pinely.svg' %}" class="pinely"
+          /></a>
+          <a href="https://yandex.by" target="_blank"
+            ><img src="{% static 'assets/img/sponsors/Yandex.svg' %}" class="yandex"
+          /></a>
+          <a href="https://mdait.by" target="_blank">
+            <img src="{% static 'assets/img/sponsors/MDA.svg' %}" class="mda"
+          /></a>
+          <a href="https://tdev.by/it/" target="_blank">
+            <img src="{% static 'assets/img/sponsors/T-Bank.svg' %}" class="tbank"
+          /></a>
+          <a href="https://www.openmygame.com" target="_blank">
+            <img src="{% static 'assets/img/sponsors/OpenMyGame.svg' %}" class="openmygame"
+          /></a>
+          <a>
+            <img src="{% static 'assets/img/sponsors/Techarena.svg' %}" class="techarena"
+          /></a>
+          <a href="https://www.modsen.by" target="_blank">
+            <img src="{% static 'assets/img/sponsors/Modsen.svg' %}" class="modsen"
+          /></a>
+          <a href="https://lwo.by" target="_blank">
+            <img src="{% static 'assets/img/sponsors/LWO.svg' %}" class="lwo"
+          /></a>
+          <a href="https://yadro.com" target="_blank">
+            <img src="{% static 'assets/img/sponsors/Yadro.svg' %}" class="yadro"
+          /></a>
+        </div>
+        <img src="{% static 'assets/img/Logo.svg' %}" class="transparent-logo" />
+      </section>
+    </main>
+{% endblock %}
 
-    <div class="ages">
-      <div class="age">
-        <span class="title age-title">Junior</span>
-        <p class="text age-text">- {{ tr.index_age_junior }}</p>
-      </div>
-      <div class="age">
-        <span class="title age-title">Student</span>
-        <p class="text age-text">- {{ tr.index_age_student }}</p>
-      </div>
-    </div>
-  </section>
-  <section id="stages">
-    <h2 class="title title-right">{{ tr.stages }}</h2>
-    <nav>
-      <ul class="steps-list">
-        <li>
-          <button
-            class="step-button step-button-active"
-            data-target="#quaterfinal"
-          >
-            {{ tr.index_round_quarter }}
-          </button>
-        </li>
-        <li>
-          <button class="step-button" data-target="#halffinal">
-            {{ tr.index_round_semi }}
-          </button>
-        </li>
-        <li>
-          <button class="step-button" data-target="#final">{{ tr.index_round_final }}</button>
-        </li>
-      </ul>
-    </nav>
-    <div class="card">
-      <div class="card-header">
-        <p class="main-title card-title">{{ tr.title }}</p>
-        <img
-          src="{% static 'assets/img/logo.svg' %}"
-          alt="BSUIR Open logo"
-          class="card-logo"
-        />
-      </div>
-      <div class="card-body">
-        <div class="card-description active" id="quaterfinal">
-          <p class="stage-title">{{ tr.index_round_quarter }}</p>
-          <p class="text card-text">{{ tr.index_quarter_purpose }}:</p>
-          <ul class="card-description-list">
-            <li class="point">
-              <p class="text card-text">
-                {{ tr.index_quarter_list_1 }}
-              </p>
-            </li>
-            <li class="point">
-              <p class="text card-text">
-                {{ tr.index_quarter_list_2 }}
-              </p>
-            </li>
-          </ul>
-          <p class="text card-text">
-            {{ tr.index_quarter_info }}
-          </p>
-          <p class="text card-text">
-            {{ tr.index_quarter_pass }}
-          </p>
-        </div>
-        <div class="card-description" id="halffinal">
-          <p class="stage-title">{{ tr.index_round_semi }}</p>
-          <p class="text card-text">
-            {{ tr.index_semifinal_info }}
-          </p>
-          <p class="text card-text">
-            {{ tr.index_semifinal_details }}
-          </p>
-        </div>
-        <div class="card-description" id="final">
-          <p class="stage-title">{{ tr.index_round_final }}</p>
-          <p class="text card-text">
-            {{ tr.index_final_info }}
-          </p>
-          <ul class="card-description-list">
-            <li class="point">
-              <p class="text card-text">
-                {{ tr.index_final_list_1 }}
-              </p>
-            </li>
-            <li class="point">
-              <p class="text card-text">
-                {{ tr.index_final_list_2 }}
-              </p>
-            </li>
-          </ul>
-          <p class="text card-text">
-            {{ tr.index_final_additional }}
-          </p>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="timetable">
-    <span class="timetable-title">
-      <img class="plane-title" src="{% static 'assets/img/plane point.svg' %}" />
-      <h2 class="title">{{ tr.schedule }}</h2>
-    </span>
-    <div class="desktop-timetable">
-      <table class="table">
-        <thead>
-          <tr>
-            <td class="header-text">{{ tr.date }}</td>
-            <td class="header-text">{{ tr.one_stage }}</td>
-            <td class="header-text">{{ tr.status }}</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="underlined">
-            <td class="merge-date">
-              <img
-                src="{% static 'assets/img/merge-line.svg' %}"
-                alt=""
-                class="merge-line"
-              />
-              <div class="date">
-                <p class="date-text">{{ tr.reg_start_day }}</p>
-                <p class="date-text">{{ tr.reg_end_day }}</p>
-              </div>
-            </td>
-            <td class="stage-text">{{ tr.registration }}</td>
-            <td class="status-text">{{tr.reg_state}}</td>
-          </tr>
-          <tr class="underlined">
-            <td class="merge-date">
-              <img
-                src="{% static 'assets/img/merge-line.svg' %}"
-                alt=""
-                class="merge-line"
-              />
-              <div class="date">
-                <p class="date-text">{{ tr.qual_start_day }}</p>
-                <p class="date-text">{{ tr.qual_end_day }}</p>
-              </div>
-            </td>
-            <td class="stage-text">{{ tr.index_selection_header }}</td>
-            <td class="status-text">
-              {{tr.qual_state}}
-            </td>
-          </tr>
-          <tr class="underlined">
-            <td class="date-text">{{ tr.semi_day }}</td>
-            <td class="stage-text">{{ tr.semifinal }}</td>
-            <td class="status-text">{{tr.semi_state}}</td>
-          </tr>
-          <tr class="underlined">
-            <td class="date-text">{{ tr.stud_final_day }}</td>
-            <td>
-              <p class="stage-text">{{ tr.stud_final }}</p>
-              <p class="status-text">({{ tr.bsuir_address }})</p>
-            </td>
-            <td class="status-text">{{tr.stud_fin_state}}</td>
-          </tr>
-          <tr>
-            <td class="date-text">{{ tr.jun_final_day }}</td>
-            <td>
-              <p class="stage-text">{{ tr.jun_final }}</p>
-              <p class="status-text">( {{tr.bsuir_address}} )</p>
-            </td>
-            <td class="status-text">{{tr.jun_fin_state}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="mobile-timetable">
-      <p class="title timetable-title">{{ tr.registration }}</p>
-      <p class="text">{{tr.reg_start_day}} - {{tr.reg_end_day}}</p>
-      <p class="title timetable-title">{{ tr.index_selection_header }}</p>
-      <p class="text">{{tr.qual_start_day}} - {{tr.qual_end_day}}</p>
-      <p class="title timetable-title">{{tr.semifinal}}</p>
-      <p class="text">{{tr.semi_day}}</p>
-      <p class="title timetable-title">{{tr.stud_final}}</p>
-      <p class="text">{{tr.stud_final_day}}</p>
-      <p class="title timetable-title">{{tr.jun_final}}</p>
-      <p class="text">{{tr.jun_final_day}}</p>
-    </div>
-  </section>
-  <section id="partners">
-    <h2 class="title">Наши партнеры</h2>
-    <div class="partners-icons">
-      <a href="https://tdev.by/it/"><img src="{% static 'assets/img/sponsors/T-Bank.svg' %}" alt="T-Bank" class="sponsor-logo" /></a>
-      <a href="https://yadro.com"><img src="{% static 'assets/img/sponsors/YADRO.svg' %}" alt="YADRO" class="sponsor-logo" /></a>
-      <a href="https://www.belveb.by"><img src="{% static 'assets/img/sponsors/belveb.svg' %}" alt="BelVeb" class="sponsor-logo" id="belveb"/></a>
-      <a href="https://lwo.by/ru/main"><img src="{% static 'assets/img/sponsors/LWO.svg' %}" alt="LWO" class="sponsor-logo" /></a>
-      <a href="https://www.vadarod.by"><img src="{% static 'assets/img/sponsors/VADAROD.svg' %}" alt="Vadarod" class="sponsor-logo" id="vadarod"/></a>
-      <a href="#"><img src="{% static 'assets/img/sponsors/Uniapps.svg' %}" alt="Uniapps" class="sponsor-logo" /></a>
-      <a href="#"><img src="{% static 'assets/img/sponsors/TechArena.svg' %}" alt="TechArena" class="sponsor-logo" id="techarena"/></a>
-    </div>
-    <img src="{% static 'assets/img/plane-front.svg' %}" alt="plane" class="plane-front" />
-    <img src="{% static 'assets/img/cloud1.svg' %}" alt="" class="cloud-1" />
-    <img src="{% static 'assets/img/cloud2.svg' %}" alt="" class="cloud-2" />
-  </section>
-</main>
-<script src="{% static 'assets/js/scroll.js' %} "></script>
+{% block footer %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script type="module" src="{% static 'pages/main/utils/add-header.js' %}"></script>
+<script type="module" src="{% static 'pages/main/utils/add-footer.js' %}"></script>
+<script type="module" src="{% static 'pages/main/utils/add-buttons.js' %}"></script>
+<script type="module" src="{% static 'pages/main/utils/add-title.js' %}"></script>
+<script type="module" src="{% static 'assets/js/scroll.js' %}"></script>
+
 {% endblock %}

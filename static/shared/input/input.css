@@ -1,0 +1,47 @@
+.input {
+  --scale-factor: 0.6;
+  box-sizing: border-box;
+  border: 0.2em solid var(--green);
+  border-radius: 1em;
+  cursor: text;
+  font-size: var(--font-size-sm);
+  padding: 1vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--light-green);
+}
+
+.input::placeholder {
+  color: var(--light-green);
+  opacity: 1;
+}
+
+.input:focus {
+  transform: scale(1.02);
+}
+
+@media (min-width: 768px) {
+  .input {
+    --scale-factor: 0.8;
+    font-size: var(--font-size-xl);
+    border-radius: 0.7em;
+  }
+}
+
+@media (min-width: 1280px) {
+  .input {
+    --scale-factor: 1;
+    font-size: var(--font-size-3xl);
+    border-radius: 0.4em;
+  }
+}
+
+.input.custom-font {
+  font-size: calc(var(--max-font-size) * var(--scale-factor));
+}
+
+.input.custom-width {
+  width: calc(var(--max-width) * var(--scale-factor));
+}
