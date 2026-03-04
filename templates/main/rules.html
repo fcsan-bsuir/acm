@@ -595,6 +595,16 @@
         </article>
       </section>
     </main>
+    <script>
+      window.BSUIR_CONFIG = {
+        authenticated: {{ user.is_authenticated|yesno:"true,false" }},
+        authLinks: {
+            account: "{% url 'team-detail' %}",
+            logout: "{% url 'logout' %}",
+            login: "{% url 'login' %}",
+        }
+      };
+    </script>
     <script type="module" src="{% static 'assets/js/utils/add-header.js' %}"></script>
     <script type="module" src="{% static 'assets/js/utils/add-footer.js' %}"></script>
     <script type="module" src="{% static 'assets/js/utils/add-title.js' %}"></script>

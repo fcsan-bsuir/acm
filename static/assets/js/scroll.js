@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(
     ".header_nav a, .mobile_menu_nav a",
   );
-  const homeLink = document.querySelector('[href="#main"]');
+  const homeLink = document.querySelector(
+    '.header_nav a[href="#main"], .header_nav a[href="/#main"], .mobile_menu_nav a[href="#main"], .mobile_menu_nav a[href="/#main"]'
+  );
 
   navLinks.forEach((link) => {
     link.classList.remove("active");
@@ -27,15 +29,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document
-  .querySelectorAll(".header_nav a, .mobile_menu_nav a")
-  .forEach((link) => {
-    link.addEventListener("click", function (e) {
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .querySelectorAll(".header_nav a, .mobile_menu_nav a")
+    .forEach((link) => {
+      link.addEventListener("click", function (e) {
       const href = this.getAttribute("href");
-      if (href && href.startsWith("#")) {
+      
+      let targetId = null;
+      if (href) {
+        if (href.startsWith("#")) {
+          targetId = href;
+        } else {
+          try {
+            const url = new URL(href, window.location.href);
+            if (url.pathname === window.location.pathname && url.hash) {
+              targetId = url.hash;
+            }
+          } catch (error) {
+            console.error(error);
+          }
+        }
+      }
+      
+      if (targetId) {
         e.preventDefault();
 
-        const targetId = href;
         const targetSection = document.querySelector(targetId);
 
         if (targetSection) {
@@ -62,6 +81,7 @@ document
       }
     });
   });
+});
 
 window.addEventListener(
   "scroll",
@@ -98,7 +118,7 @@ window.addEventListener(
 
     if (currentSectionId) {
       const activeLinks = document.querySelectorAll(
-        `.header_nav a[href="#${currentSectionId}"], .mobile_menu_nav a[href="#${currentSectionId}"]`,
+        `.header_nav a[href="#${currentSectionId}"], .header_nav a[href="/#${currentSectionId}"], .mobile_menu_nav a[href="#${currentSectionId}"], .mobile_menu_nav a[href="/#${currentSectionId}"]`,
       );
 
       activeLinks.forEach((link) => {
@@ -110,7 +130,7 @@ window.addEventListener(
     } else {
       if (window.scrollY < 100) {
         const homeLinks = document.querySelectorAll(
-          '.header_nav a[href="#main"], .mobile_menu_nav a[href="#main"]',
+          '.header_nav a[href="#main"], .header_nav a[href="/#main"], .mobile_menu_nav a[href="#main"], .mobile_menu_nav a[href="/#main"]',
         );
         homeLinks.forEach((link) => {
           link.classList.add("active");

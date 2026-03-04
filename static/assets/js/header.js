@@ -16,6 +16,12 @@ export function createHeader(options = {}) {
         mobileRegister = "",
     } = authTexts;
 
+    const {
+        account: accountHref = "#account",
+        logout: logoutHref = "#logout",
+        login: loginHref = "#login",
+    } = options.authLinks || {};
+
     const header = document.createElement("header");
     header.className = "header";
 
@@ -43,13 +49,13 @@ export function createHeader(options = {}) {
 
     if (authenticated) {
         const accountLink = document.createElement("a");
-        accountLink.href = "#account";
+        accountLink.href = accountHref;
         accountLink.className = "header_account";
     accountLink.textContent = account;
     accountLink.dataset.text = account;
 
         const logoutLink = document.createElement("a");
-        logoutLink.href = "#logout";
+        logoutLink.href = logoutHref;
         logoutLink.className = "header_logout";
     logoutLink.textContent = logout;
     logoutLink.dataset.text = logout;
@@ -58,7 +64,7 @@ export function createHeader(options = {}) {
         actions.appendChild(logoutLink);
     } else {
         const loginLink = document.createElement("a");
-        loginLink.href = "#login";
+        loginLink.href = loginHref;
         loginLink.className = "header_login";
     loginLink.textContent = login;
     loginLink.dataset.text = login;
