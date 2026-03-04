@@ -4,36 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% block title %}{% endblock %} | BSUIR OPEN XIII</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="shortcut icon" type="image/ico" href="{% static 'favicon.png' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'assets/css/reset.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/variables.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/fonts.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+
     <link rel="stylesheet" href="{% static 'assets/css/title.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/button.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/input.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/droplist.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/footer.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/header.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/auth.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/command.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/auth.css' %}" />
+    
     <link rel="stylesheet" href="{% static 'assets/css/rules.css' %}" />
 
     {% block extra_head %}{% endblock %}
     {% include 'includes/ya_metrika.html' %}
 </head>
 <body>
-    {% block header %}
-    {% include 'includes/header.html' %}
-    {% endblock %}
     
     {% block content %}
-    {% endblock %}
-    
-    {% block footer %}
-    {% include 'includes/footer.html' %}
     {% endblock %}
     
     {% block extra_scripts %}

@@ -7,48 +7,50 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<main>
+    <h1 class="title title-head">
+        {{ tr.creating_team }}
+    </h1>
     <form method="post" id="create-team">
         {% csrf_token %}
         <input type="number" form="create-team" name="command_type" style="display: none;" value="0">
         <input type="number" form="create-team" name="univer_type" style="display: none;" value="0">
     </form>
-    <p class="title headline">
-        {{ tr.creating_team }}
-    </p>
-    <div class="options">
-        <div class="option command-type">
-            <button class="item brleft item-text active-form-button" id="school" data-key="0">
+    <form class="buttons">
+            <button type="button" class="button auth-button button-clicked command-type" id="school" data-key="0">
                 {{ tr.schoolar_team }}
             </button>
-            <button class="item brright item-text" id="university" data-key="1">
+            <button type="button" class="button button-primary auth-button command-type" id="university" data-key="1">
                 {{ tr.students_team }}
             </button>
-        </div>
-        <div class="option univer-type">
-            <button class="item brleft item-text active-form-button" id="whole" data-key="0">
+            <button type="button" class="button auth-button button-clicked univer-type" id="whole" data-key="0">
                 {{ tr.university_type_same_institution }}
             </button>
-            <button class="item brright item-text" id="mixed" data-key="1">
+            <button type="button" class="button button-primary auth-button univer-type" id="mixed" data-key="1">
                 {{ tr.university_type_mixed }}
             </button>
-        </div>
-    </div>
-    <div class="name_input_container" id="command_name">
-        <input type="text" aria-label="Имя" class="input" name="name" form="create-team" placeholder="Имя"/>
-    </div>
-    <div class="restriction">
-        <h6>{{ tr.required_fields }}<br>
-            {% for field, errors in form.errors.items %}
-            {% for error in errors %}
-                {{error}}</br>
-            {% endfor %}
-            {% endfor %}
-        </h6>
-    </div>
-    <div class="center button_add" id="command_apply">
-        <button class="button signUp-button" type="submit" form="create-team">{{ tr.create }}</button>
-    </div>
-</div>
-<script src="{% static 'assets/js/create-command.js' %}"></script>
+            <div class="name_input_container">
+                <input class="input auth-input" name="com-name" placeholder="Название команды"/>
+                <div class="alarm">
+                    <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
+                </div>
+            </div>
+                
+            <span class="error-info"> {{ tr.required_fields }}<br>
+                {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    {{error}}</br>
+                {% endfor %}
+                {% endfor %}
+            </span>
+        <button class="button button-primary auth-button"  type="submit" form="create-team">{{ tr.create }}</button>
+        </form>
+</main>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script type="module" src="{% static 'assets/js/utils/add-header.js' %}"></script>
+<script type="module" src="{% static 'assets/js/utils/add-footer.js' %}"></script>
+<script type="module" src="{% static 'assets/js/create-command.js' %}"></script>
 {% endblock %}
