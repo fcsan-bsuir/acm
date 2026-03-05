@@ -1,28 +1,61 @@
 {% extends "wrapper.html" %}
+{% load static %}
 
 {% block title %}
 Printing
 {% endblock %}
 
 {% block content %}
+<main>
+<h1 class="title title-head">Insert your code to print</h1>
 <style>
-    textarea.code{
-        border-radius: var(--button-border-radius);
-        width: 70%;
+    textarea.code {
+        box-sizing: border-box;
+        border: 0.2em solid var(--green);
+        border-radius: 1em;
+        width: 200%;
         height: 50vh;
-        color: black;
-        font-size: 15px;
-        padding: 10px;
+        color: var(--green);
+        font-size: var(--font-size-sm);
+        padding: 1vh 1rem;
         font-family: monospace;
+        font-weight: 600;
+        cursor: text;
+    }
+
+    textarea.code::placeholder {
+        color: var(--green);
+        opacity: 1;
+    }
+
+    textarea.code:focus {
+        transform: scale(1.02);
     }
 </style>
 <div class="container">
-    <form method="post">
+    <form class="login-form" method="post">
         {%csrf_token%}
-        <h3 class="title subtitle">Insert your code to print</h1>
         <textarea name="text" class="code"></textarea>
+        {% if form.errors %}
+        <span class="error-info" style="display: block;">
+            {% for field in form %}
+                {% for error in field.errors %}
+                    {{ error }}<br>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                {{ error }}<br>
+            {% endfor %}
+        </span>
+        {% endif %}
         <br>
-        <button type="submit" class="button">{{ tr.send }}</button>
+        <button type="submit" class="button button-primary auth-button">{{ tr.send }}</button>
     </form>
 </div>
+</main>
+{% endblock %}
+
+{% block extra_scripts %}
+<script type="module" src="{% static 'assets/js/utils/add-header.js' %}"></script>
+<script type="module" src="{% static 'assets/js/utils/add-footer.js' %}"></script>
 {% endblock %}

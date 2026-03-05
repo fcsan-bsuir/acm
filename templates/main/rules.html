@@ -1,25 +1,17 @@
+{% extends 'wrapper.html' %}
 {% load static %}
-<!doctype html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BSUIR Open XIV</title>
-    <link rel="stylesheet" href="{% static 'assets/css/reset.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/variables.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/fonts.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/header.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/footer.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/title.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/button.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/rules.css' %}" />
-  </head>
-  <body>
+
+{% block title %}
+    BSUIR Open XIV
+{% endblock %}
+
+{% block content%}
+
     <main class="rules-page">
       <section id="rules" class="rules-section">
         <article class="rules noised large-text d-flex">
           <div class="container">
+            <h1 class="title title-head"> Правила XIV Открытого чемпионата БГУИР <h1> 
             <div id="rules-title"></div>
             <h2 class="title subtitle">
               1. АППАРАТНОЕ И ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ
@@ -29,16 +21,16 @@
               Все решения участников тестируются на 64-битной операционной системе Linux. Доступные компиляторы:
             </p>
             <ul>
-              <li class="text">C11 (gcc-12.2.1)</li>
-              <li class="text">C++17 (gcc-12.2.1)</li>
-              <li class="text">C++20 (gcc-12.2.1)</li>
-              <li class="text">C# (mono-6.12.0)</li>
-              <li class="text">Go (go-1.19.9)</li>
-              <li class="text">Java (openjdk-19.0.2)</li>
-              <li class="text">Pascal (fpc-3.2.2)</li>
-              <li class="text">Python3 (pypy-7.3.12)</li>
-              <li class="text">Python3 (python-3.10.14)</li>
-              <li class="text">Rust (rustc-1.64.0)</li>
+              <li class="text">- C11 (gcc-12.2.1)</li>
+              <li class="text">- C++17 (gcc-12.2.1)</li>
+              <li class="text">- C++20 (gcc-12.2.1)</li>
+              <li class="text">- C# (mono-6.12.0)</li>
+              <li class="text">- Go (go-1.19.9)</li>
+              <li class="text">- Java (openjdk-19.0.2)</li>
+              <li class="text">- Pascal (fpc-3.2.2)</li>
+              <li class="text">- Python3 (pypy-7.3.12)</li>
+              <li class="text">- Python3 (python-3.10.14)</li>
+              <li class="text">- Rust (rustc-1.64.0)</li>
             </ul>
             <h3 class="title subsubtitle">1.2. Рабочие места</h3>
             <p class="text">
@@ -141,10 +133,10 @@
             </p>
             <ul>
               <li class="text">
-                7 команд студентов, магистрантов и аспирантов БГУИР;
+                - 7 команд студентов, магистрантов и аспирантов БГУИР;
               </li>
               <li class="text">
-                2 команд от каждого вуза или ссуза Республики Беларусь и стран
+                - 2 команд от каждого вуза или ссуза Республики Беларусь и стран
                 зарубежья;
               </li>
             </ul>
@@ -170,7 +162,7 @@
               зарегистрированных команд, желающих принять участие в чемпионате.
             </p>
 
-            <p class="underscored text">
+            <p class="text">
               Команды высших учебных заведений, в состав которых входит не менее
               двух финалистов студенческого командного чемпионата мира по
               программированию ICPC сезона 2023-2024, а также команды средних
@@ -245,10 +237,10 @@
 
             <p class="text">В решениях задач запрещено использовать:</p>
             <ol>
-              <li class="text">Работу с подкаталогами и файлами.</li>
-              <li class="text">Любые сетевые средства.</li>
+              <li class="text">- Работу с подкаталогами и файлами.</li>
+              <li class="text">- Любые сетевые средства.</li>
               <li class="text">
-                Любые другие средства или действия, которые могут нарушить работу
+                - Любые другие средства или действия, которые могут нарушить работу
                 программного обеспечения олимпиады (в том числе использование
                 вставок ассемблерного кода).
               </li>
@@ -283,9 +275,9 @@
               тесте № 9»), это означает, что:
             </p>
             <ul>
-              <li class="text">тесты с 1 по 8 прошли проверку;</li>
+              <li class="text">- тесты с 1 по 8 прошли проверку;</li>
               <li class="text">
-                на более сложном, чем предыдущие восемь, девятом тесте программа
+                - на более сложном, чем предыдущие восемь, девятом тесте программа
                 превысила предел времени.
               </li>
             </ul>
@@ -605,8 +597,9 @@
         }
       };
     </script>
+    
     <script type="module" src="{% static 'assets/js/utils/add-header.js' %}"></script>
     <script type="module" src="{% static 'assets/js/utils/add-footer.js' %}"></script>
     <script type="module" src="{% static 'assets/js/utils/add-title.js' %}"></script>
-  </body>
-</html>
+
+    {% endblock %}
