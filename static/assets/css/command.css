@@ -95,9 +95,7 @@ form input {
   flex-direction: row;
   justify-content: space-between;
 }
-.app-main header .button {
-    width: 50%;
-}
+
 .app-main footer {
     gap: 20px;
 }

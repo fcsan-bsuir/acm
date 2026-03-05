@@ -34,12 +34,12 @@
 
 .rules .title.subtitle {
   margin-top: 2rem;
-  font-size: var(--font-size-h3);
+  font-size: var(--font-size-h1);
 }
 
 .rules .title.subsubtitle {
   margin-top: 1.5rem;
-  font-size: var(--font-size-h4);
+  font-size: var(--font-size-h2);
 }
 
 .rules .text,

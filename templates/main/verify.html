@@ -9,13 +9,15 @@
 {% block content %}
 <main>
     <h1 class="title title-head">{{ tr.rul_page_team_create_page_team_verify_page_titl }}</h1>
-    <h2 class="title" style="text-align: center; font-size: 24px;">{{ tr.approvement_warning }}</h2>
+    <div class="profile-container">
+    <p class="profile-message">{{ tr.approvement_warning }}</p>
     <form method="POST" class="login-form">
         {% csrf_token %}
         <button class="button button-primary auth-button">
         {{ tr.confirm_button }}
         </button>
     </form>
+    <div>
 </main>
 {% endblock %}
 

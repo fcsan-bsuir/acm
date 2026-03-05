@@ -11,8 +11,8 @@
         <h1 class="title title-head">{{ tr.profile|default:"Личный кабинет" }}</h1>
 
         <div class="profile-container">
-            <p class="profile-message">{{ tr.empty_team|default:"Вы пока не состоите ни в одной команде" }}</p>
             {% if available_reg %}
+            <p class="profile-message">{{ tr.empty_team|default:"Вы пока не состоите ни в одной команде" }}</p>
                 {% if olymp_type == 'single' %}
                     <form action="/team/create" method="post">
                         {% csrf_token %}
@@ -22,7 +22,7 @@
                     <a href="{% url 'create-team' %}" class="button button-primary">{{ tr.create_team|default:"Создать команду" }}</a>
                 {% endif %}
             {% else %}
-                <h2 class="text">{{ tr.registration_closed|default:"Регистрация закрыта" }}</h2>
+                <p class="profile-message">{{ tr.registration_closed|default:"Регистрация закрыта" }}</p>
             {% endif %}
         </div>
     </main>
@@ -35,7 +35,7 @@
         
         {% if request.user.participant.team.is_ready %}
             <a href="{% url 'verification' %}">
-                <button class="button button-primary no-wrap">{{ tr.send }}</button>
+                <button class="button button-primary auth-button">{{ tr.send }}</button>
             </a>
         {% elif not request.user.participant.team.is_sent %}
              <!-- Info that team is not ready/sent yet -->
@@ -43,7 +43,7 @@
         
         {% if request.user.participant.team.can_print %}
             <a href="{% url 'printer' %}">
-                 <button class="button button-primary no-wrap">Отправить на печать</button>
+                 <button class="button button-primary auth-button">Отправить на печать</button>
             </a>
         {% endif %}
       </header>
@@ -95,7 +95,7 @@
                 <!-- No coach -->
                 {% if not request.user.participant.team.is_sent %}
                  <a href="{% url 'create-coach' %}" style="display: block; width: 100%;">
-                    <button class="button button-primary" style="width: 100%;">{{ tr.add_coach }}</button>
+                    <button class="button button-primary auth-button" style="width: 100%;">{{ tr.add_coach }}</button>
                  </a>
                 {% else %}
                     <div class="app-card">
