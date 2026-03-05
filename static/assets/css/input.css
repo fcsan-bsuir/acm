@@ -10,11 +10,11 @@
   padding-right: 1rem;
   font-weight: 600;
   font-family: var(--font-body);
-  color: var(--light-green);
+  color: var(--green);
 }
 
 .input::placeholder {
-  color: var(--light-green);
+  color: var(--green);
   opacity: 1;
 }
 

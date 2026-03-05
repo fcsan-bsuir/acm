@@ -16,6 +16,10 @@ main {
     flex: 1;
 }
 
+.title-subhead{
+    padding-bottom: 10px;
+}
+
 .app-main {
     box-sizing: border-box;
     padding: 50px 60px 50px 180px;
@@ -101,7 +105,7 @@ form input {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .app-table {
@@ -184,9 +188,6 @@ form input {
     .app-main header .button {
         width: 100%;
     }
-    .title {
-        font-size: 42px;
-    }
     form {
         gap: 20px;
     }
@@ -206,6 +207,10 @@ form input {
     .title {
         text-align: center;
         font-size: var(--font-size-3xl);
+    }
+
+    .app-card-info {
+        font-size: var(--font-size-base)
     }
 
     * {

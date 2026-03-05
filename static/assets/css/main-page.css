@@ -37,7 +37,7 @@
 .main-description {
   font-family: var(--font-body);
   font-size: 2vmax;
-  color: var(--light-green);
+  color: var(--green);
 }
 
 section:not(#main):not(.participants-button) {
@@ -178,7 +178,7 @@ section:not(#main):not(.participants-button) {
 
 .schedule-description {
   font-size: var(--font-size-2xl);
-  color: var(--light-green);
+  color: var(--green);
 }
 
 .maladosc {
@@ -559,7 +559,7 @@ section:not(#main):not(.participants-button) {
     width: 60px;
   }
 
-  .innotech {
+  .openmygame {
     width: 300px;
   }
 

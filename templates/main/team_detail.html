@@ -80,8 +80,8 @@
             {% if request.user.participant.team.coach %}
               <div class="app-card">
                 <div>
-                  <h3 class="title title-subhead">{{ tr.coach }}</h3>
-                  <h4 class="title">{{ request.user.participant.team.coach.fullname }}</h4>
+                  <h4 class="title">{{ tr.coach }}</h3>
+                  <h3 class="title title-subhead">{{ request.user.participant.team.coach.fullname }}</h4>
                   <p class="app-card-info">{{ tr.phone }}: {{ request.user.participant.team.coach.phone }}</p>
                   <p class="app-card-info">{{ tr.email }}: {{ request.user.participant.team.coach.email }}</p>
                 </div>
@@ -110,10 +110,10 @@
             {% for participant in request.user.participant.team.participants.all %}
               <div class="app-card">
                 <div>
-                  <h3 class="title title-subhead">{{ tr.participant }}</h3>
+                  <h4 class="title">{{ tr.participant }}</h3>
                   
                   {% if participant.is_done or participant != request.user.participant %}
-                      <h4 class="title">{{ participant.fullname }}</h4>
+                      <h3 class="title title-subhead">{{ participant.fullname }}</h4>
                       <p class="app-card-info">{{ tr.phone }}: {{ participant.phone }}</p>
                       <p class="app-card-info">{{ tr.email }}: {{ participant.email }}</p>
                    {% else %}
