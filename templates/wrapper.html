@@ -23,6 +23,17 @@
     
     <link rel="stylesheet" href="{% static 'assets/css/rules.css' %}" />
 
+    <script>
+        window.BSUIR_CONFIG = {
+            authenticated: {{ user.is_authenticated|yesno:"true,false" }},
+            authLinks: {
+                account: "{% url 'team-detail' %}",
+                logout: "{% url 'logout' %}",
+                login: "{% url 'login' %}",
+            },
+        };
+    </script>
+
     {% block extra_head %}{% endblock %}
     {% include 'includes/ya_metrika.html' %}
 </head>

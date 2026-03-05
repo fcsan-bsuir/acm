@@ -1,7 +1,12 @@
 {% extends "wrapper.html" %}
+{% load static %}
 
 {% block title %}
 {{tr.team_list}}
+{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'assets/css/team-list.css' %}" />
 {% endblock %}
 
 {% block content %}
@@ -54,6 +59,9 @@
         </div>
     </article>
 </main>
+{% endblock %}
 
-
+{% block extra_scripts %}
+<script type="module" src="{% static 'assets/js/utils/add-header.js' %}"></script>
+<script type="module" src="{% static 'assets/js/utils/add-footer.js' %}"></script>
 {% endblock %}

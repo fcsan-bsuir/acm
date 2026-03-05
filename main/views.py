@@ -6,6 +6,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404, redirect
 from django.views import View
 from django.views.generic import CreateView, TemplateView
+from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponse
@@ -106,6 +107,11 @@ class UserLoginView(LanguageMixin, LoginView):
 
     def post(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('index')
 
 
 class TeamListView(LanguageMixin, View):

@@ -49,7 +49,7 @@ const participantsButton = createButton({
   text: "Список участников",
   role: "primary",
   onClick: () => {
-    window.location.href = "/participants";
+    window.location.href = "/teams";
   },
   fontSize: "1.25rem",
 });

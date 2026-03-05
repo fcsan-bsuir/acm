@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="{% static 'assets/css/header.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/auth.css' %}" />
 
+    <!--
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    -->
     <style>
         .checkbox-container {
             display: flex;
@@ -58,9 +60,11 @@
         <span class="error-info" style="display: none;">Пароли не совпадают</span>
         {% endif %}
 
+        <!--
         <div style="margin-top: 10px; margin-bottom: 10px;">
            <label>Captcha:</label> {{ form.captcha }}
         </div>
+        -->
 
         {% if agreement %}
         <div class="checkbox-container">

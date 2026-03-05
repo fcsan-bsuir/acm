@@ -1,5 +1,4 @@
 from django.urls import path
-from django.contrib.auth.views import LogoutView
 from main.views import (
     ChangeCoachView,
     CreateParticipantView,
@@ -16,7 +15,7 @@ from main.views import (
     IndexView,
     RulesView,
     CommonInfoView,
-    UserLoginView,
+    logout_user,
     SignUpView,
     TeamInfoView,
     FinalPrintView,
@@ -40,7 +39,7 @@ urlpatterns = [
     path('team/printer', FinalPrintView.as_view(), name='printer'),
 
     path('api/team/<int:id>', TeamInfoView.as_view()),
-    path('accounts/', LogoutView.as_view(), name='logout'),
+    path('accounts/logout', logout_user, name='logout'),
     path('accounts/login', UserLoginView.as_view(), name='login'),
     path('accounts/signup', SignUpView.as_view(), name='signup'),
 ]

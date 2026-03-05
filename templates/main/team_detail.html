@@ -1,28 +1,28 @@
 {% extends 'wrapper.html' %}
 {% load static %}
 
-{% block title %} {{ tr.profile }} {% endblock %}
+{% block title %} {{ tr.profile|default:"Личный кабинет" }} {% endblock %}
 
 {% block content %}
 
 {% if not request.user.participant.team %}
     <!-- No Team View -->
     <main>
-        <h1 class="title title-head">{{ tr.profile }}</h1>
+        <h1 class="title title-head">{{ tr.profile|default:"Личный кабинет" }}</h1>
 
         <div class="profile-container">
-            <p class="profile-message">{{ tr.empty_team }}</p>
+            <p class="profile-message">{{ tr.empty_team|default:"Вы пока не состоите ни в одной команде" }}</p>
             {% if available_reg %}
                 {% if olymp_type == 'single' %}
                     <form action="/team/create" method="post">
                         {% csrf_token %}
-                        <button class="button button-primary" type="submit">{{ tr.create_team }}</button>
+                        <button class="button button-primary" type="submit">{{ tr.create_team|default:"Создать команду" }}</button>
                     </form>
                 {% else %}
-                    <a href="{% url 'create-team' %}" class="button button-primary">{{ tr.create_team }}</a>
+                    <a href="{% url 'create-team' %}" class="button button-primary">{{ tr.create_team|default:"Создать команду" }}</a>
                 {% endif %}
             {% else %}
-                <h2 class="text">{{ tr.registration_closed }}</h2>
+                <h2 class="text">{{ tr.registration_closed|default:"Регистрация закрыта" }}</h2>
             {% endif %}
         </div>
     </main>
@@ -48,7 +48,7 @@
         {% endif %}
       </header>
 
-      <main class="app-table">
+      <div class="app-table">
           <div class="app-row">
               <h2 class="title-subhead">{{ tr.status }}</h2>
               <h2 class="title-subhead">{{ request.user.participant.team.get_status_display }}</h2>
@@ -71,7 +71,7 @@
                   <h2 class="title-subhead">{{ request.user.participant.team.system_password }}</h2>
               </div>
           {% endif %}
-      </main>
+      </div>
 
       <footer>
         <div class="app-cards">

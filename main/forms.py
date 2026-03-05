@@ -20,7 +20,7 @@ class AuthUserForm(AuthenticationForm, forms.ModelForm):
 		fields = ('username', 'password')
 
 class CreateUserForm(UserCreationForm):
-    captcha = ReCaptchaField()
+    # captcha = ReCaptchaField()
     personal_data_agreement = forms.BooleanField(initial=False, required=False)
 
 class CreateParticipantForm(forms.ModelForm):
@@ -44,15 +44,15 @@ class CreateParticipantForm(forms.ModelForm):
         super(CreateParticipantForm, self).__init__(*args, **kwargs)
         self.fields['student_status'].widget.attrs.update({
             'data-default': 'Статус',
-            'class': 'selects'
+            'class': 'droplist auth-input'
         })
         self.fields['tshirt_size'].widget.attrs.update({
             'data-default': 'Размер майки',
-            'class': 'selects'
+            'class': 'droplist auth-input'
         })
         self.fields['country'].widget.attrs.update({
             'data-default': 'Страна',
-            'class': 'selects'
+            'class': 'droplist auth-input'
         })
 
         self.fields['firstname'].widget.attrs.update({'placeholder': 'Имя', 'class': 'btn-star-input'})
@@ -106,10 +106,9 @@ class CreateCoachForm(forms.ModelForm):
         self.fields['lastname'].widget.attrs.update({'class': 'btn-star-input'})
         self.fields['email'].widget.attrs.update({'class': 'btn-star-input'})
         self.fields['phone'].widget.attrs.update({'class': 'btn-star-input'})
-        self.fields['tshirt_size'].widget.attrs.update({'class': 'btn-star-input'})
         self.fields['firstname'].widget.attrs.update({'placeholder': 'Имя'})
         self.fields['secondname'].widget.attrs.update({'placeholder': 'Отчество'})
         self.fields['lastname'].widget.attrs.update({'placeholder': 'Фамилия'})
         self.fields['email'].widget.attrs.update({'placeholder': 'Email'})
         self.fields['phone'].widget.attrs.update({'placeholder': 'Номер телефона'})
-        self.fields['tshirt_size'].widget.attrs.update({'class': 'selects', 'data-default': 'Размер майки'})
+        self.fields['tshirt_size'].widget.attrs.update({'class': 'droplist auth-input', 'data-default': 'Размер майки'})

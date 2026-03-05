@@ -7,15 +7,19 @@
 {% endblock %}
 
 {% block content %}
-<div class="container_pa colflex center_pa">
-    <h2 class="text" style="text-align: center;">{{ tr.approvement_warning }}</h2>
-    <form method="POST">
+<main>
+    <h1 class="title title-head">{{ tr.rul_page_team_create_page_team_verify_page_titl }}</h1>
+    <h2 class="title" style="text-align: center; font-size: 24px;">{{ tr.approvement_warning }}</h2>
+    <form method="POST" class="login-form">
         {% csrf_token %}
-        <button class="button signUp-button">
+        <button class="button button-primary auth-button">
         {{ tr.confirm_button }}
         </button>
     </form>
-</div>
+</main>
+{% endblock %}
 
-<script src="{% static 'assets/js/forms.js' %}"></script>
+{% block extra_scripts %}
+<script type="module" src="{% static 'assets/js/utils/add-header.js' %}"></script>
+<script type="module" src="{% static 'assets/js/utils/add-footer.js' %}"></script>
 {% endblock %}

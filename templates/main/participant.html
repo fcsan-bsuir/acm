@@ -89,3 +89,11 @@
       </form>
 </main>
 {% endblock %}
+
+{% block extra_scripts %}
+<script type="module" src="{% static 'assets/js/utils/add-header.js' %}"></script>
+<script type="module" src="{% static 'assets/js/utils/add-footer.js' %}"></script>
+<script type="module">
+  import { createDroplist } from "{% static 'assets/js/droplist.js' %}";
+</script>
+{% endblock %}
