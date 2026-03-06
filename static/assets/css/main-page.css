@@ -359,6 +359,8 @@ section:not(#main):not(.participants-button) {
     justify-content: center;
     flex-direction: column;
     gap: 30px;
+    padding-right: 0;
+    margin-top: 0;
   }
 
   .big-text {
