@@ -92,7 +92,7 @@ class SignUpView(LanguageMixin, CreateView):
 
 class UserLoginView(LanguageMixin, LoginView):
     form_class = AuthUserForm
-    success_url = 'index'
+    next_page = 'team-detail'
     template_name = 'main/registration/login.html'
 
     def get(self, request, *args, **kwargs):

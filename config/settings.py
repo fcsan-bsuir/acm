@@ -216,7 +216,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'team-detail'
 LOGOUT_REDIRECT_URL = 'index'
 
 # Getting version of project
