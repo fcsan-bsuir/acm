@@ -40,7 +40,7 @@
         "en": "BSUIR Open XIV"
     },
     "profile": {
-        "ru": "Личный кабинет",
+        "ru": "Профиль",
         "en": "Profile"
     },
     "edit": {
@@ -470,8 +470,8 @@
         "en": "2.1. Testing System"
     },
     "rul_page_titl_hw_and_sw_testsys_descr": {
-        "ru": "Intel(R) Xeon(R) CPU E5-2630 @ 2.20GHz, 15MB cache, virtualizаtion on 8 core, 8GB RAM, OS Linux. Доступные компиляторы:",
-        "en": "Intel(R) Xeon(R) CPU E5-2660 @ 2.20GHz, 2048KB cache, virtualizаtion on 6 core, 8GB RAM, OS Linux. Available compilers:"
+        "ru": "Все решения участников тестируются на 64-битной операционной системе Linux. Доступные компиляторы:",
+        "en": "All participant solutions are tested on a 64-bit Linux operating system. Available compilers:"
     },
     "rul_page_titl_hw_and_sw_testsys_compil_1": {
         "ru": "GNU c 11 7.3",
@@ -870,8 +870,8 @@
         "en": "Passwords do not match"
     },
     "send_to_print": {
-        "ru": "Отправить на печать",
-        "en": "Send to print"
+        "ru": "Печать на принтере",
+        "en": "Print on printer"
     },
     "rul_page_titl_general_info_title": {
         "ru": "1. ОБЩАЯ ИНФОРМАЦИЯ",
@@ -970,7 +970,7 @@
         "en": "Teams that violate the rules will be disqualified. In case of disputes, the burden of proving compliance with the rules lies entirely with participants."
     },
     "rul_page_titl_hw_and_sw_testsys_compil": {
-        "ru": "<ul><li>C11 (gcc-12.2.1)</li><li>C++17 (gcc-12.2.1)</li><li>C++20 (gcc-12.2.1)</li><li>C# (mono-6.12.0)</li><li>Go (go-1.19.9)</li><li>Java (openjdk-19.0.2)</li><li>Pascal (fpc-3.2.2)</li><li>Python3 (pypy-7.3.12)</li><li>Python3 (python-3.10.14)</li><li>Rust (rustc-1.64.0)</li></ul>",
-        "en": "<ul><li>C11 (gcc-12.2.1)</li><li>C++17 (gcc-12.2.1)</li><li>C++20 (gcc-12.2.1)</li><li>C# (mono-6.12.0)</li><li>Go (go-1.19.9)</li><li>Java (openjdk-19.0.2)</li><li>Pascal (fpc-3.2.2)</li><li>Python3 (pypy-7.3.12)</li><li>Python3 (python-3.10.14)</li><li>Rust (rustc-1.64.0)</li></ul>"
+        "ru": "<ul><li>- C11 (gcc-12.2.1)</li><li>- C++17 (gcc-12.2.1)</li><li>- C++20 (gcc-12.2.1)</li><li>- C# (mono-6.12.0)</li><li>- Go (go-1.19.9)</li><li>- Java (openjdk-19.0.2)</li><li>- Pascal (fpc-3.2.2)</li><li>- Python3 (pypy-7.3.12)</li><li>- Python3 (python-3.10.14)</li><li>- Rust (rustc-1.64.0)</li></ul>",
+        "en": "<ul><li>- C11 (gcc-12.2.1)</li><li>- C++17 (gcc-12.2.1)</li><li>- C++20 (gcc-12.2.1)</li><li>- C# (mono-6.12.0)</li><li>- Go (go-1.19.9)</li><li>- Java (openjdk-19.0.2)</li><li>- Pascal (fpc-3.2.2)</li><li>- Python3 (pypy-7.3.12)</li><li>- Python3 (python-3.10.14)</li><li>- Rust (rustc-1.64.0)</li></ul>"
     }
 }

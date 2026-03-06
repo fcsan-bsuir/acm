@@ -18,22 +18,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/header.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/auth.css' %}" />
 
-    <!--
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    -->
-    <style>
-        .checkbox-container {
-            display: flex;
-            align-items: center; 
-            gap: 8px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-        .checkbox-label {
-            font-family: 'Open Sans', sans-serif;
-            font-size: 14px;
-        }
-    </style>
+    
     <title>{{ tr.registration|default:"Регистрация" }}</title>
 </head>
 <body>
@@ -60,13 +45,7 @@
         {% else %}
         <span class="error-info" style="display: none;">{{ tr.passwords_do_not_match|default:"Пароли не совпадают" }}</span>
         {% endif %}
-
-        <!--
-        <div style="margin-top: 10px; margin-bottom: 10px;">
-           <label>Captcha:</label> {{ form.captcha }}
-        </div>
-        -->
-
+        
         {% if agreement %}
         <div class="checkbox-container">
             <input type="checkbox" id="terms" name="personal_data_agreement" class="checkbox" required>
@@ -75,6 +54,8 @@
             </label>
         </div>
         {% endif %}
+
+        {{form.captcha}}
 
         <button class="button button-primary auth-button" type="submit" style="margin-top: 20px;">{{ tr.signup|default:"Зарегистрироваться" }}</button>
     </form>
