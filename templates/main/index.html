@@ -80,7 +80,7 @@
             <img src="{% static 'assets/img/maladosc_light.svg' %}" class="maladosc" />
             <div>
               <h3 class="schedule-title">{{ tr.registration|default:"Регистрация" }}</h3>
-              <p class="schedule-description">{{ tr.reg_start_day|default:"1 марта" }} - {{ tr.reg_end_day|default:"20 марта" }}</p>
+              <p class="schedule-description">{{ tr.reg_start_day }} - {{ tr.reg_end_day }}</p>
             </div>
           </div>
           <img
@@ -91,7 +91,7 @@
             <img src="{% static 'assets/img/maladosc_light.svg' %}" class="maladosc" />
             <div>
               <h3 class="schedule-title">{{ tr.index_selection_header|default:"Отборочный тур" }}</h3>
-              <p class="schedule-description">{{ tr.qual_start_day|default:"16 марта" }} - {{ tr.qual_end_day|default:"22 марта" }}</p>
+              <p class="schedule-description">{{ tr.qual_start_day }} - {{ tr.qual_end_day }}</p>
             </div>
           </div>
           <img
@@ -102,7 +102,7 @@
             <img src="{% static 'assets/img/maladosc_light.svg' %}" class="maladosc" />
             <div>
               <h3 class="schedule-title">{{ tr.semifinal|default:"Полуфинал" }}</h3>
-              <p class="schedule-description">{{ tr.semi_day|default:"8 апреля" }}</p>
+              <p class="schedule-description">{{ tr.semi_day }}</p>
             </div>
           </div>
           <img
@@ -116,8 +116,8 @@
           <div class="finals-span">
             <img src="{% static 'assets/img/ornament-strelka.svg' %}" class="strelka" />
             <div class="description-mobile">
-              <p class="finals-description">{{ tr.stud_final|default:"Student" }} - {{ tr.stud_final_day|default:"24 апреля" }}</p>
-              <p class="finals-description">{{ tr.jun_final|default:"Junior" }} - {{ tr.jun_final_day|default:"25 апреля" }}</p>
+              <p class="finals-description">{{ tr.stud_final|default:"Student" }} - {{ tr.stud_final_day }}</p>
+              <p class="finals-description">{{ tr.jun_final|default:"Junior" }} - {{ tr.jun_final_day }}</p>
             </div>
             <img
               src="{% static 'assets/img/ornament-strelka.svg' %}"
