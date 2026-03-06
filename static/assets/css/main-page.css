@@ -1,14 +1,5 @@
 @keyframes rotate {
   from {
-    transform: translate(220%, 0%) rotate(0deg);
-  }
-  to {
-    transform: translate(220%, 0%) rotate(360deg);
-  }
-}
-
-@keyframes rotate-mobile {
-  from {
     transform: rotate(0deg);
   }
   to {
@@ -23,7 +14,6 @@
 }
 
 .valoshka {
-  position: absolute;
   align-self: center;
   width: 30vw;
   animation: rotate 20s linear infinite;
@@ -53,6 +43,9 @@ section:not(#main):not(.participants-button) {
   width: 100vw;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding-right: 80px;
+  margin-top: -40px;
 }
 
 .main-span {
@@ -380,7 +373,7 @@ section:not(#main):not(.participants-button) {
   }
 
   .valoshka {
-    animation: rotate-mobile 20s linear infinite;
+    animation: rotate 20s linear infinite;
     position: relative;
     width: 80vw;
   }
