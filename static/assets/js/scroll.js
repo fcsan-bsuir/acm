@@ -58,6 +58,26 @@ function setActiveByHash(hash) {
   });
 }
 
+function closeMobileMenu() {
+  const mobileMenu = document.querySelector(".mobile_menu");
+  if (!mobileMenu || !mobileMenu.classList.contains("active")) {
+    return;
+  }
+
+  const scrollY = parseInt(document.body.style.top || "0", 10) * -1;
+
+  mobileMenu.classList.remove("active");
+  document.body.classList.remove("mobile-menu-open");
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.width = "";
+  document.body.style.overflow = "";
+
+  if (!Number.isNaN(scrollY) && scrollY >= 0) {
+    window.scrollTo(0, scrollY);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   if (normalizePath(window.location.pathname) !== getHomePathname()) {
     return;
@@ -77,6 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (targetId) {
           e.preventDefault();
           setActiveByHash(targetId);
+
+          closeMobileMenu();
 
           const targetSection = document.querySelector(targetId);
 
@@ -98,12 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const currentUrl = new URL(window.location.href);
             currentUrl.hash = targetId;
             window.history.replaceState({}, "", currentUrl.toString());
-
-            const mobileMenu = document.querySelector(".mobile_menu");
-            if (mobileMenu && mobileMenu.classList.contains("active")) {
-              mobileMenu.classList.remove("active");
-              document.body.style.overflow = "";
-            }
           }
         }
       });
@@ -153,10 +169,9 @@ document.addEventListener("click", (e) => {
   const mobileMenu = document.querySelector(".mobile_menu");
   const burger = document.querySelector(".header_burger");
 
-  if (mobileMenu && mobileMenu.classList.contains("active")) {
+  if (mobileMenu && burger && mobileMenu.classList.contains("active")) {
     if (!mobileMenu.contains(e.target) && !burger.contains(e.target)) {
-      mobileMenu.classList.remove("active");
-      document.body.style.overflow = "";
+      closeMobileMenu();
     }
   }
 });

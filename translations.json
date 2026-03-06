@@ -89,7 +89,7 @@
     },
     "logout": {
         "ru": "Выйти",
-        "en": "Logout"
+        "en": "Sign out"
     },
     "rules": {
         "ru": "Правила",
@@ -543,7 +543,7 @@
     },
     "rul_page_titl_conduct_team_rules": {
         "ru": "Команда может состоять не более чем из 3 участников. Участнику соревнований запрещается входить в состав более чем одной команды. Команда, в состав которой входит хотя бы один студент, магистрант или аспирант вуза или ссуза, считается студенческой командой. Команда, в состав которой входят участники не из одного учебного заведения считается смешанной. Студенческие смешанные команды в очном финале официальное участие не принимают. Не полная команда, состоящая менее чем из 2 участников в очном финале официальное участие не принимают.",
-        "en": "A team must consist of 2 or 3 members. Being part of more than one team is prohibited for participants. A team consisting of at least one university student, graduate student or postgraduate student of a higher educational institution or college is considered to be a student team. A team that includes participants from different educational institutions, except primary and secondary general education, is considered a mixed team. Mixed teams do not take part in on-campus Finals. An incomplete team consisting of less than 2 participants does not officially participate in the intramural final."
+        "en": "A team must consist of 2 or 3 members. Being part of more than one team is prohibited for participants. A team consisting of at least one university student, graduate student or postgraduate student of a higher educational institution or college is considered to be a student team. A team that includes participants from different educational institutions, except primary and secondary general education, is considered a mixed team. Mixed teams do not take part in on-campus Finals. An incomplete team consisting of less than 2 participants does not officially participate in the final."
     },
     "rul_page_titl_conduct_championship_rules": {
         "ru": "Чемпионат по программированию проводится по правилам ICPC и состоит из трех туров. Во время всех туров чемпионата запрещается обсуждать идеи и обмениваться решениями задач вне команды.",
@@ -607,7 +607,7 @@
     },
     "rul_page_titl_conduct_other_conditions_special_conditions": {
         "ru": "Команды высших учебных заведений, в состав которых входит не менее двух финалистов студенческого командного чемпионата мира по программированию ICPC сезона 2025-2026, а также команды средних общеобразовательных учреждений (школ, гимназий, лицеев), в состав которых входит не менее двух призеров заключительного этапа республиканской олимпиады по информатике 2026 года (диплом 1, 2 и 3 степени), допускаются к участию в финале соревнований без прохождения отборочных этапов и сверх установленной квоты для учебного заведения.",
-        "en": "Teams from higher educational institutions with at least two finalists of ICPC season 2024-2025 and teams from general secondary educational institutions (school, gymnasium, lyceum), which include at least two award-winners of the final stage of the Republican Olympiad in informatics in 2025 (diploma of 1st, 2nd and 3rd degree), are allowed to participate in the Finals of the competition without passing qualification stages and above the established quota for an educational institution."
+        "en": "Teams from higher educational institutions with at least two finalists of ICPC season 2025-2026 and teams from general secondary educational institutions (school, gymnasium, lyceum), which include at least two award-winners of the final stage of the Republican Olympiad in informatics in 2026 (diploma of 1st, 2nd and 3rd degree), are allowed to participate in the Finals of the competition without passing qualification stages and above the established quota for an educational institution."
     },
     "rul_page_titl_conduct_other_conditions_equipment_rules": {
         "ru": "Во время второго отборочного тура (полуфинала) и финала соревнований каждой команде предоставляется один компьютер.",
@@ -806,8 +806,8 @@
         "en": "To participate in the qualifying round, registration must be confirmed by the organizers. The list of registered teams and their status can be viewed at <a class=\"underscored\" href=\"/teams\">Team List</a>."
     },
     "common_info_page_semifinal_dates": {
-        "ru": "Полуфинал XIII Международного открытого чемпионата БГУИР по программированию пройдет <span class=\"color-red\">09.04.2025 с 14:00 до 19:00 по минскому времени</span>.",
-        "en": "The Semi-Finals of the XIII International Open BSUIR Programming Contest will be held on <span class=\"color-red\">09.04.2025, from 14:00 to 19:00(GMT+3)</span>."
+        "ru": "Полуфинал XIV Международного открытого чемпионата БГУИР по программированию пройдет <span class=\"color-red\">08.04.2026 с 14:00 до 19:00 по минскому времени</span>.",
+        "en": "The Semi-Finals of the XIV International Open BSUIR Programming Contest will be held on <span class=\"color-red\">08.04.2026, from 14:00 to 19:00(GMT+3)</span>."
     },
     "common_info_page_semifinal_participants": {
         "ru": "Напомним, что данный этап является обязательным в том числе для команд из других вузов. Список участников полуфинала можно найти по <a class=\"underscored\" href=\"/semifinal\">ссылке.</a>",
