@@ -230,7 +230,7 @@ class Participant(models.Model):
     def is_done(self):
         if(
             self.firstname and
-            self.secondname and
+            # self.secondname and
             self.lastname and
             self.email and
             self.phone and
