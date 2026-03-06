@@ -589,6 +589,10 @@
         "ru": "По решению оргкомитета и жюри количество команд, которое проходит в следующий этап, их состав, а также квота могут быть изменены.",
         "en": "By the decision of organizers and judges the number of teams that pass in the next stage, their composition, as well as the quota can be changed."
     },
+    "rul_page_titl_conduct_semi_finals_quota": {
+        "ru": "Для студенческих команд Республики Беларусь выделяется квота не менее 30% от общего числа участников финала.",
+        "en": "A quota of at least 30% of the total number of final participants is allocated for student teams from the Republic of Belarus."
+    },
     "rul_page_titl_conduct_finals_titl": {
         "ru": "3.3. Финал чемпионата",
         "en": "3.3. Finals"
