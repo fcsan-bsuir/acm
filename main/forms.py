@@ -56,7 +56,7 @@ class CreateParticipantForm(forms.ModelForm):
         })
 
         self.fields['firstname'].widget.attrs.update({'placeholder': 'Имя', 'class': 'btn-star-input'})
-        self.fields['secondname'].widget.attrs.update({'placeholder': 'Отчество', 'class': 'btn-star-input'})
+        self.fields['secondname'].widget.attrs.update({'placeholder': 'Отчество'})
         self.fields['lastname'].widget.attrs.update({'placeholder': 'Фамилия', 'class': 'btn-star-input'})
         self.fields['education'].widget.attrs.update({'placeholder': 'Учебное заведение', 'class': 'btn-star-input'})
         self.fields['email'].widget.attrs.update({'placeholder': 'Email', 'class': 'btn-star-input'})
