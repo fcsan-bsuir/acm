@@ -11,13 +11,12 @@
     <h1 class="title title-head">
         {{ tr.creating_team }}
     </h1>
-    <form method="post" id="create-team">
+    <form class="buttons" method="post" id="create-team">
         {% csrf_token %}
         <input type="number" form="create-team" name="command_type" style="display: none;" value="0">
         <input type="number" form="create-team" name="univer_type" style="display: none;" value="0">
-    </form>
-    <div class="buttons">
-            <button type="button" class="button auth-button button-clicked command-type" id="school" data-key="0">
+    
+            <button type="button" class="button auth-button button-clicked command-type" style="margin-bottom: 0px" id="school" data-key="0">
                 {{ tr.schoolar_team }}
             </button>
             <button type="button" class="button button-primary auth-button command-type" id="university" data-key="1">
@@ -44,7 +43,7 @@
                 {% endfor %}
             </span>
         <button class="button button-primary auth-button" id="command_apply" type="submit" form="create-team">{{ tr.create }}</button>
-        </div>
+       </form>
 </main>
 
 {% endblock %}

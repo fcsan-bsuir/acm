@@ -263,6 +263,12 @@ form input {
         grid-column: 1 / 2;
         justify-self: center;
     }
+    .buttons :nth-child(7) {
+        grid-column: 1 / 2;
+        width: 100%;
+        max-width: none;
+        justify-self: center;
+    }
 
     .application-block footer {
         display: flex;

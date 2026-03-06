@@ -119,6 +119,11 @@
                 {% endif %}
             {% else %}
                 {% for participant in participants %}
+                    {% if participant == request.user.participant and not participant.is_done %}
+                        <a href="{% url 'change-participant' participant.id %}">
+                            <button class="button button-primary auth-button">{{ tr.fullfill_self }}</button>
+                        </a>
+                    {% endif %}
                   <div class="app-card">
                     <div>
                       {% if participant.is_done or participant != request.user.participant %}
@@ -131,17 +136,11 @@
                        {% endif %}
                     </div>
                     
-                    {% if not request.user.participant.team.is_sent %}
+                    {% if not request.user.participant.team.is_sent and participant != request.user.participant or not request.user.participant.team.is_sent and participant.is_done %}
                          <a href="{% url 'change-participant' participant.id %}">
                             <button class="button button-primary auth-button">{{ tr.edit }}</button>
                          </a>
                     {% endif %}
-                    
-                     {% if participant == request.user.participant and not participant.is_done %}
-                          <a href="{% url 'change-participant' participant.id %}">
-                            <button class="button button-primary auth-button">{{ tr.fullfill_self }}</button>
-                          </a>
-                     {% endif %}
                   </div>
                 {% endfor %}
                 
