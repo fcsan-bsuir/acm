@@ -7,43 +7,45 @@
 {% endblock %}
 
 {% block content %}
-<main>
+<main class="team-create-page">
     <h1 class="title title-head">
         {{ tr.creating_team }}
     </h1>
-    <form class="buttons" method="post" id="create-team">
+    <form method="post" id="create-team">
         {% csrf_token %}
-        <input type="number" form="create-team" name="command_type" style="display: none;" value="0">
-        <input type="number" form="create-team" name="univer_type" style="display: none;" value="0">
-    
-            <button type="button" class="button auth-button button-clicked command-type" style="margin-bottom: 0px" id="school" data-key="0">
-                {{ tr.schoolar_team }}
-            </button>
-            <button type="button" class="button button-primary auth-button command-type" id="university" data-key="1">
-                {{ tr.students_team }}
-            </button>
-            <button type="button" class="button auth-button button-clicked univer-type" id="whole" data-key="0">
-                {{ tr.university_type_same_institution }}
-            </button>
-            <button type="button" class="button button-primary auth-button univer-type" id="mixed" data-key="1">
-                {{ tr.university_type_mixed }}
-            </button>
-            <div class="name_input_container" id="command_name">
-                <input class="input auth-input" name="name" form="create-team" placeholder="{{ tr.team_name|default:'Название команды' }}"/>
-                <div class="alarm">
-                    <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
-                </div>
+        <input type="hidden" name="command_type" value="0">
+        <input type="hidden" name="univer_type" value="0">
+    </form>
+
+    <div class="buttons">
+        <button type="button" class="button auth-button button-clicked command-type" id="school" data-key="0">
+            {{ tr.schoolar_team }}
+        </button>
+        <button type="button" class="button button-primary auth-button command-type" id="university" data-key="1">
+            {{ tr.students_team }}
+        </button>
+        <button type="button" class="button auth-button button-clicked univer-type" id="whole" data-key="0">
+            {{ tr.university_type_same_institution }}
+        </button>
+        <button type="button" class="button button-primary auth-button univer-type" id="mixed" data-key="1">
+            {{ tr.university_type_mixed }}
+        </button>
+        <div class="name_input_container" id="command_name">
+            <input class="input auth-input" name="name" form="create-team" placeholder="{{ tr.team_name|default:'Название команды' }}"/>
+            <div class="alarm">
+                <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
             </div>
-                
-            <span class="error-info"> {{ tr.required_fields }}<br>
-                {% for field, errors in form.errors.items %}
-                {% for error in errors %}
-                    {{error}}</br>
-                {% endfor %}
-                {% endfor %}
-            </span>
+        </div>
+
+        <span class="error-info"> {{ tr.required_fields }}<br>
+            {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+                {{error}}</br>
+            {% endfor %}
+            {% endfor %}
+        </span>
         <button class="button button-primary auth-button" id="command_apply" type="submit" form="create-team">{{ tr.create }}</button>
-       </form>
+    </div>
 </main>
 
 {% endblock %}
