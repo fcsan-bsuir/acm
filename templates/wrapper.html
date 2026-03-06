@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="{{ selected_language|default:'ru' }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,9 +23,20 @@
     
     <link rel="stylesheet" href="{% static 'assets/css/rules.css' %}" />
 
+    {{ tr|json_script:"bsuir-translations" }}
     <script>
+        const translationsElement = document.getElementById("bsuir-translations");
+        const translations = translationsElement ? JSON.parse(translationsElement.textContent) : {};
+
         window.BSUIR_CONFIG = {
+            ...(window.BSUIR_CONFIG || {}),
             authenticated: {{ user.is_authenticated|yesno:"true,false" }},
+            selectedLanguage: "{{ selected_language|default:'ru' }}",
+            translations,
+            navLinks: {
+                home: "{% url 'index' %}",
+                rules: "{% url 'rules' %}",
+            },
             authLinks: {
                 account: "{% url 'team-detail' %}",
                 logout: "{% url 'logout' %}",

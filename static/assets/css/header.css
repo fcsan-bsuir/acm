@@ -94,6 +94,12 @@ body {
         -0.35px 0 0 currentColor;
 }
 
+.header_login.active,
+.header_account.active,
+.header_logout.active {
+    font-weight: 700;
+}
+
 .header_account,
 .header_logout {
     font-weight: 500;

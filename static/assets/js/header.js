@@ -4,6 +4,8 @@ export function createHeader(options = {}) {
         logoHref = "/",
         navItems = [],
         languages = [],
+        selectedLanguage,
+        hideAccountLink = false,
         authenticated = false,
         authTexts = {},
     } = options;
@@ -21,6 +23,8 @@ export function createHeader(options = {}) {
         logout: logoutHref = "#logout",
         login: loginHref = "#login",
     } = options.authLinks || {};
+    const currentLanguage = resolveCurrentLanguage(languages, selectedLanguage);
+    const currentPath = normalizePath(window.location.pathname);
 
     const header = document.createElement("header");
     header.className = "header";
@@ -29,7 +33,7 @@ export function createHeader(options = {}) {
     container.className = "header_container";
 
     const logo = document.createElement("a");
-    logo.href = logoHref;
+    logo.href = localizeHref(logoHref, currentLanguage);
     logo.className = "header_logo";
     logo.textContent = logoText || "";
 
@@ -38,9 +42,12 @@ export function createHeader(options = {}) {
 
     navItems.forEach((item) => {
         const link = document.createElement("a");
-        link.href = item.href;
-    link.textContent = item.text;
-    link.dataset.text = item.text;
+        link.href = localizeHref(item.href, currentLanguage);
+        if (item.active) {
+            link.classList.add("active");
+        }
+        link.textContent = item.text;
+        link.dataset.text = item.text;
         nav.appendChild(link);
     });
 
@@ -48,26 +55,33 @@ export function createHeader(options = {}) {
     actions.className = "header_actions";
 
     if (authenticated) {
-        const accountLink = document.createElement("a");
-        accountLink.href = accountHref;
-        accountLink.className = "header_account";
-    accountLink.textContent = account;
-    accountLink.dataset.text = account;
+        if (!hideAccountLink) {
+            const accountLink = document.createElement("a");
+            accountLink.href = localizeHref(accountHref, currentLanguage);
+            accountLink.className = "header_account";
+            if (pathMatchesHref(currentPath, accountHref)) {
+                accountLink.classList.add("active");
+            }
+            accountLink.textContent = account;
+            accountLink.dataset.text = account;
+            actions.appendChild(accountLink);
+        }
 
         const logoutLink = document.createElement("a");
-        logoutLink.href = logoutHref;
+        logoutLink.href = localizeHref(logoutHref, currentLanguage);
         logoutLink.className = "header_logout";
-    logoutLink.textContent = logout;
-    logoutLink.dataset.text = logout;
-
-        actions.appendChild(accountLink);
+        logoutLink.textContent = logout;
+        logoutLink.dataset.text = logout;
         actions.appendChild(logoutLink);
     } else {
         const loginLink = document.createElement("a");
-        loginLink.href = loginHref;
+        loginLink.href = localizeHref(loginHref, currentLanguage);
         loginLink.className = "header_login";
-    loginLink.textContent = login;
-    loginLink.dataset.text = login;
+        if (pathMatchesHref(currentPath, loginHref)) {
+            loginLink.classList.add("active");
+        }
+        loginLink.textContent = login;
+        loginLink.dataset.text = login;
         actions.appendChild(loginLink);
     }
 
@@ -80,8 +94,7 @@ export function createHeader(options = {}) {
     lang.dataset.logoutText = logout;
     lang.dataset.mobileLoginText = mobileLogin;
     lang.dataset.mobileRegisterText = mobileRegister;
-    const initialCode =
-        languages[0] && languages[0].code ? languages[0].code.toUpperCase() : "";
+    const initialCode = currentLanguage.toUpperCase();
     const translateIcon = document.createElement("img");
     translateIcon.src = new URL(
         "../../assets/img/translate.svg",
@@ -107,9 +120,7 @@ export function createHeader(options = {}) {
         btn.textContent = langItem.label;
         btn.dataset.lang = langItem.code;
         btn.addEventListener("click", () => {
-            const codeEl = lang.querySelector(".lang-code");
-            if (codeEl) codeEl.textContent = langItem.code.toUpperCase();
-            closeDropdown();
+            redirectWithLanguage(langItem.code);
         });
         li.appendChild(btn);
         dropdown.appendChild(li);
@@ -135,7 +146,15 @@ export function createHeader(options = {}) {
 
     header.appendChild(container);
 
-    const mobileMenu = createMobileMenu(navItems, languages, lang, authenticated);
+    const mobileMenu = createMobileMenu(
+        navItems,
+        languages,
+        lang,
+        authenticated,
+        currentLanguage,
+        { accountHref, logoutHref, loginHref },
+        hideAccountLink,
+    );
     document.body.appendChild(mobileMenu);
 
     burger.addEventListener("click", () => {
@@ -156,7 +175,16 @@ function createMobileMenu(
     languages = [],
     headerLangButton,
     authenticated = false,
+    selectedLanguage = "ru",
+    authHrefs = {},
+    hideAccountLink = false,
 ) {
+    const {
+        accountHref = "#account",
+        logoutHref = "#logout",
+        loginHref = "#login",
+    } = authHrefs;
+
     const menu = document.createElement("div");
     menu.className = "mobile_menu";
 
@@ -178,7 +206,7 @@ function createMobileMenu(
 
     navItems.forEach((item) => {
         const link = document.createElement("a");
-        link.href = item.href;
+        link.href = localizeHref(item.href, selectedLanguage);
         link.textContent = item.text;
         if (item.active) link.classList.add("active");
         if (item.primary) link.dataset.primary = "true";
@@ -189,50 +217,33 @@ function createMobileMenu(
     bottom.className = "mobile_menu_bottom";
 
     if (authenticated) {
-        const accountLink = document.createElement("a");
-        accountLink.href = "#account";
-        accountLink.textContent = (headerLangButton?.dataset?.accountText) || "";
+        if (!hideAccountLink) {
+            const accountLink = document.createElement("a");
+            accountLink.href = localizeHref(accountHref, selectedLanguage);
+            accountLink.textContent = (headerLangButton?.dataset?.accountText) || "";
+            bottom.appendChild(accountLink);
+        }
         const logoutLink = document.createElement("a");
-        logoutLink.href = "#logout";
+        logoutLink.href = localizeHref(logoutHref, selectedLanguage);
         logoutLink.textContent = (headerLangButton?.dataset?.logoutText) || "";
-        bottom.appendChild(accountLink);
         bottom.appendChild(logoutLink);
     } else {
         const login = document.createElement("a");
-        login.href = "#login";
+        login.href = localizeHref(loginHref, selectedLanguage);
         login.textContent = (headerLangButton?.dataset?.mobileLoginText) || "";
-
-        const register = document.createElement("a");
-        register.href = "#register";
-        register.textContent =
-            (headerLangButton?.dataset?.mobileRegisterText) || "";
-
         bottom.appendChild(login);
-        bottom.appendChild(register);
     }
-
-    let currentLang = languages[0]?.code || "ru";
 
     const langToggle = document.createElement("a");
     langToggle.href = "#";
     langToggle.className = "lang";
-    langToggle.textContent = currentLang.toUpperCase();
+    langToggle.textContent = selectedLanguage.toUpperCase();
 
     langToggle.addEventListener("click", (e) => {
         e.preventDefault();
-
-        const nextLang = languages.find((l) => l.code !== currentLang);
+        const nextLang = languages.find((l) => l.code !== selectedLanguage);
         if (!nextLang) return;
-
-        currentLang = nextLang.code;
-        langToggle.textContent = currentLang.toUpperCase();
-
-        if (headerLangButton) {
-            const codeEl = headerLangButton.querySelector(".lang-code");
-            if (codeEl) {
-                codeEl.textContent = currentLang.toUpperCase();
-            }
-        }
+        redirectWithLanguage(nextLang.code);
     });
 
     bottom.appendChild(langToggle);
@@ -272,4 +283,54 @@ function createMobileMenu(
     });
 
     return menu;
+}
+
+function resolveCurrentLanguage(languages, explicitLanguage) {
+    const allowed = new Set((languages || []).map((lang) => lang.code));
+    const urlLanguage = new URLSearchParams(window.location.search).get("lang");
+    const fallbackLanguage = languages[0]?.code || "ru";
+    const candidate = explicitLanguage || urlLanguage || fallbackLanguage;
+
+    if (allowed.size > 0 && !allowed.has(candidate)) {
+        return fallbackLanguage;
+    }
+
+    return candidate;
+}
+
+function redirectWithLanguage(language) {
+    const currentUrl = new URL(window.location.href);
+    currentUrl.searchParams.set("lang", language);
+    window.location.href = currentUrl.toString();
+}
+
+function normalizePath(pathname) {
+    if (!pathname) return "/";
+    if (pathname !== "/" && pathname.endsWith("/")) {
+        return pathname.slice(0, -1);
+    }
+    return pathname;
+}
+
+function pathMatchesHref(currentPath, href) {
+    if (!href || href.startsWith("#")) return false;
+    const parsed = new URL(href, window.location.origin);
+    return normalizePath(parsed.pathname) === normalizePath(currentPath);
+}
+
+function localizeHref(href, language) {
+    if (!href || href.startsWith("#")) {
+        return href;
+    }
+
+    const parsed = new URL(href, window.location.origin);
+    if (parsed.origin !== window.location.origin) {
+        return href;
+    }
+
+    if (language) {
+        parsed.searchParams.set("lang", language);
+    }
+
+    return `${parsed.pathname}${parsed.search}${parsed.hash}`;
 }

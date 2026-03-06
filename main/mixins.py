@@ -1,8 +1,39 @@
+import json
+from pathlib import Path
+
 from django.shortcuts import render
 from main.models import Translation
 
 
 class LanguageMixin:
+    _json_translations_cache = None
+
+    @classmethod
+    def _load_json_translations(cls):
+        if cls._json_translations_cache is not None:
+            return cls._json_translations_cache
+
+        translations_path = Path(__file__).resolve().parents[1] / "translations.json"
+        try:
+            with translations_path.open(encoding="utf-8") as f:
+                cls._json_translations_cache = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            cls._json_translations_cache = {}
+
+        return cls._json_translations_cache
+
+    def _get_json_language_translations(self, language):
+        raw = self._load_json_translations()
+        result = {}
+
+        for key, values in raw.items():
+            if not isinstance(values, dict):
+                continue
+            value = values.get(language)
+            if value is not None:
+                result[key] = value
+
+        return result
 
     def get_user_language(self, request):
         user_language = request.GET.get('lang') or request.session.get('language', 'ru')
@@ -13,11 +44,13 @@ class LanguageMixin:
         return user_language
 
     def get_translations(self, language):
-        translations = Translation.objects.filter(language=language)
-        return {
+        file_translations = self._get_json_language_translations(language)
+        db_translations = {
             translation.translation_key.key: translation.translated_text
-            for translation in translations
+            for translation in Translation.objects.filter(language=language)
         }
+        file_translations.update(db_translations)
+        return file_translations
 
     def render_page(self, request, template_name, context=None):
         if context is None:

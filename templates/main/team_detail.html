@@ -107,39 +107,51 @@
         
         <div class="app-cards">
             <!-- Participants -->
-            {% for participant in request.user.participant.team.participants.all %}
-              <div class="app-card">
-                <div>
-                  <h4 class="title">{{ tr.participant }}</h3>
-                  
-                  {% if participant.is_done or participant != request.user.participant %}
-                      <h3 class="title title-subhead">{{ participant.fullname }}</h4>
-                      <p class="app-card-info">{{ tr.phone }}: {{ participant.phone }}</p>
-                      <p class="app-card-info">{{ tr.email }}: {{ participant.email }}</p>
-                   {% else %}
-                       <h4 class="title">{{ participant.fullname|default:"..." }}</h4>
-                   {% endif %}
-                </div>
+            {% with participants=request.user.participant.team.participants.all %}
+            {% if not request.user.participant.team.is_sent and participants|length == 1 and not request.user.participant.is_done %}
+                <a href="{% url 'change-participant' request.user.participant.id %}" style="display: block; width: 100%;">
+                    <button class="button button-primary auth-button" style="width: 100%;">{{ tr.fullfill_self }}</button>
+                </a>
+                {% if not request.user.participant.team.is_full %}
+                <a href="{% url 'create-participant' %}" style="display: block; width: 100%;">
+                    <button class="button button-primary auth-button" style="width: 100%;">{{ tr.add_participant }}</button>
+                </a>
+                {% endif %}
+            {% else %}
+                {% for participant in participants %}
+                  <div class="app-card">
+                    <div>
+                      {% if participant.is_done or participant != request.user.participant %}
+                        <h4 class="title">{{ tr.participant }}</h3>
+                          <h3 class="title title-subhead">{{ participant.fullname }}</h4>
+                          <p class="app-card-info">{{ tr.phone }}: {{ participant.phone }}</p>
+                          <p class="app-card-info">{{ tr.email }}: {{ participant.email }}</p>
+                       {% else %}
+                           <h4 class="title">{{ participant.fullname|default:"..." }}</h4>
+                       {% endif %}
+                    </div>
+                    
+                    {% if not request.user.participant.team.is_sent %}
+                         <a href="{% url 'change-participant' participant.id %}">
+                            <button class="button button-primary auth-button">{{ tr.edit }}</button>
+                         </a>
+                    {% endif %}
+                    
+                     {% if participant == request.user.participant and not participant.is_done %}
+                          <a href="{% url 'change-participant' participant.id %}">
+                            <button class="button button-primary auth-button">{{ tr.fullfill_self }}</button>
+                          </a>
+                     {% endif %}
+                  </div>
+                {% endfor %}
                 
-                {% if not request.user.participant.team.is_sent %}
-                     <a href="{% url 'change-participant' participant.id %}">
-                        <button class="button button-primary auth-button">{{ tr.edit }}</button>
+                {% if not request.user.participant.team.is_full and not request.user.participant.team.is_sent %}
+                     <a href="{% url 'create-participant' %}" style="display: block; width: 100%;">
+                        <button class="button button-primary auth-button" style="width: 100%;">{{ tr.add_participant }}</button>
                      </a>
                 {% endif %}
-                
-                 {% if participant == request.user.participant and not participant.is_done %}
-                      <a href="{% url 'change-participant' participant.id %}">
-                        <button class="button button-primary auth-button">{{ tr.fullfill_self }}</button>
-                      </a>
-                 {% endif %}
-              </div>
-            {% endfor %}
-            
-            {% if not request.user.participant.team.is_full and not request.user.participant.team.is_sent %}
-                 <a href="{% url 'create-participant' %}" style="display: block; width: 100%;">
-                    <button class="button button-primary auth-button" style="width: 100%;">{{ tr.add_participant }}</button>
-                 </a>
             {% endif %}
+            {% endwith %}
         </div>
       </footer>
     </main>

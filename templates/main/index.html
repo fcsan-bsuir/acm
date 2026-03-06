@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    BSUIR Open XIV
+    {{ tr.title|default:"BSUIR Open XIV" }}
 {% endblock %}
 
 {% block extra_head %}
@@ -16,39 +16,34 @@
 <main class="main-page">
       <section id="main" class="main">
         <div class="main-span">
-          <h1 class="main-title">BSUIR Open XIV</h1>
+          <h1 class="main-title">{{ tr.title }}</h1>
           <div class="hidden main-title-span">
-            <h1 class="main-title-mobile hidden">BSUIR Open</h1>
+            <h1 class="main-title-mobile hidden">{{ tr.title }}</h1>
             <h1 class="main-title-mobile hidden big-text">XIV</h1>
           </div>
           <p class="main-description">
-            14-й&nbsp;командный&nbsp;чемпионат&nbsp;БГУИР
-            по&nbsp;спортивному&nbsp;программированию
+            {{ tr.index_main_description|default:"14-й&nbsp;командный&nbsp;чемпионат&nbsp;БГУИР по&nbsp;спортивному&nbsp;программированию"|safe }}
           </p>
         </div>
         <img src="{% static 'assets/img/valoshka.svg' %}" alt="valoshka" class="valoshka" />
       </section>
       <section id="about" class="about">
         <ul class="about-list">
-          <li class="about-list-item">
-            Проводится по стандартным правилам ICPC
-          </li>
-          <li class="about-list-item">Команды от 1 до 3 человек</li>
-          <li class="about-list-item">Участники со всего земного шара</li>
-          <li class="about-list-item">
-            Интересные задачи и незабываемые эмоции
-          </li>
-          <li class="about-list-item">Две возрастные категории:</li>
+          <li class="about-list-item">{{ tr.index_about_list_1|default:"Проводится по стандартным правилам ICPC" }}</li>
+          <li class="about-list-item">{{ tr.index_about_list_2|default:"Команды от 1 до 3 человек" }}</li>
+          <li class="about-list-item">{{ tr.index_about_list_3|default:"Участники со всего земного шара" }}</li>
+          <li class="about-list-item">{{ tr.index_about_list_4|default:"Интересные задачи и незабываемые эмоции" }}</li>
+          <li class="about-list-item">{{ tr.index_ages_header|default:"Две возрастные категории" }}:</li>
         </ul>
         <div class="teams">
           <div class="team">
             <span class="team-title">Junior</span>
-            <p class="team-description">школьные команды</p>
+            <p class="team-description">{{ tr.index_age_junior }}</p>
           </div>
           <img src="{% static 'assets/img/Logo.svg' %}" class="teams-logo" />
           <div class="team">
             <span class="team-title">Student</span>
-            <p class="team-description">студенческие команды</p>
+            <p class="team-description">{{ tr.index_age_student }}</p>
           </div>
         </div>
       </section>
@@ -57,77 +52,26 @@
           <ul class="buttons"></ul>
         </nav>
         <div id="quaterfinals" class="stage">
-          <p>Цели отборочного тура:</p>
+          <p>{{ tr.index_quarter_purpose|default:"Цели отборочного тура" }}:</p>
           <ul class="stages-list">
-            <li class="stages-list-item">
-              дать возможность командам самостоятельно оценить уровень
-              подготовки к участию в Чемпионате;
-            </li>
-            <li class="stages-list-item">
-              команды, которые смогут бороться во втором отборочном туре
-              (полуфинале) за выход в финал Чемпионата.
-            </li>
+            <li class="stages-list-item">{{ tr.index_quarter_list_1|default:"дать возможность командам самостоятельно оценить уровень подготовки к участию в Чемпионате;" }}</li>
+            <li class="stages-list-item">{{ tr.index_quarter_list_2|default:"команды, которые смогут бороться во втором отборочном туре (полуфинале) за выход в финал Чемпионата." }}</li>
           </ul>
-          <p>
-            Четвертьфинал является обязательным отборочным этапом для команд
-            БГУИР и школьников. Остальные команды по желанию также могут принять
-            участие в данном туре. Смешанные команды, в состав которых входит
-            хотя бы один студент, магистрант или аспирант БГУИР, также должны
-            принимать участие в четвертьфинале соревнований.
-          </p>
-          <p>
-            Команды, решившие не менее половины из предложенных задач, проходят
-            во второй отборочный тур (полуфинал соревнований).
-          </p>
+          <p>{{ tr.index_quarter_info|default:"Четвертьфинал является обязательным отборочным этапом для команд БГУИР и школьников." }}</p>
+          <p>{{ tr.index_quarter_pass|default:"Команды, решившие не менее половины из предложенных задач, проходят во второй отборочный тур." }}</p>
         </div>
         <div id="semifinals" class="stage">
-          <p>
-            Второй отборочный тур (полуфинал) проводится в очно-заочной форме.
-            Командам-участницам предлагается решить от 4 до 12 задач (текст
-            задач на русском и английском языках) за 4-5 астрономических часов.
-            Жюри имеет право продлить соревнования в случае каких-либо
-            непредвиденных обстоятельств.
-          </p>
-          <p>
-            Команды БГУИР участвуют в туре очно на базе университета. Команды не
-            из БГУИР решают тур заочно в своих учреждениях образования. За
-            соблюдение правил соревнований в данном случае отвечает тренер
-            команды. Участники других учреждений образования, изъявившие желание
-            участвовать в полуфинале на базе БГУИР, должны заранее сообщить
-            организаторам об этом.
-          </p>
+          <p>{{ tr.index_semifinal_info|default:"Второй отборочный тур (полуфинал) проводится в очно-заочной форме." }}</p>
+          <p>{{ tr.index_semifinal_details|default:"Команды БГУИР участвуют в туре очно на базе университета." }}</p>
         </div>
         <div id="finals" class="stage">
-          <p>
-            В следующий этап (финал) проходят 30 команд, показавшие лучшие
-            результаты на данном этапе, но не более:
-          </p>
+          <p>{{ tr.index_final_info|default:"В следующий этап (финал) проходят 30 команд, показавшие лучшие результаты." }}</p>
           <ul class="stages-list">
-            <li class="stages-list-item">
-              7 команд студентов, магистрантов и аспирантов БГУИР;
-            </li>
-            <li class="stages-list-item">
-              2 команд от каждого ВУЗа или ССУЗа Республики Беларусь и стран
-              зарубежья;
-            </li>
+            <li class="stages-list-item">{{ tr.index_final_list_1|default:"7 команд студентов, магистрантов и аспирантов БГУИР;" }}</li>
+            <li class="stages-list-item">{{ tr.index_final_list_2|default:"2 команды от каждого ВУЗа или ССУЗа Республики Беларусь и стран зарубежья;" }}</li>
           </ul>
-          <p>
-            Для команд из средних общеобразовательных учреждений проводится
-            отдельный финал, в который приглашается не более 25 команд и не
-            более одной команды от каждого учреждения образования. Решение об
-            участии в школьном финале команд, участники которых являются
-            представителями разных учреждений образования, принимается
-            организационным комитетом в индивидуальном порядке.
-          </p>
-          <p>
-            По решению оргкомитета и жюри количество команд, которое проходит в
-            следующий этап, их состав, а также квота могут быть изменены.
-          </p>
-          <p>
-            Финал соревнований проводится в очной форме. Участникам предлагается
-            решить от 6 до 12 алгоритмических задач (тексты задач на английском
-            языке) за 5 астрономических часов.
-          </p>
+          <p>{{ tr.index_final_additional|default:"По решению оргкомитета и жюри количество команд, которое проходит в следующий этап, может быть изменено." }}</p>
+          <p>{{ tr.rul_page_titl_conduct_finals_descript|default:"Финал соревнований проводится в очной форме." }}</p>
         </div>
       </section>
       <section id="schedule" class="schedule">
@@ -135,8 +79,8 @@
           <div class="schedule-item flex-row">
             <img src="{% static 'assets/img/maladosc_light.svg' %}" class="maladosc" />
             <div>
-              <h3 class="schedule-title">Регистрация</h3>
-              <p class="schedule-description">1-20 марта</p>
+              <h3 class="schedule-title">{{ tr.registration|default:"Регистрация" }}</h3>
+              <p class="schedule-description">{{ tr.reg_start_day|default:"1 марта" }} - {{ tr.reg_end_day|default:"20 марта" }}</p>
             </div>
           </div>
           <img
@@ -146,8 +90,8 @@
           <div class="schedule-item flex-row-reverse">
             <img src="{% static 'assets/img/maladosc_light.svg' %}" class="maladosc" />
             <div>
-              <h3 class="schedule-title">Отборочный тур</h3>
-              <p class="schedule-description">16-22 марта</p>
+              <h3 class="schedule-title">{{ tr.index_selection_header|default:"Отборочный тур" }}</h3>
+              <p class="schedule-description">{{ tr.qual_start_day|default:"16 марта" }} - {{ tr.qual_end_day|default:"22 марта" }}</p>
             </div>
           </div>
           <img
@@ -157,8 +101,8 @@
           <div class="schedule-item flex-row">
             <img src="{% static 'assets/img/maladosc_light.svg' %}" class="maladosc" />
             <div>
-              <h3 class="schedule-title">Полуфинал</h3>
-              <p class="schedule-description">8 апреля</p>
+              <h3 class="schedule-title">{{ tr.semifinal|default:"Полуфинал" }}</h3>
+              <p class="schedule-description">{{ tr.semi_day|default:"8 апреля" }}</p>
             </div>
           </div>
           <img
@@ -168,12 +112,12 @@
         </div>
         <div class="finals">
           <img src="{% static 'assets/img/ornament-strelka-mobile.svg' %}" class="hidden" />
-          <h2 class="finals-title">Финал</h2>
+          <h2 class="finals-title">{{ tr.index_round_final|default:"Финал" }}</h2>
           <div class="finals-span">
             <img src="{% static 'assets/img/ornament-strelka.svg' %}" class="strelka" />
             <div class="description-mobile">
-              <p class="finals-description">Student - 24 апреля</p>
-              <p class="finals-description">Junior - 25 апреля</p>
+              <p class="finals-description">{{ tr.stud_final|default:"Student" }} - {{ tr.stud_final_day|default:"24 апреля" }}</p>
+              <p class="finals-description">{{ tr.jun_final|default:"Junior" }} - {{ tr.jun_final_day|default:"25 апреля" }}</p>
             </div>
             <img
               src="{% static 'assets/img/ornament-strelka.svg' %}"
@@ -259,6 +203,7 @@
 {% block extra_scripts %}
 <script>
   window.BSUIR_CONFIG = {
+    ...(window.BSUIR_CONFIG || {}),
     authenticated: {{ user.is_authenticated|yesno:"true,false" }},
     authLinks: {
         account: "{% url 'team-detail' %}",

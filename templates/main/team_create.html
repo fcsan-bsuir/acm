@@ -30,7 +30,7 @@
                 {{ tr.university_type_mixed }}
             </button>
             <div class="name_input_container" id="command_name">
-                <input class="input auth-input" name="name" form="create-team" placeholder="Название команды"/>
+                <input class="input auth-input" name="name" form="create-team" placeholder="{{ tr.team_name|default:'Название команды' }}"/>
                 <div class="alarm">
                     <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
                 </div>

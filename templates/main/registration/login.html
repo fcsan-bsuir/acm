@@ -1,10 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ selected_language|default:'ru' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="shortcut icon" type="image/ico" href="{% static 'favicon.svg' %}">
     <link rel="stylesheet" href="{% static 'assets/css/reset.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/variables.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/fonts.css' %}" />
@@ -18,16 +18,16 @@
     <link rel="stylesheet" href="{% static 'assets/css/header.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/auth.css' %}" />
 
-    <title>Вход в аккаунт</title>
+    <title>{{ tr.authorization|default:"Вход в аккаунт" }}</title>
 </head>
 <body>
 <main>
-    <h1 class="title title-head">Вход</h1>
+    <h1 class="title title-head">{{ tr.authorization|default:"Вход" }}</h1>
 
     <form class="login-form" method="post">
         {% csrf_token %}
-        <input class="input auth-input" name="username" placeholder="Логин" type="text" required />
-        <input class="input auth-input" name="password" placeholder="Пароль" type="password" required />
+        <input class="input auth-input" name="username" placeholder="{{ tr.username|default:'Логин' }}" type="text" required />
+        <input class="input auth-input" name="password" placeholder="{{ tr.password|default:'Пароль' }}" type="password" required />
 
         {% if form.errors %}
         <span class="error-info" style="display: block;">
@@ -41,16 +41,36 @@
             {% endfor %}
         </span>
         {% else %}
-        <span class="error-info" style="display: none;">Неверный логин или пароль</span>
+        <span class="error-info" style="display: none;">{{ tr.invalid_login_or_password|default:"Неверный логин или пароль" }}</span>
         {% endif %}
 
         <div class="auth-link">
-            Нет аккаунта? <a href="{% url 'signup' %}">Зарегистрироваться</a>
+            {{ tr.no_account|default:"Нет аккаунта" }}? <a href="{% url 'signup' %}">{{ tr.signup|default:"Зарегистрироваться" }}</a>
         </div>
 
-        <button class="button button-primary auth-button" type="submit">Войти</button>
+        <button class="button button-primary auth-button" type="submit">{{ tr.login_action|default:"Войти" }}</button>
     </form>
 </main>
+{{ tr|json_script:"bsuir-translations-login" }}
+<script>
+    const translationsElement = document.getElementById("bsuir-translations-login");
+    const translations = translationsElement ? JSON.parse(translationsElement.textContent) : {};
+    window.BSUIR_CONFIG = {
+        ...(window.BSUIR_CONFIG || {}),
+        authenticated: {{ user.is_authenticated|yesno:"true,false" }},
+        selectedLanguage: "{{ selected_language|default:'ru' }}",
+        translations,
+        navLinks: {
+            home: "{% url 'index' %}",
+            rules: "{% url 'rules' %}",
+        },
+        authLinks: {
+            account: "{% url 'team-detail' %}",
+            logout: "{% url 'logout' %}",
+            login: "{% url 'login' %}",
+        },
+    };
+</script>
 <script type="module" src="{% static 'assets/js/utils/add-header.js' %}"></script>
 <script type="module" src="{% static 'assets/js/utils/add-footer.js' %}"></script>
 <script type="module">
@@ -82,7 +102,7 @@
                 // But let's keep it safe.
                if(errorInfo) {
                     errorInfo.style.display = 'block';
-                    errorInfo.innerText = "Пожалуйста, заполните все поля";
+                    errorInfo.innerText = "{{ tr.required_fields|default:'Пожалуйста, заполните все поля' }}";
                }
             }
         });

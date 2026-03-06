@@ -1,9 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ selected_language|default:'ru' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/ico" href="{% static 'favicon.svg' %}">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/reset.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/variables.css' %}" />
@@ -33,17 +34,17 @@
             font-size: 14px;
         }
     </style>
-    <title>Регистрация</title>
+    <title>{{ tr.registration|default:"Регистрация" }}</title>
 </head>
 <body>
 <main>
-    <h1 class="title title-head">Регистрация</h1>
+    <h1 class="title title-head">{{ tr.registration|default:"Регистрация" }}</h1>
 
     <form class="login-form" method="post">
         {% csrf_token %}
-        <input class="input auth-input" name="username" placeholder="Логин" type="text" required />
-        <input class="input auth-input" name="password1" placeholder="Пароль" type="password" required />
-        <input class="input auth-input" name="password2" placeholder="Повторите пароль" type="password" required />
+        <input class="input auth-input" name="username" placeholder="{{ tr.username|default:'Логин' }}" type="text" required />
+        <input class="input auth-input" name="password1" placeholder="{{ tr.password|default:'Пароль' }}" type="password" required />
+        <input class="input auth-input" name="password2" placeholder="{{ tr.repeat_password|default:'Повторите пароль' }}" type="password" required />
 
         {% if form.errors %}
         <span class="error-info" style="display: block;">
@@ -57,7 +58,7 @@
             {% endfor %}
         </span>
         {% else %}
-        <span class="error-info" style="display: none;">Пароли не совпадают</span>
+        <span class="error-info" style="display: none;">{{ tr.passwords_do_not_match|default:"Пароли не совпадают" }}</span>
         {% endif %}
 
         <!--
@@ -70,14 +71,34 @@
         <div class="checkbox-container">
             <input type="checkbox" id="terms" name="personal_data_agreement" class="checkbox" required>
             <label for="terms" class="checkbox-label">
-                Я согласен с <a href="{{ agreement_url|default:'#' }}" target="_blank" class="checkbox-link" style="color: #000; font-weight: 700; text-decoration: none;">обработкой персональных данных</a>
+                {{ tr.policy_agree|default:"Я согласен с" }} <a href="{{ agreement_url|default:'#' }}" target="_blank" class="checkbox-link" style="color: #000; font-weight: 700; text-decoration: none;">{{ tr.policy|default:"обработкой персональных данных" }}</a>
             </label>
         </div>
         {% endif %}
 
-        <button class="button button-primary auth-button" type="submit" style="margin-top: 20px;">Зарегистрироваться</button>
+        <button class="button button-primary auth-button" type="submit" style="margin-top: 20px;">{{ tr.signup|default:"Зарегистрироваться" }}</button>
     </form>
 </main>
+{{ tr|json_script:"bsuir-translations-signup" }}
+<script>
+    const translationsElement = document.getElementById("bsuir-translations-signup");
+    const translations = translationsElement ? JSON.parse(translationsElement.textContent) : {};
+    window.BSUIR_CONFIG = {
+        ...(window.BSUIR_CONFIG || {}),
+        authenticated: {{ user.is_authenticated|yesno:"true,false" }},
+        selectedLanguage: "{{ selected_language|default:'ru' }}",
+        translations,
+        navLinks: {
+            home: "{% url 'index' %}",
+            rules: "{% url 'rules' %}",
+        },
+        authLinks: {
+            account: "{% url 'team-detail' %}",
+            logout: "{% url 'logout' %}",
+            login: "{% url 'login' %}",
+        },
+    };
+</script>
 <script type="module" src="{% static 'assets/js/utils/add-header.js' %}"></script>
 <script type="module" src="{% static 'assets/js/utils/add-footer.js' %}"></script>
 <script type="module">
@@ -94,7 +115,7 @@
         
         if (password && passwordConfirm && password !== passwordConfirm) {
             errorInfo.style.display = 'block';
-            errorInfo.innerText = "Пароли не совпадают";
+            errorInfo.innerText = "{{ tr.passwords_do_not_match|default:'Пароли не совпадают' }}";
             return false;
         } else {
             errorInfo.style.display = 'none';

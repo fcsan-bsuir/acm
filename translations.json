@@ -8,8 +8,8 @@
         "en": "The stage has not started"
     },
     "participate": {
-        "ru": "Участвовать",
-        "en": "Participate"
+        "ru": "Вход",
+        "en": "Sign In"
     },
     "semi_state": {
         "ru": "Этап не начался",
@@ -31,24 +31,17 @@
         "ru": "Об олимпиаде",
         "en": "About"
     },
+    "partners": {
+        "ru": "Партнеры",
+        "en": "Partners"
+    },
     "title": {
-        "ru": "BSUIR Open XIII",
-        "en": "BSUIR Open XIII"
+        "ru": "BSUIR Open XIV",
+        "en": "BSUIR Open XIV"
     },
     "profile": {
         "ru": "Личный кабинет",
         "en": "Profile"
-    },
-    "running_line": {
-        "ru": [
-            "Привет участникам олимпиады! // На взлет! // ",
-            "13ый открытый командный чемпионат БГУИР по спортивному программированию // ",
-            "Продам гараж!!! //"
-        ],
-        "en": [
-            "Greetings to the participants of the Olympiad! // Flight BSUIR Open XIII is now boarding. // ",
-            "XIII Open BSUIR Programming Championship // Do you want some snacks? //"
-        ]
     },
     "edit": {
         "ru": "Редактировать",
@@ -60,11 +53,11 @@
     },
     "main_page": {
         "ru": "Главная",
-        "en": "Main page"
+        "en": "Home"
     },
     "authorization": {
-        "ru": "Авторизация",
-        "en": "Authorization"
+        "ru": "Вход",
+        "en": "Sign In"
     },
     "username": {
         "ru": "Имя пользователя",
@@ -92,7 +85,7 @@
     },
     "login_action": {
         "ru": "Войти",
-        "en": "Login"
+        "en": "Sign In"
     },
     "logout": {
         "ru": "Выйти",
@@ -127,32 +120,32 @@
         "en": "FCSAN Student Union"
     },
     "reg_start_day": {
-        "ru": "5 марта",
-        "en": "March 5st"
+        "ru": "6 марта",
+        "en": "March 6st"
     },
     "reg_end_day": {
         "ru": "20 марта",
         "en": "March 20th"
     },
     "qual_start_day": {
-        "ru": "17 марта",
-        "en": "March 17th"
+        "ru": "16 марта",
+        "en": "March 16th"
     },
     "qual_end_day": {
-        "ru": "23 марта",
-        "en": "March 23th"
+        "ru": "22 марта",
+        "en": "March 22th"
     },
     "semi_day": {
-        "ru": "9 апреля",
-        "en": "April 9th"
+        "ru": "8 апреля",
+        "en": "April 8th"
     },
     "stud_final_day": {
-        "ru": "26 апреля",
-        "en": "April 26th"
+        "ru": "24 апреля",
+        "en": "April 24th"
     },
     "jun_final_day": {
-        "ru": "3 мая",
-        "en": "May 3rd"
+        "ru": "25 апреля",
+        "en": "April 25th"
     },
     "semifinal": {
         "ru": "Полуфинал",
@@ -170,33 +163,25 @@
         "ru": "Минск, Гикало, 9",
         "en": "Minsk, vulica Hikaly 9"
     },
-    "students_team": {
-        "ru": "Студенческая",
-        "en": "Student"
-    },
-    "schoolar_team": {
-        "ru": "Школьная",
-        "en": "Schoolar"
-    },
     "add_coach": {
-        "ru": "Добавить/обновить тренера",
-        "en": "Add/update coach"
+        "ru": "Добавить тренера",
+        "en": "Add coach"
     },
     "adding_coach": {
-        "ru": "Добавление/обновление тренера",
-        "en": "Adding/updating coach"
+        "ru": "Обновление тренера",
+        "en": "Updating coach"
     },
     "participant": {
         "ru": "Участник",
         "en": "Participant"
     },
     "add_participant": {
-        "ru": "Добавить/обновить участника",
-        "en": "Add/update participant"
+        "ru": "Добавить участника",
+        "en": "Add participant"
     },
     "adding_participant": {
-        "ru": "Добавление/обновление участника",
-        "en": "Adding/updating participant"
+        "ru": "Обновление участника",
+        "en": "Updating participant"
     },
     "coach": {
         "ru": "Тренер",
@@ -243,7 +228,7 @@
         "en": "No information."
     },
     "phone": {
-        "ru": "Тел.",
+        "ru": "Телефон",
         "en": "Phone number"
     },
     "email": {
@@ -257,10 +242,6 @@
     "fullfilled_info": {
         "ru": "Чтобы отправить команду на рассмотрение заполните всю информацию.",
         "en": "Complete all fields to send approvement request."
-    },
-    "send_for_approve": {
-        "ru": "Отправить на рассмотрение",
-        "en": "Send approvement request"
     },
     "empty_team": {
         "ru": "У вас нет команды. Нажмите на кнопку, чтобы добавить.",
@@ -313,12 +294,12 @@
         "en": "select the teams that will be able to compete in the second qualifying round (Semi-Finals) for reaching the final Championship."
     },
     "common_info_page_qualification_dates_1": {
-        "ru": "Начало отборочного тура: 17.03.2025 в 16:00.",
-        "en": "Start of quailifying round: 17.03.2025 16:00(GMT+3)."
+        "ru": "Начало отборочного тура: 16.03.2026 в 16:00.",
+        "en": "Start of quailifying round: 16.03.2026 16:00(GMT+3)."
     },
     "common_info_page_qualification_dates_2": {
-        "ru": "Окончание отборочного тура: 24.03.2025 в 16:00.",
-        "en": "End of quailifying round: 24.03.2025 16:00(GMT+3)."
+        "ru": "Окончание отборочного тура: 23.03.2026 в 16:00.",
+        "en": "End of quailifying round: 23.03.2026 16:00(GMT+3)."
     },
     "common_info_page_qualification_rules": {
         "ru": "Четвертьфинал является обязательным отборочным этапом для команд БГУИР и школьников. Остальные команды по желанию также могут принять участие в данном туре.",
@@ -364,9 +345,17 @@
         "ru": "Разрешается пользоваться справочными интернет-ресурсами.",
         "en": "It is allowed to use online help resources."
     },
-    "index_about_header": {
-        "ru": "13-й открытый командный чемпионат БГУИР по спортивному программированию",
-        "en": "XIII Open BSUIR Programming Championship"
+    "index_about_header_1": {
+        "ru": "14-й&nbsp;командный&nbsp;чемпионат&nbsp;БГУИР",
+        "en": "XIV Open BSUIR Programming Championship"
+    },
+    "index_about_header_2": {
+        "ru": "по&nbsp;спортивному&nbsp;программированию",
+        "en": " "
+    },
+    "index_main_description": {
+        "ru": "14-й&nbsp;командный&nbsp;чемпионат&nbsp;БГУИР по&nbsp;спортивному&nbsp;программированию",
+        "en": "XIV&nbsp;Open&nbsp;BSUIR&nbsp;Programming&nbsp;Championship"
     },
     "index_about_list_1": {
         "ru": "Проводится по стандартным правилам ICPC",
@@ -395,6 +384,14 @@
     "index_age_student": {
         "ru": "студенческие команды",
         "en": "student teams"
+    },
+    "schoolar_team": {
+        "ru": "Школьная",
+        "en": "School"
+    },
+    "students_team": {
+        "ru": "Студенческая",
+        "en": "Student"
     },
     "index_round_quarter": {
         "ru": "Четвертьфинал",
@@ -465,12 +462,12 @@
         "en": "Rules"
     },
     "rul_page_titl_hw_and_sw_title": {
-        "ru": "1. АППАРАТНОЕ И ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ",
-        "en": "1. HARDWARE AND SOFTWARE"
+        "ru": "2. АППАРАТНОЕ И ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ",
+        "en": "2. HARDWARE AND SOFTWARE"
     },
     "rul_page_titl_hw_and_sw_testsys_title": {
-        "ru": "1.1. Тестирующая система",
-        "en": "1.1. Testing system"
+        "ru": "2.1. Тестирующая система",
+        "en": "2.1. Testing System"
     },
     "rul_page_titl_hw_and_sw_testsys_descr": {
         "ru": "Intel(R) Xeon(R) CPU E5-2630 @ 2.20GHz, 15MB cache, virtualizаtion on 8 core, 8GB RAM, OS Linux. Доступные компиляторы:",
@@ -525,11 +522,11 @@
         "en": "Golang 1.16"
     },
     "rul_page_titl_hw_and_sw_work_places_title": {
-        "ru": "1.2. Рабочие места",
-        "en": "1.2. Work places"
+        "ru": "2.2. Рабочие места",
+        "en": "2.2. Workplaces"
     },
     "rul_page_titl_hw_and_sw_work_places_descr": {
-        "ru": "Во время очных туров соревнований предоставляется подсоединенный к интернет сети IBM PC-совместимый компьютер в следующей конфигурации: процессор Pentium или совместимый, ОЗУ не менее 2 Gb, операционная система Microsoft Windows и сопутствующее программное обеспечение.",
+        "ru": "Во время очных туров соревнований предоставляется подсоединенный к интернет сети IBM PC-совместимый компьютер в следующей конфигурации: процессор Pentium или совместимый, ОЗУ не менее 2 Gb, операционная система Fedora и сопутствующее программное обеспечение.",
         "en": "During on-campus contests of the Championship participants are provided with IBM PC compatible computer connected to local network in following configuration: CPU Pentium or compatible processor, at least 2 GB of RAM, Microsoft Windows OS and accompanying software."
     },
     "rul_page_titl_hw_and_sw_work_places_note": {
@@ -537,15 +534,15 @@
         "en": "Participants should indicate, which IDEs are needed. Otherwise, availability of only one of mentioned is guaranteed."
     },
     "rul_page_titl_conduct_titl": {
-        "ru": "2. ПОРЯДОК ПРОВЕДЕНИЯ",
-        "en": "2. CONDUCT"
+        "ru": "3. ПОРЯДОК ПРОВЕДЕНИЯ",
+        "en": "3. CONDUCT"
     },
     "rul_page_titl_conduct_descr": {
         "ru": "Участниками соревнований являются учащиеся средних общеобразовательных учреждений, учащиеся учреждений среднего специального образования и студенты (I и II ступень) и аспиранты учреждений высшего образования Республики Беларусь и других стран.",
         "en": "Participants can be general secondary school students, students in specialized secondary education, university students (bachelor and master) and postgraduate students of the Republic of Belarus and other countries."
     },
     "rul_page_titl_conduct_team_rules": {
-        "ru": "Команда может состоять не более чем из 3 участников. Участнику соревнований запрещается входить в состав более чем одной команды. Команда, в состав которой входит хотя бы один студент, магистрант или аспирант вуза или ссуза, считается студенческой командой. Команда, в состав которой входят участники не из одного учебного заведения, кроме учебных заведений основного и среднего общего образования, считается смешанной и в очном финале официальное участие не принимают. Не полная команда, состоящая менее чем из 2 участников в очном финале официальное участие не принимают.",
+        "ru": "Команда может состоять не более чем из 3 участников. Участнику соревнований запрещается входить в состав более чем одной команды. Команда, в состав которой входит хотя бы один студент, магистрант или аспирант вуза или ссуза, считается студенческой командой. Команда, в состав которой входят участники не из одного учебного заведения считается смешанной. Студенческие смешанные команды в очном финале официальное участие не принимают. Не полная команда, состоящая менее чем из 2 участников в очном финале официальное участие не принимают.",
         "en": "A team must consist of 2 or 3 members. Being part of more than one team is prohibited for participants. A team consisting of at least one university student, graduate student or postgraduate student of a higher educational institution or college is considered to be a student team. A team that includes participants from different educational institutions, except primary and secondary general education, is considered a mixed team. Mixed teams do not take part in on-campus Finals. An incomplete team consisting of less than 2 participants does not officially participate in the intramural final."
     },
     "rul_page_titl_conduct_championship_rules": {
@@ -553,8 +550,8 @@
         "en": "Programming Championship is conducted according to the ICPC rules. Championship is held in 3 stages. Discussing ideas and sharing problem solutions outside the team is prohibited at all stages of championship."
     },
     "rul_page_titl_conduct_quarter_finals_titl": {
-        "ru": "2.1. Первый отборочный тур (четвертьфинал)",
-        "en": "2.1. First Qualification Contest (Quarter-Finals)"
+        "ru": "3.1. Первый отборочный тур (четвертьфинал)",
+        "en": "3.1. First Qualification Contest (Quarter-Finals)"
     },
     "rul_page_titl_conduct_quarter_finals_descript": {
         "ru": "Первый отборочный тур проводится в заочной форме. Командам-участницам предлагается решить от 12 до 15 задач (текст задач на русском языке) за 168 часов (7 дней). Жюри имеет право продлить соревнования в случае каких-либо непредвиденных обстоятельств. Для прохождения на следующий этап участникам необходимо решить не менее половины задач.",
@@ -569,8 +566,8 @@
         "en": "First contest is mandatory for BSUIR and school teams. First contest is not mandatory for teams from other universities of the Republic of Belarus and foreign countries. These teams immediately pass to Semi-Finals, though they can also participate in Quarter-Finals."
     },
     "rul_page_titl_conduct_semi_finals_titl": {
-        "ru": "2.2. Второй отборочный тур (полуфинал)",
-        "en": "2.2. Second Qualification Contest (Semi-Finals)"
+        "ru": "3.2. Второй отборочный тур (полуфинал)",
+        "en": "3.2. Second Qualification Contest (Semi-Finals)"
     },
     "rul_page_titl_conduct_semi_finals_descript": {
         "ru": "Второй отборочный тур (полуфинал) проводится в очно-заочной форме. Командам-участницам предлагается решить от 4 до 12 задач (текст задач на русском и английском языках) за 4-5 астрономических часов. Жюри имеет право продлить соревнования в случае каких-либо непредвиденных обстоятельств.",
@@ -593,23 +590,23 @@
         "en": "By the decision of organizers and judges the number of teams that pass in the next stage, their composition, as well as the quota can be changed."
     },
     "rul_page_titl_conduct_finals_titl": {
-        "ru": "2.3. Финал чемпионата",
-        "en": "2.3. Finals"
+        "ru": "3.3. Финал чемпионата",
+        "en": "3.3. Finals"
     },
     "rul_page_titl_conduct_finals_descript": {
-        "ru": "Финал соревнований проводится в очной форме. Участникам предлагается решить от 6 до 12 алгоритмических задач (тексты задач на английском языке) за 5 астрономических часов.",
+        "ru": "Финал соревнований проводится в очной форме. Участникам предлагается решить от 6 до 13 алгоритмических задач (тексты задач на английском языке) за 5 астрономических часов.",
         "en": "The Finals of the Championship are conducted on-campus. Participating teams are given from 4 to 12 algorithmic problems to solve (problem statements are written in English and Russian) in 5 hours."
     },
     "rul_page_titl_conduct_other_conditions_titl": {
-        "ru": "2.4. Прочие условия",
-        "en": "2.4. Other conditions"
+        "ru": "3.4. Прочие условия",
+        "en": "3.4. Other conditions"
     },
     "rul_page_titl_conduct_other_conditions_descript": {
         "ru": "Второй отборочный тур (полуфинал) является обязательным для всех зарегистрированных команд, желающих принять участие в чемпионате.",
         "en": "Second contest (Semi-Finals) is mandatory for all registered teams, wishing to participate in the Championship."
     },
     "rul_page_titl_conduct_other_conditions_special_conditions": {
-        "ru": "Команды высших учебных заведений, в состав которых входит не менее двух финалистов студенческого командного чемпионата мира по программированию ICPC сезона 2024-2025, а также команды средних общеобразовательных учреждений (школ, гимназий, лицеев), в состав которых входит не менее двух призеров заключительного этапа республиканской олимпиады по информатике 2025 года (диплом 1, 2 и 3 степени), допускаются к участию в финале соревнований без прохождения отборочных этапов и сверх установленной квоты для учебного заведения.",
+        "ru": "Команды высших учебных заведений, в состав которых входит не менее двух финалистов студенческого командного чемпионата мира по программированию ICPC сезона 2025-2026, а также команды средних общеобразовательных учреждений (школ, гимназий, лицеев), в состав которых входит не менее двух призеров заключительного этапа республиканской олимпиады по информатике 2026 года (диплом 1, 2 и 3 степени), допускаются к участию в финале соревнований без прохождения отборочных этапов и сверх установленной квоты для учебного заведения.",
         "en": "Teams from higher educational institutions with at least two finalists of ICPC season 2024-2025 and teams from general secondary educational institutions (school, gymnasium, lyceum), which include at least two award-winners of the final stage of the Republican Olympiad in informatics in 2025 (diploma of 1st, 2nd and 3rd degree), are allowed to participate in the Finals of the competition without passing qualification stages and above the established quota for an educational institution."
     },
     "rul_page_titl_conduct_other_conditions_equipment_rules": {
@@ -617,11 +614,11 @@
         "en": "During the second Qualification Contest (Semi-Finals) and Finals of the competition each team is given one computer."
     },
     "rul_page_titl_conduct_other_conditions_allowed_items": {
-        "ru": "Участники могут приносить с собой и использовать словари (англо-русский и т.п.), чистые листы бумаги и инструменты для письма.",
+        "ru": "Участники могут приносить с собой и использовать словари (англо-русский и т.п.), чистые листы бумаги, инструменты для письма, а также Team Reference Document (максимум 25 страниц печатного текста без пометок, размер шрифта — читаемый с расстояния вытянутой руки).",
         "en": "Participants can bring and use dictionaries (English-Russian, etc.), blank sheets of paper and writing tools."
     },
     "rul_page_titl_conduct_other_conditions_prohibited_items": {
-        "ru": "Запрещается использовать любые (кроме предоставленных жюри) книги, распечатки, электронные средства хранения и передачи информации: личные компьютеры, флешки, дискеты, калькуляторы, мобильные телефоны и др.",
+        "ru": "Все остальные материалы, включая книги, распечатки, электронные устройства (личные компьютеры, флешки, дискеты, калькуляторы, мобильные телефоны и др.), запрещены, если они не предоставлены жюри.",
         "en": "It is forbidden to use any (other than those provided by the jury) books, printouts, electronic means of storing and transmitting information: personal computers, flash drives, floppy disks, calculators, mobile phones, etc."
     },
     "rul_page_titl_conduct_other_conditions_printer_usage": {
@@ -633,8 +630,8 @@
         "en": "During on-campus contests participants can only communicate with members of their team, judges and competition organizers."
     },
     "rul_page_titl_problem_solving_titl": {
-        "ru": "3. РЕШЕНИЕ ЗАДАЧ",
-        "en": "3. Problem solving"
+        "ru": "4. РЕШЕНИЕ ЗАДАЧ",
+        "en": "4. PROBLEM SOLVING"
     },
     "rul_page_titl_problem_solving_descript": {
         "ru": "Во время тура участники решают предложенные задачи. Решением является программа (исходный текст). Программа не должна включать в себя другие файлы или модули кроме стандартных.",
@@ -653,16 +650,16 @@
         "en": "Maximum time per test is specified for each problem. If the program exceeds this time on one of the tests, the solution is considered to be incorrect."
     },
     "rul_page_titl_problem_solving_prohibited_actions_1": {
-        "ru": "Работу с подкаталогами и файлами.",
-        "en": "Work with subdirectories and files."
+        "ru": "- Работу с подкаталогами и файлами.",
+        "en": "- Work with subdirectories and files."
     },
     "rul_page_titl_problem_solving_prohibited_actions_2": {
-        "ru": "Любые сетевые средства.",
-        "en": "Use any network devices."
+        "ru": "- Любые сетевые средства.",
+        "en": "- Use any network devices."
     },
     "rul_page_titl_problem_solving_prohibited_actions_3": {
-        "ru": "Любые другие средства или действия, которые могут нарушить работу программного обеспечения олимпиады (в том числе использование вставок ассемблерного кода).",
-        "en": "Use any other devices or behavior, that may disrupt the software of the (including the use of Assembler code inserts)."
+        "ru": "- Любые другие средства или действия, которые могут нарушить работу программного обеспечения олимпиады (в том числе использование вставок ассемблерного кода).",
+        "en": "- Use any other devices or behavior, that may disrupt the software of the (including the use of Assembler code inserts)."
     },
     "rul_page_titl_problem_solving_disqualification": {
         "ru": "Проверяющие программы используют различные методы контроля за соблюдением данных требований. Нарушители будут дисквалифицированы.",
@@ -681,12 +678,12 @@
         "en": "All tests are performed in the same order. The number of test with error in testing results is considered to be a number of the first test where the program gives an incorrect answer. For example: «Time limit exceeded: Test 9» means that:"
     },
     "rul_page_titl_problem_solving_test_order_list_1": {
-        "ru": "тесты с 1 по 8 прошли проверку;",
-        "en": "Tests 1-8 were correct;"
+        "ru": "- тесты с 1 по 8 прошли проверку;",
+        "en": "- Tests 1-8 were correct;"
     },
     "rul_page_titl_problem_solving_test_order_list_2": {
-        "ru": "на более сложном, чем предыдущие восемь, девятом тесте программа превысила предел времени.",
-        "en": "On 9th test program exceeded time limit."
+        "ru": "- на более сложном, чем предыдущие восемь, девятом тесте программа превысила предел времени.",
+        "en": "- On 9th test program exceeded time limit."
     },
     "rul_page_titl_problem_solving_presentation_error": {
         "ru": "Если получено сообщение «Presentation error» («Ошибка вывода»), то это означает, что формат результата (вывода) программы отличается от требуемого.",
@@ -721,12 +718,12 @@
         "en": "«User» – Name of the team, A, B, C, D, E, F – Problems, «Total» - Number of successfully solved problems, «Penalty» – Number of penalty points. Sign «+» means that the problem was successfully solved, «+n» means that problem was solved after n unsuccessful tries, «-n» means that problem was not solved and there were n unsuccessful tries."
     },
     "rul_page_titl_programming_features_titl": {
-        "ru": "4. ОСОБЕННОСТИ НАПИСАНИЯ ПРОГРАММ",
-        "en": "4. FEATURES OF WRITING A PROGRAMS"
+        "ru": "5. ОСОБЕННОСТИ НАПИСАНИЯ ПРОГРАММ",
+        "en": "5. FEATURES OF WRITING PROGRAMS"
     },
     "rul_page_titl_programming_features_cpp_titl": {
-        "ru": "4.1. На С/С++",
-        "en": "4.1. С/С++"
+        "ru": "5.1. На С/С++",
+        "en": "5.1. C/C++"
     },
     "rul_page_titl_programming_features_cpp_description": {
         "ru": "Если решение задачи написано на языке С/С++, то для корректной работы тестирующей системы оно должно завершать работу с кодом возврата 0, т.е., например,",
@@ -737,16 +734,16 @@
         "en": "Also, instead of __int64, write long long (VC++ also understands long long)."
     },
     "rul_page_titl_programming_features_java_titl": {
-        "ru": "4.2. На Java",
-        "en": "4.2. Java"
+        "ru": "5.2. На Java",
+        "en": "5.2. Java"
     },
     "rul_page_titl_programming_features_java_description": {
         "ru": "Решение нужно оформить в виде публичного класса Main в пакете по умолчанию. В файле может быть произвольное количество непубличных и вложенных классов. Точка входа в программу - стандартный метод main(String[]).",
         "en": "The solution should be in the form of a public Main class in the default package. A file can have an arbitrary number of non-public and nested classes. Program entry point – standard method main(String[])."
     },
     "rul_page_titl_results_titl": {
-        "ru": "5. ПОДВЕДЕНИЕ ИТОГОВ СОРЕВНОВАНИЯ",
-        "en": "5. COUNTING THE RESULTS"
+        "ru": "6. ПОДВЕДЕНИЕ ИТОГОВ СОРЕВНОВАНИЯ",
+        "en": "6. RESULTS SUMMARY"
     },
     "rul_page_titl_results_description": {
         "ru": "Результаты соревнований подводятся жюри.",
@@ -821,16 +818,16 @@
         "en": "According to the rules of our competition, the teams that participate in the second qualifying stage (Semi-Finals) must compete in their educational institutions. Though the final decision on the stage of the contest remains with the team coach. You can participate in the Semi-Finals in the classrooms of BSUIR only with prior notification of the organizing committee by writing to the email address acm@bsuir.by before <b>26.03.2025 13:00(GMT+3)</b>."
     },
     "rul_page_titl_conduct_semi_finals_final_qualification_list_1": {
-        "ru": "7 команд студентов, магистрантов и аспирантов БГУИР;",
-        "en": "7 teams of students, graduate students and postgraduate students of the BSUIR;"
+        "ru": "- 7 команд студентов, магистрантов и аспирантов БГУИР;",
+        "en": "- 7 teams of students, graduate students and postgraduate students of the BSUIR;"
     },
     "rul_page_titl_conduct_semi_finals_final_qualification_list_2": {
-        "ru": "2 команд от каждого вуза или ссуза Республики Беларусь и стран зарубежья;",
-        "en": "2 teams from each university or college of the Republic of Belarus and foreign countries;"
+        "ru": "- 2 команд от каждого вуза или ссуза Республики Беларусь и стран зарубежья;",
+        "en": "- 2 teams from each university or college of the Republic of Belarus and foreign countries;"
     },
     "rul_page_titl_hw_and_sw_rules": {
-        "ru": "Правила XIII Открытого чемпионата БГУИР",
-        "en": "Rules of the XIII BSUIR Open Championship"
+        "ru": "Правила XIV Открытого чемпионата БГУИР",
+        "en": "Rules of the XIV BSUIR Open Championship"
     },
     "rul_page_titl_problem_solving_time_problems": {
         "ru": "В решениях задач запрещено использовать:",
@@ -863,5 +860,117 @@
     "rul_page_titl_programming_features_cpp_incorrect_example_not_5": {
         "ru": "Пример:",
         "en": "Example:"
+    },
+    "invalid_login_or_password": {
+        "ru": "Неверный логин или пароль",
+        "en": "Invalid username or password"
+    },
+    "passwords_do_not_match": {
+        "ru": "Пароли не совпадают",
+        "en": "Passwords do not match"
+    },
+    "send_to_print": {
+        "ru": "Отправить на печать",
+        "en": "Send to print"
+    },
+    "rul_page_titl_general_info_title": {
+        "ru": "1. ОБЩАЯ ИНФОРМАЦИЯ",
+        "en": "1. GENERAL INFORMATION"
+    },
+    "rul_page_titl_general_info_qual_title": {
+        "ru": "1.1 Общая информация отборочного тура",
+        "en": "1.1 General Information About the Qualification Round"
+    },
+    "rul_page_titl_general_info_qual_purpose": {
+        "ru": "Цель отборочного тура:",
+        "en": "Purpose of the qualification round:"
+    },
+    "rul_page_titl_general_info_qual_goal_1": {
+        "ru": "- дать возможность командам самостоятельно оценить уровень подготовки к участию в Чемпионате;",
+        "en": "- to let teams independently assess their level of preparation for participating in the Championship;"
+    },
+    "rul_page_titl_general_info_qual_goal_2": {
+        "ru": "- отобрать команды, которые смогут бороться во втором отборочном туре (полуфинале) за выход в финал Чемпионата.",
+        "en": "- to select teams that can compete in the second qualification round (Semi-Finals) for a place in the Finals."
+    },
+    "rul_page_titl_general_info_qual_start": {
+        "ru": "Начало отборочного тура: 16.03.2026 в 16:00.",
+        "en": "Start of the qualification round: March 16, 2026 at 16:00 (GMT+3)."
+    },
+    "rul_page_titl_general_info_qual_end": {
+        "ru": "Окончание отборочного тура: 22.03.2026 в 16:00.",
+        "en": "End of the qualification round: March 22, 2026 at 16:00 (GMT+3)."
+    },
+    "rul_page_titl_general_info_qual_mandatory": {
+        "ru": "Четвертьфинал является обязательным отборочным этапом для команд БГУИР и школьников. Остальные команды по желанию также могут принять участие в данном туре.",
+        "en": "Quarter-Finals are a mandatory qualification stage for BSUIR teams and school teams. Other teams may also participate voluntarily."
+    },
+    "rul_page_titl_general_info_qual_pass": {
+        "ru": "Команды, решившие не менее половины из предложенных задач, проходят во второй отборочный тур (полуфинал соревнований).",
+        "en": "Teams that solve at least half of the problems advance to the second qualification round (Semi-Finals)."
+    },
+    "rul_page_titl_general_info_qual_access": {
+        "ru": "Доступ к системе тестирования: условия задач доступны в разделе задач и в тестирующей системе.",
+        "en": "Access to the testing system: problem statements are available in the Problems section and in the testing system."
+    },
+    "rul_page_titl_general_info_qual_registration": {
+        "ru": "Для участия в отборочном этапе необходимо, чтобы регистрация была подтверждена. Список зарегистрированных команд и их статус можно посмотреть на главной странице во вкладке «Этапы».",
+        "en": "To participate in the qualification round, registration must be confirmed. The list of registered teams and their status is available on the main page in the “Stages” tab."
+    },
+    "rul_page_titl_general_info_qual_credentials": {
+        "ru": "Логины и пароли для доступа к тестирующей системе указаны в личном кабинете.",
+        "en": "Logins and passwords for access to the testing system are available in your personal account."
+    },
+    "rul_page_titl_general_info_semi_title": {
+        "ru": "1.2 Общая информация полуфинала",
+        "en": "1.2 General Information About the Semi-Finals"
+    },
+    "rul_page_titl_general_info_semi_date": {
+        "ru": "Полуфинал XIV Международного открытого чемпионата БГУИР по программированию пройдет 08.04.2026 с 14:00 до 19:00 по минскому времени.",
+        "en": "The Semi-Finals of the XIV International Open BSUIR Programming Championship will be held on April 8, 2026 from 14:00 to 19:00 (GMT+3)."
+    },
+    "rul_page_titl_general_info_semi_list": {
+        "ru": "Напомним, что данный этап является обязательным в том числе для команд из других вузов. Список участников полуфинала можно найти на главной странице во вкладке «Этапы».",
+        "en": "This stage is mandatory, including for teams from other universities. The list of Semi-Finals participants is available on the main page in the “Stages” tab."
+    },
+    "rul_page_titl_general_info_semi_place": {
+        "ru": "По правилам наших соревнований второй отборочный этап (полуфинал) команды должны решать в своих учреждениях образования, однако окончательное решение о месте проведения контеста остается за тренером команды. Участвовать в полуфинале можно в учебных аудиториях БГУИР только при предварительном уведомлении организационного комитета по средства письма на электронный адрес acm@bsuir.by в срок до 26.03.2026 13:00.",
+        "en": "According to our rules, teams should solve the second qualification stage (Semi-Finals) at their educational institutions, but the final decision on the contest venue remains with the team coach. Participation in BSUIR classrooms is allowed only with prior notification of the organizing committee by email to acm@bsuir.by before March 26, 2026 at 13:00 (GMT+3)."
+    },
+    "rul_page_titl_general_info_fair_play_intro": {
+        "ru": "Вот простые правила fair-play, которые необходимо соблюдать во время полуфинального контеста:",
+        "en": "These are the simple fair-play rules that must be followed during the Semi-Finals contest:"
+    },
+    "rul_page_titl_general_info_fair_play_1": {
+        "ru": "- Команда должна использовать только один компьютер для решения контеста. Исключение: если участники команды решают контест удаленно друг от друга, то для написания кода разрешается использовать ТОЛЬКО ОДНУ клавиатуру в один момент времени; допускается использование чатов и аудио и видео коммуникации внутри команды.",
+        "en": "- A team must use only one computer for solving the contest. Exception: if team members participate remotely, only ONE keyboard may be used for coding at any moment; chats and audio/video communication within the team are allowed."
+    },
+    "rul_page_titl_general_info_fair_play_2": {
+        "ru": "- Допускается чтение условий (и ничего кроме этого) с разных устройств.",
+        "en": "- Reading problem statements (and nothing else) from different devices is allowed."
+    },
+    "rul_page_titl_general_info_fair_play_3": {
+        "ru": "- Разрешается общаться только с членами своей команды и через тестирующую систему с представителями жюри.",
+        "en": "- Communication is allowed only with your teammates and with judges via the testing system."
+    },
+    "rul_page_titl_general_info_fair_play_4": {
+        "ru": "- Запрещается обсуждать идеи и обмениваться условиями и решениями задач вне команды. Также запрещено публиковать или делиться любой информацией, имеющей отношение к задачам, до окончания полуфинала.",
+        "en": "- It is forbidden to discuss ideas or exchange problem statements and solutions outside the team. Publishing or sharing any problem-related information before the end of the Semi-Finals is also forbidden."
+    },
+    "rul_page_titl_general_info_fair_play_5": {
+        "ru": "- Разрешено использовать предварительно написанный участниками команды код или любой другой код, который находился в публичном доступе до начала полуфинала.",
+        "en": "- It is allowed to use code previously written by team members or any other code publicly available before the start of the Semi-Finals."
+    },
+    "rul_page_titl_general_info_fair_play_6": {
+        "ru": "- Разрешается пользоваться справочными интернет-ресурсами.",
+        "en": "- Using online reference resources is allowed."
+    },
+    "rul_page_titl_general_info_fair_play_warning": {
+        "ru": "Команды, которые нарушат правила, будут дисквалифицированы. В случае возникновения спорных ситуаций бремя доказательства соблюдения правил полностью ложится на участников.",
+        "en": "Teams that violate the rules will be disqualified. In case of disputes, the burden of proving compliance with the rules lies entirely with participants."
+    },
+    "rul_page_titl_hw_and_sw_testsys_compil": {
+        "ru": "<ul><li>C11 (gcc-12.2.1)</li><li>C++17 (gcc-12.2.1)</li><li>C++20 (gcc-12.2.1)</li><li>C# (mono-6.12.0)</li><li>Go (go-1.19.9)</li><li>Java (openjdk-19.0.2)</li><li>Pascal (fpc-3.2.2)</li><li>Python3 (pypy-7.3.12)</li><li>Python3 (python-3.10.14)</li><li>Rust (rustc-1.64.0)</li></ul>",
+        "en": "<ul><li>C11 (gcc-12.2.1)</li><li>C++17 (gcc-12.2.1)</li><li>C++20 (gcc-12.2.1)</li><li>C# (mono-6.12.0)</li><li>Go (go-1.19.9)</li><li>Java (openjdk-19.0.2)</li><li>Pascal (fpc-3.2.2)</li><li>Python3 (pypy-7.3.12)</li><li>Python3 (python-3.10.14)</li><li>Rust (rustc-1.64.0)</li></ul>"
     }
 }
