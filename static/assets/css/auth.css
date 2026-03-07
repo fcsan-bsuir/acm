@@ -6,6 +6,9 @@ main {
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
+}
+
+.auth-main--entry {
     padding-top: 80px;
 }
 

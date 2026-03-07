@@ -154,10 +154,24 @@ section:not(#main):not(.participants-button) {
   margin-left: 200px;
 }
 
-.participants-button {
+.participants-buttons {
   align-self: center;
   justify-self: flex-end;
-  margin-right: 20%;
+  gap: 8px;
+  margin-right: 20%
+}
+
+.participants-buttons .participants-button {
+  white-space: nowrap;
+  margin: 0;
+}
+
+.participants-buttons .final-stage-list-button {
+  width: 24em;
+}
+
+.participants-buttons .final-stage-list-button + .final-stage-list-button {
+  margin-left: 10px;
 }
 
 .nav {
@@ -358,7 +372,7 @@ section:not(#main):not(.participants-button) {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
     padding-right: 0;
     margin-top: 0;
   }
@@ -457,6 +471,33 @@ section:not(#main):not(.participants-button) {
 
   .participants-button {
     margin: 0;
+  }
+
+  .participants-buttons {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    margin-right: 0;
+  }
+
+  .participants-buttons .participants-button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .participants-buttons .participants-button + .participants-button {
+    margin-top: 12px;
+  }
+
+  .participants-buttons .final-stage-list-button {
+    width: min(20rem, 100%);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .participants-buttons .final-stage-list-button + .final-stage-list-button {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .maladosc {

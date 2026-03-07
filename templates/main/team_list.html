@@ -12,48 +12,52 @@
     <article class="rules noised large-text d-flex">
       <div class="container">
         <h1 class="title title-head">{{tr.team_list}}</h1>
-        <div class="table__wrap">
-          <table class="table">
-            <thead>
-              <tr>
-                <th class="header-text" >{{ tr.team_name }}</th>
-                <th class="header-text" >{{ tr.participant }} 1</th>
-                <th class="header-text" >{{ tr.participant }} 2</th>
-                <th class="header-text" >{{ tr.participant }} 3</th>
-                <th class="header-text" >{{ tr.coach }}</th>
-                <th class="header-text" ">{{ tr.status }}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for team in teams %}
-              <tr class="underlined">
-                <td>{{team.name}}</td>
-                <td>
-                  {% if team.participants.all.count >= 1%}
-                  {{team.participants.all.0.fullname}}
-                  {% endif %}
-                </td>
-                <td>
-                  {% if team.participants.all.count >= 2 %}
-                  {{team.participants.all.1.fullname}}
-                  {% endif %}
-                </td>
-                <td>
-                  {% if team.participants.all.count >= 3 %}
-                  {{team.participants.all.2.fullname}}
-                  {% endif %}
-                </td>
-                <td>
-                  {% if team.coach %}
-                  {{team.coach.fullname}}
-                  {% endif %}
-                </td>
-                <td>{{team.get_status_display}}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
+        {% if teams %}
+          <div class="table__wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="header-text" >{{ tr.team_name }}</th>
+                  <th class="header-text" >{{ tr.participant }} 1</th>
+                  <th class="header-text" >{{ tr.participant }} 2</th>
+                  <th class="header-text" >{{ tr.participant }} 3</th>
+                  <th class="header-text" >{{ tr.coach }}</th>
+                  <th class="header-text" >{{ tr.status }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for team in teams %}
+                <tr class="underlined">
+                  <td>{{team.name}}</td>
+                  <td>
+                    {% if team.participants.all.count >= 1%}
+                    {{team.participants.all.0.fullname}}
+                    {% endif %}
+                  </td>
+                  <td>
+                    {% if team.participants.all.count >= 2 %}
+                    {{team.participants.all.1.fullname}}
+                    {% endif %}
+                  </td>
+                  <td>
+                    {% if team.participants.all.count >= 3 %}
+                    {{team.participants.all.2.fullname}}
+                    {% endif %}
+                  </td>
+                  <td>
+                    {% if team.coach %}
+                    {{team.coach.fullname}}
+                    {% endif %}
+                  </td>
+                  <td>{{team.get_status_display}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        {% else %}
+          <p class="text">{{ tr.empty_stage_team_list }}</p>
+        {% endif %}
       </div>
     </article>
   </section>

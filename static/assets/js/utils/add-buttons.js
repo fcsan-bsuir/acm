@@ -22,6 +22,54 @@ const stages = [
 
 let activeButton = null;
 let activeStageId = null;
+const stagesSection = document.querySelector("#stages");
+
+function createListButton(text, url) {
+  const button = createButton({
+    text,
+    role: "primary",
+    onClick: () => {
+      window.location.href = localizeUrl(url);
+    },
+    fontSize: "1.25rem",
+  });
+
+  button.classList.add("participants-button");
+  return button;
+}
+
+function renderStageListButtons(stageId) {
+  const oldButtons = stagesSection.querySelector(".participants-buttons");
+  if (oldButtons) {
+    oldButtons.remove();
+  }
+
+  const buttonsWrap = document.createElement("div");
+  buttonsWrap.className = "participants-buttons";
+
+  if (stageId === "finals") {
+    const studentButton = createListButton(
+      t("student_team_list", "Список студенческих команд"),
+      "/studfinal",
+    );
+    studentButton.classList.add("final-stage-list-button");
+    buttonsWrap.appendChild(studentButton);
+
+    const schoolButton = createListButton(
+      t("school_team_list", "Список школьных команд"),
+      "/junfinal",
+    );
+    schoolButton.classList.add("final-stage-list-button");
+    buttonsWrap.appendChild(schoolButton);
+  } else {
+    const activeStage = stages.find((s) => s.id === stageId);
+    if (activeStage) {
+      buttonsWrap.appendChild(createListButton(t("team_list", "Список участников"), activeStage.url));
+    }
+  }
+
+  stagesSection.appendChild(buttonsWrap);
+}
 
 stages.forEach((stage) => {
   const button = createButton({
@@ -40,6 +88,7 @@ stages.forEach((stage) => {
         div.style.display = "none";
       });
       document.getElementById(stage.id).style.display = "flex";
+      renderStageListButtons(stage.id);
     },
     fontSize: "1.25rem",
   });
@@ -57,21 +106,5 @@ if (firstButton) {
   document.getElementById("quaterfinals").style.display = "flex";
   document.getElementById("semifinals").style.display = "none";
   document.getElementById("finals").style.display = "none";
+  renderStageListButtons(activeStageId);
 }
-
-const stagesSection = document.querySelector("#stages");
-const participantsButton = createButton({
-  text: t("team_list", "Список участников"),
-  role: "primary",
-  onClick: () => {
-    const activeStage = stages.find(s => s.id === activeStageId);
-    if (activeStage) {
-      window.location.href = localizeUrl(activeStage.url);
-    }
-  },
-  fontSize: "1.25rem",
-});
-
-participantsButton.classList.add("participants-button");
-
-stagesSection.appendChild(participantsButton);

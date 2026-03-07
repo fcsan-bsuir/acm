@@ -7,32 +7,18 @@
 {% endblock %}
 
 {% block content %}
-<main>
+<main class="form-main-padded">
       <h1 class="title title-head">{{ tr.adding_participant }}</h1>
       <form class="login-form" method="post">
         {% csrf_token %}
 
-        {% if form.errors %}
-            <div class="error-info">
-            {% for field, errors in form.errors.items %}
-                {% for error in errors %}
-                    <p>{{ field }}: {{ error }}</p>
-                {% endfor %}
-            {% endfor %}
-            </div>
-        {% endif %}
-
         <div class="big-input name_input_container">
           <input class="input auth-input" name="lastname" placeholder="{{ tr.add_coach_page_lastname }}" type="text" value="{% if form.lastname.value %}{{ form.lastname.value }}{% endif %}"/>
-          
+          <div class="alarm">
+            <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
+          </div>
           {% if form.lastname.errors %}
-            <div class="alarm">
-                <img src="{% static 'assets/img/star.png' %}" alt="error label"/>
-            </div>
-          {% else %}
-            <div class="alarm">
-                <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
-            </div>
+            <div class="error-info">{{ form.lastname.errors }}</div>
           {% endif %}
         </div>
 
@@ -41,50 +27,74 @@
           <div class="alarm">
             <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
           </div>
+          {% if form.firstname.errors %}
+            <div class="error-info">{{ form.firstname.errors }}</div>
+          {% endif %}
         </div>
         <div class="big-input name_input_container">
           <input class="input auth-input" name="secondname" placeholder="{{ tr.add_coach_page_secondname }}" type="text" value="{% if form.secondname.value %}{{ form.secondname.value }}{% endif %}"/>
           <div class="alarm">
             <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
           </div>
+          {% if form.secondname.errors %}
+            <div class="error-info">{{ form.secondname.errors }}</div>
+          {% endif %}
         </div>
         <div class="big-input name_input_container">
           <input class="input auth-input" name="education" placeholder="{{ tr.education }}" type="text" value="{% if form.education.value %}{{ form.education.value }}{% endif %}"/>
           <div class="alarm">
             <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
           </div>
+          {% if form.education.errors %}
+            <div class="error-info">{{ form.education.errors }}</div>
+          {% endif %}
         </div>
         <div class="big-input name_input_container">
           <input class="input auth-input" name="email" placeholder="E-mail" type="email" value="{% if form.email.value %}{{ form.email.value }}{% endif %}"/>
           <div class="alarm">
             <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
           </div>
+          {% if form.email.errors %}
+            <div class="error-info">{{ form.email.errors }}</div>
+          {% endif %}
         </div>
         <div class="big-input name_input_container">
           <input class="input auth-input" name="phone" placeholder="{{ tr.phone }}" type="text" value="{% if form.phone.value %}{{ form.phone.value }}{% endif %}"/>
           <div class="alarm">
             <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
           </div>
+          {% if form.phone.errors %}
+            <div class="error-info">{{ form.phone.errors }}</div>
+          {% endif %}
         </div>
         <div class="big-input name_input_container">
           {{ form.student_status }}
           <div class="alarm">
             <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
           </div>
+          {% if form.student_status.errors %}
+            <div class="error-info">{{ form.student_status.errors }}</div>
+          {% endif %}
         </div>
         <div class="big-input name_input_container">
             {{ form.tshirt_size }}
           <div class="alarm">
             <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
           </div>
+          {% if form.tshirt_size.errors %}
+            <div class="error-info">{{ form.tshirt_size.errors }}</div>
+          {% endif %}
         </div>
         <div class="big-input name_input_container">
             {{ form.country }}
           <div class="alarm">
             <img src="{% static 'assets/img/star.png' %}" alt="required label"/>
           </div>
+          {% if form.country.errors %}
+            <div class="error-info">{{ form.country.errors }}</div>
+          {% endif %}
         </div>
-        <span class="error-info">*{{ tr.add_coach_page_required_fields }}</span>
+        <span class="error-info">{{ tr.add_coach_page_required_fields }}</span>
         <button class="button button-primary auth-button">{{ tr.add_participant }}</button>
       </form>
 </main>

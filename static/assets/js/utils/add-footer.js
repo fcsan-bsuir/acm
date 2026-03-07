@@ -5,7 +5,7 @@ const footer = createFooter({
     {
       src: new URL("../../img/social/tg.svg", import.meta.url).href,
       alt: "Telegram",
-      href: "https://t.me/fcsan_by",
+      href: "https://t.me/bsuir_open",
     },
     {
       src: new URL("../../img/social/vk.svg", import.meta.url).href,
@@ -25,7 +25,7 @@ const footer = createFooter({
     {
       src: new URL("../../img/social/fcsan.svg", import.meta.url).href,
       alt: "FCSAN",
-      href: "https://vk.com/studsovet_fksis",
+      href: "https://t.me/fcsan_by",
     },
   ],
 });

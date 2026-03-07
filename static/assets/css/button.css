@@ -1,6 +1,6 @@
 .button {
   --scale-factor: 0.6;
-  border: 0.3em solid var(--light-blue);
+  border: 0.2em solid var(--light-blue);
   border-radius: 1em;
   cursor: pointer;
   font-size: var(--font-size-sm);
@@ -29,7 +29,7 @@
   background-color: transparent;
   color: var(--blue);
   border-color: var(--blue);
-  box-shadow: 0 0 0 2.5px var(--blue); 
+  border-width: 0.2em;
 }
 
 @media (min-width: 768px) {

@@ -27,6 +27,18 @@
         "ru": "Список команд",
         "en": "Team list"
     },
+    "student_team_list": {
+        "ru": "Список студенческих команд",
+        "en": "Student team list"
+    },
+    "school_team_list": {
+        "ru": "Список школьных команд",
+        "en": "School team list"
+    },
+    "empty_stage_team_list": {
+        "ru": "На данный момент список команд данного этапа отсутствует.",
+        "en": "At the moment, the team list for this stage is unavailable."
+    },
     "about": {
         "ru": "Об олимпиаде",
         "en": "About"

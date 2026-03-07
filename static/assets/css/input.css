@@ -10,7 +10,7 @@
   padding-right: 1rem;
   font-weight: 600;
   font-family: var(--font-body);
-  color: var(--green);
+  color: var(--almost-black);
 }
 
 .input::placeholder {
