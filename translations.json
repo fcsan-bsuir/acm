@@ -889,6 +889,10 @@
         "ru": "Печать на принтере",
         "en": "Print on printer"
     },
+    "print": {
+        "ru": "Отправить на печать",
+        "en": "Send to print"
+    },
     "rul_page_titl_general_info_title": {
         "ru": "1. ОБЩАЯ ИНФОРМАЦИЯ",
         "en": "1. GENERAL INFORMATION"

@@ -22,18 +22,18 @@
             <h1 class="main-title-mobile hidden big-text">XIV</h1>
           </div>
           <p class="main-description">
-            {{ tr.index_main_description|default:"14-й&nbsp;командный&nbsp;чемпионат&nbsp;БГУИР по&nbsp;спортивному&nbsp;программированию"|safe }}
+            {{ tr.index_main_description|safe }}
           </p>
         </div>
         <img src="{% static 'assets/img/valoshka.svg' %}" alt="valoshka" class="valoshka" />
       </section>
       <section id="about" class="about">
         <ul class="about-list">
-          <li class="about-list-item">{{ tr.index_about_list_1|default:"Проводится по стандартным правилам ICPC" }}</li>
-          <li class="about-list-item">{{ tr.index_about_list_2|default:"Команды от 1 до 3 человек" }}</li>
-          <li class="about-list-item">{{ tr.index_about_list_3|default:"Участники со всего земного шара" }}</li>
-          <li class="about-list-item">{{ tr.index_about_list_4|default:"Интересные задачи и незабываемые эмоции" }}</li>
-          <li class="about-list-item">{{ tr.index_ages_header|default:"Две возрастные категории" }}:</li>
+          <li class="about-list-item">{{ tr.index_about_list_1 }}</li>
+          <li class="about-list-item">{{ tr.index_about_list_2 }}</li>
+          <li class="about-list-item">{{ tr.index_about_list_3 }}</li>
+          <li class="about-list-item">{{ tr.index_about_list_4 }}</li>
+          <li class="about-list-item">{{ tr.index_ages_header }}:</li>
         </ul>
         <div class="teams">
           <div class="team">
@@ -52,26 +52,26 @@
           <ul class="buttons"></ul>
         </nav>
         <div id="quaterfinals" class="stage">
-          <p>{{ tr.index_quarter_purpose|default:"Цели отборочного тура" }}:</p>
+          <p>{{ tr.index_quarter_purpose }}:</p>
           <ul class="stages-list">
-            <li class="stages-list-item">{{ tr.index_quarter_list_1|default:"дать возможность командам самостоятельно оценить уровень подготовки к участию в Чемпионате;" }}</li>
-            <li class="stages-list-item">{{ tr.index_quarter_list_2|default:"команды, которые смогут бороться во втором отборочном туре (полуфинале) за выход в финал Чемпионата." }}</li>
+            <li class="stages-list-item">{{ tr.index_quarter_list_1 }}</li>
+            <li class="stages-list-item">{{ tr.index_quarter_list_2 }}</li>
           </ul>
-          <p>{{ tr.index_quarter_info|default:"Четвертьфинал является обязательным отборочным этапом для команд БГУИР и школьников." }}</p>
-          <p>{{ tr.index_quarter_pass|default:"Команды, решившие не менее половины из предложенных задач, проходят во второй отборочный тур." }}</p>
+          <p>{{ tr.index_quarter_info }}</p>
+          <p>{{ tr.index_quarter_pass }}</p>
         </div>
         <div id="semifinals" class="stage">
-          <p>{{ tr.index_semifinal_info|default:"Второй отборочный тур (полуфинал) проводится в очно-заочной форме." }}</p>
+          <p>{{ tr.index_semifinal_info }}</p>
           <p>{{ tr.index_semifinal_details_short }}</p>
         </div>
         <div id="finals" class="stage">
-          <p>{{ tr.index_final_info|default:"В следующий этап (финал) проходят 30 команд, показавшие лучшие результаты." }}</p>
+          <p>{{ tr.index_final_info }}</p>
           <ul class="stages-list">
-            <li class="stages-list-item">{{ tr.index_final_list_1|default:"7 команд студентов, магистрантов и аспирантов БГУИР;" }}</li>
-            <li class="stages-list-item">{{ tr.index_final_list_2|default:"2 команды от каждого ВУЗа или ССУЗа Республики Беларусь и стран зарубежья;" }}</li>
+            <li class="stages-list-item">{{ tr.index_final_list_1 }}</li>
+            <li class="stages-list-item">{{ tr.index_final_list_2 }}</li>
           </ul>
-          <p>{{ tr.index_final_additional|default:"По решению оргкомитета и жюри количество команд, которое проходит в следующий этап, может быть изменено." }}</p>
-          <p>{{ tr.rul_page_titl_conduct_finals_descript|default:"Финал соревнований проводится в очной форме." }}</p>
+          <p>{{ tr.index_final_additional }}</p>
+          <p>{{ tr.rul_page_titl_conduct_finals_descript }}</p>
         </div>
       </section>
       <section id="schedule" class="schedule">
@@ -79,7 +79,7 @@
           <div class="schedule-item flex-row">
             <img src="{% static 'assets/img/maladosc_light.svg' %}" class="maladosc" />
             <div>
-              <h3 class="schedule-title">{{ tr.registration|default:"Регистрация" }}</h3>
+              <h3 class="schedule-title">{{ tr.registration }}</h3>
               <p class="schedule-description">{{ tr.reg_start_day }} - {{ tr.reg_end_day }}</p>
             </div>
           </div>
@@ -90,7 +90,7 @@
           <div class="schedule-item flex-row-reverse">
             <img src="{% static 'assets/img/maladosc_light.svg' %}" class="maladosc" />
             <div>
-              <h3 class="schedule-title">{{ tr.index_selection_header|default:"Отборочный тур" }}</h3>
+              <h3 class="schedule-title">{{ tr.index_selection_header }}</h3>
               <p class="schedule-description">{{ tr.qual_start_day }} - {{ tr.qual_end_day }}</p>
             </div>
           </div>
@@ -101,7 +101,7 @@
           <div class="schedule-item flex-row">
             <img src="{% static 'assets/img/maladosc_light.svg' %}" class="maladosc" />
             <div>
-              <h3 class="schedule-title">{{ tr.semifinal|default:"Полуфинал" }}</h3>
+              <h3 class="schedule-title">{{ tr.semifinal }}</h3>
               <p class="schedule-description">{{ tr.semi_day }}</p>
             </div>
           </div>
@@ -112,12 +112,12 @@
         </div>
         <div class="finals">
           <img src="{% static 'assets/img/ornament-strelka-mobile.svg' %}" class="hidden" />
-          <h2 class="finals-title">{{ tr.index_round_final|default:"Финал" }}</h2>
+          <h2 class="finals-title">{{ tr.index_round_final }}</h2>
           <div class="finals-span">
             <img src="{% static 'assets/img/ornament-strelka.svg' %}" class="strelka" />
             <div class="description-mobile">
-              <p class="finals-description">{{ tr.stud_final|default:"Student" }} - {{ tr.stud_final_day }}</p>
-              <p class="finals-description">{{ tr.jun_final|default:"Junior" }} - {{ tr.jun_final_day }}</p>
+              <p class="finals-description">{{ tr.stud_final }} - {{ tr.stud_final_day }}</p>
+              <p class="finals-description">{{ tr.jun_final }} - {{ tr.jun_final_day }}</p>
             </div>
             <img
               src="{% static 'assets/img/ornament-strelka.svg' %}"

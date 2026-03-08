@@ -1,28 +1,28 @@
 {% extends 'wrapper.html' %}
 {% load static %}
 
-{% block title %} {{ tr.profile|default:"Личный кабинет" }} {% endblock %}
+{% block title %} {{ tr.profile }} {% endblock %}
 
 {% block content %}
 
 {% if not request.user.participant.team %}
     <!-- No Team View -->
-    <main>
-        <h1 class="title title-head">{{ tr.profile|default:"Личный кабинет" }}</h1>
+    <main class="form-main-padded">
+        <h1 class="title title-head">{{ tr.profile }}</h1>
 
         <div class="profile-container">
             {% if available_reg %}
-            <p class="profile-message">{{ tr.empty_team|default:"Вы пока не состоите ни в одной команде" }}</p>
+            <p class="profile-message">{{ tr.empty_team }}</p>
                 {% if olymp_type == 'single' %}
                     <form action="/team/create" method="post">
                         {% csrf_token %}
-                        <button class="button button-primary" type="submit">{{ tr.create_team|default:"Создать команду" }}</button>
+                        <button class="button button-primary" type="submit">{{ tr.create_team }}</button>
                     </form>
                 {% else %}
-                    <a href="{% url 'create-team' %}" class="button button-primary">{{ tr.create_team|default:"Создать команду" }}</a>
+                    <a href="{% url 'create-team' %}" class="button button-primary">{{ tr.create_team }}</a>
                 {% endif %}
             {% else %}
-                <p class="profile-message">{{ tr.registration_closed|default:"Регистрация закрыта" }}</p>
+                <p class="profile-message">{{ tr.registration_closed }}</p>
             {% endif %}
         </div>
     </main>
@@ -43,7 +43,7 @@
         
         {% if request.user.participant.team.can_print %}
             <a href="{% url 'printer' %}">
-                 <button class="button button-primary auth-button">Отправить на печать</button>
+                 <button class="button button-primary auth-button">{{ tr.print }}</button>
             </a>
         {% endif %}
       </header>
@@ -132,7 +132,7 @@
                           <p class="app-card-info">{{ tr.phone }}: {{ participant.phone }}</p>
                           <p class="app-card-info">{{ tr.email }}: {{ participant.email }}</p>
                        {% else %}
-                           <h4 class="title">{{ participant.fullname|default:"..." }}</h4>
+                           <h4 class="title">{{ participant.fullname }}</h4>
                        {% endif %}
                     </div>
                     
