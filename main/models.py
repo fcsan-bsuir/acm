@@ -54,7 +54,7 @@ class Coach(models.Model):
         ('XXXL', 'XXXL'),
     ]
     firstname = models.CharField(max_length=50)
-    secondname = models.CharField(max_length=50)
+    secondname = models.CharField(max_length=50, blank=True, default='')
     lastname = models.CharField(max_length=50)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
@@ -63,6 +63,11 @@ class Coach(models.Model):
     class Meta:
         verbose_name = 'Тренер'
         verbose_name_plural = 'Тренеры'
+
+    def save(self, *args, **kwargs):
+        if self.secondname is None:
+            self.secondname = ''
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f'[{self.id}] {self.lastname} {self.firstname} {self.secondname}'
@@ -201,7 +206,7 @@ class Participant(models.Model):
         blank=True
     )
     firstname = models.CharField(max_length=50)
-    secondname = models.CharField(max_length=50)
+    secondname = models.CharField(max_length=50, blank=True, default='')
     lastname = models.CharField(max_length=50)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
@@ -222,6 +227,11 @@ class Participant(models.Model):
         verbose_name = 'Участник'
         verbose_name_plural = 'Участники'
 
+    def save(self, *args, **kwargs):
+        if self.secondname is None:
+            self.secondname = ''
+        super().save(*args, **kwargs)
+
 
     def __str__(self):
         return f'[{self.country.code}] {self.firstname} {self.secondname} {self.lastname} ({self.education})'
@@ -230,7 +240,6 @@ class Participant(models.Model):
     def is_done(self):
         if(
             self.firstname and
-            self.secondname and
             self.lastname and
             self.email and
             self.phone and

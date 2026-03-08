@@ -56,7 +56,8 @@ class CreateParticipantForm(forms.ModelForm):
         })
 
         self.fields['firstname'].widget.attrs.update({'placeholder': 'Имя', 'class': 'btn-star-input'})
-        self.fields['secondname'].widget.attrs.update({'placeholder': 'Отчество', 'class': 'btn-star-input'})
+        self.fields['secondname'].required = False
+        self.fields['secondname'].widget.attrs.update({'placeholder': 'Отчество', 'class': 'auth-input'})
         self.fields['lastname'].widget.attrs.update({'placeholder': 'Фамилия', 'class': 'btn-star-input'})
         self.fields['education'].widget.attrs.update({'placeholder': 'Учебное заведение', 'class': 'btn-star-input'})
         self.fields['email'].widget.attrs.update({'placeholder': 'Email', 'class': 'btn-star-input'})
@@ -102,7 +103,8 @@ class CreateCoachForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(CreateCoachForm, self).__init__(*args, **kwargs)
         self.fields['firstname'].widget.attrs.update({'class': 'btn-star-input'})
-        self.fields['secondname'].widget.attrs.update({'class': 'btn-star-input'})
+        self.fields['secondname'].required = False
+        self.fields['secondname'].widget.attrs.update({'class': 'auth-input'})
         self.fields['lastname'].widget.attrs.update({'class': 'btn-star-input'})
         self.fields['email'].widget.attrs.update({'class': 'btn-star-input'})
         self.fields['phone'].widget.attrs.update({'class': 'btn-star-input'})

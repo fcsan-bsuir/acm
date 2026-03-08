@@ -36,7 +36,7 @@
         "en": "School team list"
     },
     "empty_stage_team_list": {
-        "ru": "На данный момент список команд данного этапа отсутствует.",
+        "ru": "На данный момент список команд выбранного этапа отсутствует.",
         "en": "At the moment, the team list for this stage is unavailable."
     },
     "about": {
@@ -144,8 +144,8 @@
         "en": "March 16th"
     },
     "qual_end_day": {
-        "ru": "22 марта",
-        "en": "March 22th"
+        "ru": "23 марта",
+        "en": "March 23th"
     },
     "semi_day": {
         "ru": "8 апреля",
@@ -918,8 +918,8 @@
         "en": "Start of the qualification round: March 16, 2026 at 16:00 (GMT+3)."
     },
     "rul_page_titl_general_info_qual_end": {
-        "ru": "Окончание отборочного тура: 22.03.2026 в 16:00.",
-        "en": "End of the qualification round: March 22, 2026 at 16:00 (GMT+3)."
+        "ru": "Окончание отборочного тура: 23.03.2026 в 16:00.",
+        "en": "End of the qualification round: March 23, 2026 at 16:00 (GMT+3)."
     },
     "rul_page_titl_general_info_qual_mandatory": {
         "ru": "Четвертьфинал является обязательным отборочным этапом для команд БГУИР и школьников. Остальные команды по желанию также могут принять участие в данном туре.",

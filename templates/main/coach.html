@@ -34,11 +34,6 @@
         </div>
         <div class="big-input name_input_container">
              <input type="text" name="secondname" class="input auth-input" placeholder="{{tr.add_coach_page_secondname}}" value="{% if form.secondname.value %}{{ form.secondname.value }}{% endif %}"/>
-          <div class="alarm">
-            <img
-              src="{% static 'assets/img/star.png' %}"
-            />
-          </div>
             {% if form.secondname.errors %}
                 <div class="error-info">{{ form.secondname.errors }}</div>
             {% endif %}
