@@ -45,8 +45,6 @@ class Command(BaseCommand):
                 print(f"[WARN] {var} is not specified")
 
         for key, langs in translations.items():
-            if key not in self.__vars:
-                continue
             tr_key, _ = TranslationKey.objects.get_or_create(key=key)
             for lang, value in langs.items():
                 tr, _ = Translation.objects.get_or_create(
