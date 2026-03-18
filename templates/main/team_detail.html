@@ -62,6 +62,10 @@
               <h2 class="title-subhead">{{ request.user.participant.team.stage }}</h2>
           </div>
           {% if credentials and request.user.participant.team.status == 'good' %}
+            <div class="app-row">
+                  <h2 class="title-subhead">{{ tr.testsystem }}</h2>
+                  <h2 class="title-subhead"><a href=\"https://solve.bsuir.by/\">solve.bsuir.by</a></h2>
+              </div>
               <div class="app-row">
                   <h2 class="title-subhead">{{ tr.login }}</h2>
                   <h2 class="title-subhead">{{ request.user.participant.team.system_login }}</h2>

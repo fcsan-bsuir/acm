@@ -28,3 +28,12 @@ body {
 body > main {
   flex: 1 0 auto;
 }
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
+}

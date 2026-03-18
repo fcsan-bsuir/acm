@@ -485,9 +485,13 @@
         "ru": "2.1. Тестирующая система",
         "en": "2.1. Testing System"
     },
+    "testsystem": {
+        "ru": "Тестирующая система",
+        "en": "Testing system"
+    },
     "rul_page_titl_hw_and_sw_testsys_descr": {
-        "ru": "Все решения участников тестируются на 64-битной операционной системе Linux. Доступные компиляторы:",
-        "en": "All participant solutions are tested on a 64-bit Linux operating system. Available compilers:"
+        "ru": "Тестирующая система доступна по ссылке: <a href=\"https://solve.bsuir.by/\">solve.bsuir.by</a>. Все решения участников тестируются на 64-битной операционной системе Linux. Доступные компиляторы:",
+        "en": "The testing system is available at the link: <a href=\"https://solve.bsuir.by/\">solve.bsuir.by</a>.All participant solutions are tested on a 64-bit Linux operating system. Available compilers:"
     },
     "rul_page_titl_hw_and_sw_testsys_compil_1": {
         "ru": "GNU c 11 7.3",
@@ -830,8 +834,8 @@
         "en": "This stage is mandatory for all teams. The list of Semi-Finals’ participants can be found at <a class=\"underscored\" href=\"/semifinal\">Team List</a>."
     },
     "common_info_page_semifinal_rules": {
-        "ru": "По правилам наших соревнований второй отборочный этап (полуфинал) команды должны решать в своих учреждениях образования, однако окончательное решение о месте проведения контеста остается за тренером команды. Участвовать в полуфинале можно в учебных аудиториях БГУИР только при предварительном уведомлении организационного комитета посредством письма на электронный адрес acm@bsuir.by в срок до <b>26.03.2025 13:00</b>.",
-        "en": "According to the rules of our competition, the teams that participate in the second qualifying stage (Semi-Finals) must compete in their educational institutions. Though the final decision on the stage of the contest remains with the team coach. You can participate in the Semi-Finals in the classrooms of BSUIR only with prior notification of the organizing committee by writing to the email address acm@bsuir.by before <b>26.03.2025 13:00(GMT+3)</b>."
+        "ru": "По правилам наших соревнований второй отборочный этап (полуфинал) команды должны решать в своих учреждениях образования, однако окончательное решение о месте проведения контеста остается за тренером команды. Участвовать в полуфинале можно в учебных аудиториях БГУИР только при предварительном уведомлении организационного комитета посредством письма на электронный адрес <a href=\"mailto:acm@bsuir.by\">acm@bsuir.by</a> в срок до <b>26.03.2025 13:00</b>.",
+        "en": "According to the rules of our competition, the teams that participate in the second qualifying stage (Semi-Finals) must compete in their educational institutions. Though the final decision on the stage of the contest remains with the team coach. You can participate in the Semi-Finals in the classrooms of BSUIR only with prior notification of the organizing committee by writing to the email address <a href=\"mailto:acm@bsuir.by\">acm@bsuir.by</a> before <b>26.03.2025 13:00(GMT+3)</b>."
     },
     "rul_page_titl_conduct_semi_finals_final_qualification_list_1": {
         "ru": "- 7 команд студентов, магистрантов и аспирантов БГУИР;",
