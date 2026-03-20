@@ -45,10 +45,15 @@ class LanguageMixin:
 
     def get_translations(self, language):
         file_translations = self._get_json_language_translations(language)
-        db_translations = {
-            translation.translation_key.key: translation.translated_text
-            for translation in Translation.objects.filter(language=language)
-        }
+        db_translations_qs = Translation.objects.filter(
+            language=language
+        ).values_list(
+            'translation_key__key',
+            'translated_text'
+        )
+        
+        db_translations = dict(db_translations_qs)
+        
         file_translations.update(db_translations)
         return file_translations
 
