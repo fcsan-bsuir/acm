@@ -45,8 +45,10 @@
                     {% endif %}
                   </td>
                   <td>
-                    {% if team.coach %}
-                    {{team.coach.fullname}}
+                    {% if team.coaches.all %}
+                      {% for coach in team.coaches.all %}
+                        {{ coach.fullname }}{% if not forloop.last %}<br>{% endif %}
+                      {% endfor %}
                     {% endif %}
                   </td>
                   <td>{{team.get_status_display}}</td>

@@ -80,33 +80,34 @@
       <footer>
         <div class="app-cards">
             <!-- Coach -->
-            <!-- If coach exists -->
-            {% if request.user.participant.team.coach %}
-              <div class="app-card">
-                <div>
-                  <h4 class="title">{{ tr.coach }}</h3>
-                  <h3 class="title title-subhead">{{ request.user.participant.team.coach.fullname }}</h4>
-                  <p class="app-card-info">{{ tr.phone }}: {{ request.user.participant.team.coach.phone }}</p>
-                  <p class="app-card-info">{{ tr.email }}: {{ request.user.participant.team.coach.email }}</p>
-                </div>
-                {% if not request.user.participant.team.is_sent %}
-                    <a href="{% url 'change-coach' %}">
-                        <button class="button button-primary auth-button">{{ tr.edit }}</button>
-                    </a>
-                {% endif %}
-              </div>
-            {% else %}
-                <!-- No coach -->
-                {% if not request.user.participant.team.is_sent %}
-                 <a href="{% url 'create-coach' %}" style="display: block; width: 100%;">
-                    <button class="button button-primary auth-button" style="width: 100%;">{{ tr.add_coach }}</button>
-                 </a>
-                {% else %}
+            {% with coaches=request.user.participant.team.coaches.all %}
+                {% if coaches %}
+                    {% for coach in coaches %}
+                      <div class="app-card">
+                        <div>
+                          <h4 class="title">{{ tr.coach }}</h4>
+                          <h3 class="title title-subhead">{{ coach.fullname }}</h3>
+                          <p class="app-card-info">{{ tr.phone }}: {{ coach.phone }}</p>
+                          <p class="app-card-info">{{ tr.email }}: {{ coach.email }}</p>
+                        </div>
+                        {% if not request.user.participant.team.is_sent %}
+                            <a href="{% url 'change-coach' coach.id %}">
+                                <button class="button button-primary auth-button">{{ tr.edit }}</button>
+                            </a>
+                        {% endif %}
+                      </div>
+                    {% endfor %}
+                {% elif request.user.participant.team.is_sent %}
                     <div class="app-card">
                         <h5 class="info">{{ tr.no_info }}</h5>
                     </div>
                 {% endif %}
-            {% endif %}
+                {% if not request.user.participant.team.is_sent and not request.user.participant.team.is_coaches_full %}
+                 <a href="{% url 'create-coach' %}" style="display: block; width: 100%;">
+                    <button class="button button-primary auth-button" style="width: 100%;">{{ tr.add_coach }}</button>
+                 </a>
+                {% endif %}
+            {% endwith %}
         </div>
         
         <div class="app-cards">

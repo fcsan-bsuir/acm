@@ -206,7 +206,7 @@ class CreateCoachView(LanguageMixin, LoginRequiredMixin, CreateView):
     def get(self, request, *args, **kwargs):
         if get_olympiad_type()=='single' or\
             not request.user.participant.team or\
-            request.user.participant.team.coach or\
+            request.user.participant.team.coaches.count() == 3 or\
             request.user.participant.team.status != 'in progress':
             return redirect('team-detail')
 
@@ -223,7 +223,7 @@ class CreateCoachView(LanguageMixin, LoginRequiredMixin, CreateView):
     def post(self, request, *args, **kwargs):
         if get_olympiad_type()=='single' or\
             not request.user.participant.team or \
-            request.user.participant.team.coach or\
+            request.user.participant.team.coaches.count() == 3 or\
             request.user.participant.team.status != 'in progress':
             return redirect('team-detail')
 
@@ -231,9 +231,8 @@ class CreateCoachView(LanguageMixin, LoginRequiredMixin, CreateView):
 
         if form.is_valid():
             coach = Coach(**form.cleaned_data)
+            coach.team = request.user.participant.team
             coach.save()
-            request.user.participant.team.coach = coach
-            request.user.participant.team.save()
 
             return redirect('team-detail')
 
@@ -408,13 +407,17 @@ class ChangeCoachView(LanguageMixin, LoginRequiredMixin, View):
     template_name = 'main/coach.html'
     form_class = CreateCoachForm
 
+    def get_coach_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Coach, id=id_)
+
     def get(self, request, *args, **kwargs):
+        _coach = self.get_coach_object()
         if not request.user.participant.team or \
             request.user.participant.team.status != 'in progress' or \
-            not request.user.participant.team.coach:
+            not (_coach in request.user.participant.team.coaches.all()):
             return redirect('team-detail')
 
-        _coach = request.user.participant.team.coach
         form = self.form_class(instance=_coach)
         return self.render_page(
             request,
@@ -425,12 +428,12 @@ class ChangeCoachView(LanguageMixin, LoginRequiredMixin, View):
         )
 
     def post(self, request, *args, **kwargs):
+        _coach = self.get_coach_object()
         if not request.user.participant.team or \
             request.user.participant.team.status != 'in progress' or \
-            not request.user.participant.team.coach:
+            not (_coach in request.user.participant.team.coaches.all()):
             return redirect('team-detail')
 
-        _coach = request.user.participant.team.coach
         form = self.form_class(request.POST, instance=_coach)
 
         if form.is_valid():

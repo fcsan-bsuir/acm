@@ -59,6 +59,13 @@ class Coach(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=20)
     tshirt_size = models.CharField(max_length=10, choices=TSHIRT_SIZE)
+    team = models.ForeignKey(
+        'Team',
+        models.SET_NULL,
+        blank=True,
+        null=True,
+        related_name='coaches'
+    )
 
     class Meta:
         verbose_name = 'Тренер'
@@ -97,12 +104,6 @@ class Team(models.Model):
     ]
 
     name = models.CharField(max_length=64, unique=True)
-    coach = models.ForeignKey(
-        Coach,
-        models.SET_NULL,
-        null=True,
-        blank=True,
-    )
     status = models.CharField(max_length=30, default='in progress', choices=TEAM_STATUS)
     type = models.CharField(max_length=50, choices=TEAM_TYPE)
     participant_status = models.CharField(max_length=30, choices=TEAM_PARTICIPANT_STATUS)
@@ -165,6 +166,10 @@ class Team(models.Model):
     @property
     def is_full(self):
         return self.participants.count() == 3
+
+    @property
+    def is_coaches_full(self):
+        return self.coaches.count() == 3
 
 
     @property
