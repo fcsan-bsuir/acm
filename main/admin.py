@@ -3,6 +3,7 @@ from uuid import uuid4
 from django.contrib import admin
 from django.conf import settings
 from django.http import HttpResponse
+from django.db.models import Q
 
 from main.utils import Configuration
 from main.models import (
@@ -60,9 +61,50 @@ class ParticipantInline(admin.TabularInline):
     exclude = ['user']
 
 
+class CoachInline(admin.TabularInline):
+    extra = 0
+    model = Coach
+
+
+class GeneratedSolveCredsFilter(admin.SimpleListFilter):
+    title = 'has solve creds'
+    parameter_name = 'generated_solve_creds'
+
+    def lookups(self, request, model_admin):
+        return (
+            ('yes', 'Yes'),
+            ('no', 'No'),
+        )
+
+    def queryset(self, request, queryset):
+        value = self.value()
+        if value not in {'yes', 'no'}:
+            return queryset
+
+        scope = Configuration('configuration.team.scope').strip()
+        prefix = Configuration('configuration.team.prefix').strip()
+        login_prefix = f'{scope}/{prefix}' if scope else prefix
+
+        has_creds_q = (
+            Q(system_login__isnull=False) &
+            ~Q(system_login='') &
+            Q(system_password__isnull=False) &
+            ~Q(system_password='')
+        )
+
+        if login_prefix:
+            valid_q = has_creds_q & Q(system_login__startswith=login_prefix)
+        else:
+            valid_q = Q(pk__in=[])
+
+        if value == 'yes':
+            return queryset.filter(valid_q)
+        return queryset.exclude(valid_q)
+
+
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    inlines = [ParticipantInline]
+    inlines = [ParticipantInline, CoachInline]
     list_display = (
         '__str__',
         'status',
@@ -71,11 +113,12 @@ class TeamAdmin(admin.ModelAdmin):
         'can_print',
     )
     search_fields = ['name', 'participants__lastname',
-                     'coach__lastname', 'system_login']
+                     'coaches__lastname', 'system_login']
     list_filter = (
         'status',
         'type',
         'is_generated_mail',
+        GeneratedSolveCredsFilter,
         'quaterfinal',
         'semifinal',
         'final',
@@ -161,8 +204,7 @@ class TeamAdmin(admin.ModelAdmin):
         res = ''
         s = set()
         for team in queryset:
-            if team.coach:
-                coach = team.coach
+            for coach in team.coaches.all():
                 s.add(f'{coach.firstname}\t{coach.lastname}\n')
 
         for coach in s:
@@ -192,8 +234,9 @@ class TeamAdmin(admin.ModelAdmin):
             res += f'{team.name}\t'
             for part in team.participants.all():
                 res += f'{part.lastname} {part.firstname}\t'
-            if team.coach:
-                res += f'{team.coach.lastname} {team.coach.firstname}'
+            coaches = [f'{coach.lastname} {coach.firstname}' for coach in team.coaches.all()]
+            if coaches:
+                res += ', '.join(coaches)
             res += '\n'
         return HttpResponse(res, content_type='text/plain; charset=utf-8')
 
@@ -294,4 +337,5 @@ class TeamAdmin(admin.ModelAdmin):
 
 @admin.register(Coach)
 class CoachAdmin(admin.ModelAdmin):
+    list_display = ('id', 'fullname', 'email', 'phone', 'team')
     search_fields = ['firstname', 'secondname', 'lastname', 'email',]

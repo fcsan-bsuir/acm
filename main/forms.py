@@ -97,7 +97,12 @@ class CreateCoachForm(forms.ModelForm):
     class Meta:
         model = Coach
         fields = (
-            '__all__'
+            'firstname',
+            'secondname',
+            'lastname',
+            'email',
+            'phone',
+            'tshirt_size',
         )
 
     def __init__(self, *args, **kwargs):
