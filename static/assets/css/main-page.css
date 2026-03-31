@@ -308,10 +308,6 @@ section:not(#main):not(.participants-button) {
   width: 12vmax;
 }
 
-.innotech {
-  width: 30vmax;
-}
-
 .partners-title {
   align-self: flex-start;
   margin-left: 100px;
@@ -617,10 +613,6 @@ section:not(#main):not(.participants-button) {
 
   .yadro {
     width: 150px;
-  }
-
-  .innotech {
-    width: 300px;
   }
 
   .partners {
