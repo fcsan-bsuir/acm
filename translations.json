@@ -251,6 +251,10 @@
         "ru": "Отправить на рассмотрение",
         "en": "Submit for review"
     },
+    "print_sending": {
+        "ru": "Отправить на печать",
+        "en": "Send to print"
+    },
     "fullfilled_info": {
         "ru": "Чтобы отправить команду на рассмотрение заполните всю информацию.",
         "en": "Complete all fields to send approvement request."

@@ -525,8 +525,8 @@ class FinalPrintView(LanguageMixin, View):
                    '-dNOPAUSE '
                    '-dBATCH '
                    '-sDEVICE=ljet4 '
-                   f'-sOutputFile={pcl_path} '
-                   f'{pdf_path}'
+                   f'-sOutputFile="{pcl_path}" '
+                   f'"{pdf_path}"'
             )
             import subprocess
             try:
@@ -534,7 +534,7 @@ class FinalPrintView(LanguageMixin, View):
             except subprocess.CalledProcessError as e:
                 raise RuntimeError(f"Ошибка конвертации: {e}")
 
-            with open(Path(settings.BASE_DIR, pcl_path), "rb") as f:
+            with open(pcl_path, "rb") as f:
                 file_data = f.read()
 
             printer_ip = Configuration("configuration.printer.ip")
