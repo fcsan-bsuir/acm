@@ -893,6 +893,10 @@
         "ru": "Печать на принтере",
         "en": "Print on printer"
     },
+    "insert_printer_code": {
+        "ru": "Введите свой код чтобы распечатать",
+        "en": "Insert your code to print"
+    },
     "print": {
         "ru": "Отправить на печать",
         "en": "Send to print"
