@@ -490,8 +490,8 @@
         "en": "Testing system"
     },
     "rul_page_titl_hw_and_sw_testsys_descr": {
-        "ru": "Тестирующая система доступна по ссылке: <a href=\"https://solve.bsuir.by/\">solve.bsuir.by</a>. Все решения участников тестируются на 64-битной операционной системе Linux. Доступные компиляторы:",
-        "en": "The testing system is available at the link: <a href=\"https://solve.bsuir.by/\">solve.bsuir.by</a>.All participant solutions are tested on a 64-bit Linux operating system. Available compilers:"
+        "ru": "Тестирующая система доступна по ссылке: <a href='https://solve.bsuir.by/'>solve.bsuir.by</a>. Все решения участников тестируются на 64-битной операционной системе Linux. Доступные компиляторы:",
+        "en": "The testing system is available at the link: <a href='https://solve.bsuir.by/'>solve.bsuir.by</a>.All participant solutions are tested on a 64-bit Linux operating system. Available compilers:"
     },
     "rul_page_titl_hw_and_sw_testsys_compil_1": {
         "ru": "GNU c 11 7.3",
