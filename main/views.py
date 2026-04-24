@@ -482,14 +482,26 @@ class TeamInfoView(View):
     def get(self, request, *args, **kwargs):
         team = self.get_team()
 
+        participants_with_user = team.participants.filter(user__isnull=False)
+
+        participant = {}
+        for p in participants_with_user:
+            participant = {
+                "id": p.id,
+                "firstname": p.firstname,
+                "email": p.email,
+                "username": p.user.username 
+            }
+
         data = {
             "id": team.id,
             "name": team.name,
             "location": team.location,
+            "participant": participant,
         }
 
         return HttpResponse(
-            json.dumps(data),
+            json.dumps(data, ensure_ascii=False),
             status=200,
             content_type='application/json; charset=utf-8'
         )
