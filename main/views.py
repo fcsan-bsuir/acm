@@ -193,7 +193,7 @@ class TeamView(LanguageMixin, LoginRequiredMixin, View):
                 "firstname": p.firstname,
                 "email": p.email,
                 "username": p.user.username 
-            })
+            }
 
         data = {
             "id": team.id,
