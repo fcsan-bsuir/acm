@@ -181,21 +181,33 @@ class TeamSchoolFinalListView(LanguageMixin, View):
 
 class TeamView(LanguageMixin, LoginRequiredMixin, View):
     template_name = 'main/team_detail.html'
-
     def get(self, request, *args, **kwargs):
-        context = {
-            'team_page': 'active',
-            'available_reg': get_available_reg(),
-            'olymp_type': get_olympiad_type(),
-            'disable_footer': True,
-            'credentials': get_credentials_show(),
+        team = self.get_team()
+
+        participants_with_user = team.participants.filter(user__isnull=False)
+
+        participant = {}
+        for p in participants_with_user:
+            participant = {
+                "id": p.id,
+                "firstname": p.firstname,
+                "email": p.email,
+                "username": p.user.username 
+            })
+
+        data = {
+            "id": team.id,
+            "name": team.name,
+            "location": team.location,
+            "participant": participant,
         }
 
-        return self.render_page(
-            request,
-            self.template_name,
-            context
+        return HttpResponse(
+            json.dumps(data, ensure_ascii=False),
+            status=200,
+            content_type='application/json; charset=utf-8'
         )
+
 
 
 class CreateCoachView(LanguageMixin, LoginRequiredMixin, CreateView):
