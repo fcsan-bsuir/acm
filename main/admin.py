@@ -51,7 +51,7 @@ class ParticipantAdmin(admin.ModelAdmin):
         'education',
         'user__username',
     )
-    search_fields = ['firstname', 'secondname', 'lastname', 'email', 'user__username']
+    search_fields = ['firstname', 'secondname', 'lastname', 'email', 'user__username', 'team']
     empty_value_display = 'unknown'
 
 
